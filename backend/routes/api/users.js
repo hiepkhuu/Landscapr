@@ -1,13 +1,14 @@
 const express = require('express')
 const asyncHandler = require('express-async-handler');
 
-const { setTokenCookie, requireAuth } = require('../../utils/auth');
+const { setTokenCookie, requireAuth, restoreUser } = require('../../utils/auth');
 const { User } = require('../../db/models');
 
 const router = express.Router();
 
 
-//##POST /api/users   // Sign up
+
+//##POST /api/users  for  // Sign up
 router.post(
   '/',
   asyncHandler(async (req, res) => {
