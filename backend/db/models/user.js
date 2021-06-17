@@ -29,7 +29,25 @@ module.exports = (sequelize, DataTypes) => {
         len: [60, 60]
       },
     },
-  }, {});
+  },
+  {
+    /*PROTECT USER'S INFO */
+    defaultScope: {
+      attributes: {
+        exclude: ['hashedPassword', 'email', 'createdAt', 'updatedAt'],
+      },
+    },
+     /*PROTECT USER'S INFO */
+    scopes: {
+      currentUser: {
+        attributes: { exclude: ['hashedPassword'] },
+      },
+      loginUser: {
+        attributes: {},
+      },
+    },
+  });
+
   User.associate = function(models) {
     // associations can be defined here
   };
