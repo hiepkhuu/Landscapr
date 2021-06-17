@@ -8,9 +8,11 @@ const apiRouter = require('./api');
 
 router.use('/api', apiRouter);
 
-router.get('/hello/world', csrfProtection, function(req, res) {
-  res.cookie('XSRF-TOKEN', req.csrfToken());//, req.csrfToken() - commented out as it broke the code
-  res.send('Hello World!');
-});
+
+//GET /HELLO/WORLD TEST ROUTE(BELOW)
+// router.get('/hello/world', csrfProtection, function(req, res) {
+//   res.cookie('XSRF-TOKEN', req.csrfToken());//, req.csrfToken() - commented out as it broke the code
+//   res.send('Hello World!');
+// });
 
 module.exports = router;
