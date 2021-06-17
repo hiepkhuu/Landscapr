@@ -10,9 +10,9 @@ router.use('/api', apiRouter);
 
 
 //GET /HELLO/WORLD TEST ROUTE(BELOW)
-// router.get('/hello/world', csrfProtection, function(req, res) {
-//   res.cookie('XSRF-TOKEN', req.csrfToken());//, req.csrfToken() - commented out as it broke the code
-//   res.send('Hello World!');
-// });
+router.get('/', csrfProtection, function(req, res) {
+  res.cookie('XSRF-TOKEN', req.csrfToken());//, req.csrfToken() - commented out as it broke the code
+  res.send('Hello World!');
+});
 
 module.exports = router;
