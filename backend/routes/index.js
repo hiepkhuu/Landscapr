@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// const csrf = require('csurf');// not sur eif we need this for csrfToken
+const csrf = require('csurf');// not sur eif we need this for csrfToken
 
 /** CONNECT ROUTERS TO THIS FILE */
 const apiRouter = require('./api');
