@@ -1,5 +1,5 @@
 # Welcome to Campr!
-Clickr is a web clone of the photo sharing website, Flickr where campers can document their trips adn all things camp related. This project uses Express, React, JS and Redux.
+Campr is a web clone of the photo sharing website, Flickr, where campers can document their trips adn all things camp related. This project uses Express, React, JS and Redux.
 
 ## Technology
   - Express
