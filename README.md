@@ -10,9 +10,9 @@ This project uses Express, React, JS and Redux.
   - Javascript
 
 ## Key Feactures (MVP)
-  - Users:
-          - Login
-          - Signup
+### Users:
+    - Login
+    - Signup
   - Photo upload
   - Creating and deleting comments on photos
 
