@@ -41,11 +41,13 @@ export const restoreUser = () => async (dispatch) => {
 
 /**THUNK SIGNUP*/
 export const signup = (user) => async (dispatch) => {
-  const { username, email, password } = user;
+  const { username, email, password, firstName, lastName } = user;
   const response = await csrfFetch("/api/users", {
     method: "POST",
     body: JSON.stringify({
       username,
+      lastName,
+      firstName,
       email,
       password,
     }),
