@@ -10,11 +10,10 @@ This project uses Express, React, JS and Redux.
   - Javascript
 
 ## Key Feactures (MVP)
-### Users:
-    - Login
-    - Signup
-  - Photo upload
-  - Creating and deleting comments on photos
+   - Users may sign-in, sign-up or log-out of their accounts
+   - Users may also upload their photos as well as delete them
+   - Users may create comments and delete them
+   - Once signed in, users will have their own homepage which includes their photostream and albums
 
 
 ## Project Design
