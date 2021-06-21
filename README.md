@@ -8,7 +8,7 @@ Campr is a web clone of the photo sharing website, Flickr, where campers can doc
   - Javascript
 
 ## Feactures/MVP
-  - User accounts including authentication
+  - User accounts with authentication
   - Login
   - Signup
   - Photo upload
