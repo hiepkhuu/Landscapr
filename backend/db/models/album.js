@@ -14,12 +14,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     },
   }, {});
-  const columnMapping = {
-    through: 'AlbumPhoto',
-    otherKey: 'albumId',
-    foriegnKey: 'photoId'
-  }
+
   Album.associate = function(models) {
+    const columnMapping = {
+      through: 'AlbumPhoto',
+      otherKey: 'albumId',
+      foriegnKey: 'photoId'
+    }
     Album.belongsToMany(models.Photo, columnMapping)
     Album.belongsTo(models.User, {foreignKey: 'userId'})
   };
