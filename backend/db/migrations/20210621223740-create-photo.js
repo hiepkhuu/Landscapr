@@ -13,6 +13,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {model: 'Users'}
       },
+      locationId: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {model: 'Locations'}
+      },
       imageUrl: {
         allowNull: false,
         type: Sequelize.STRING
