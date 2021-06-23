@@ -23,14 +23,24 @@ if (process.env.NODE_ENV !== "production") {
 function Root() {
   return (
     <Provider store={store}>
-      <ModalProvider>
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      </ModalProvider>
     </Provider>
   );
 }
+
+// function Root() {
+//   return (
+//     <Provider store={store}>
+//       <ModalProvider>
+//         <BrowserRouter>
+//           <App />
+//         </BrowserRouter>
+//       </ModalProvider>
+//     </Provider>
+//   );
+// }
 
 ReactDOM.render(
   <React.StrictMode>

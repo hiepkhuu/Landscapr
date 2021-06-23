@@ -11,7 +11,9 @@ const router = express.Router();
 
 
 router.get('/', asyncHandler(async(req, res)=>{
-  const allPhoto = await Photo.findAll();
+  const allPhoto = await Photo.findAll({
+    include: [{model: User, attributes: ['username']}]
+  });
   return res.json(allPhoto)
 }))
 
@@ -33,7 +35,7 @@ const photoValidation = [
     handleValidationErrors,
 ]
 
-//##POST /api/users
+//##POST /api/photos
 router.post('/', asyncHandler(async(req, res)=>{
   const {imageUrl, title, description, locationId, userId} = req.body
   const photoUpload = await Photo.create({
@@ -42,14 +44,72 @@ router.post('/', asyncHandler(async(req, res)=>{
 
   return res.json(photoUpload)
 
+}))
 
+const photoNotFoundError = (id) => {
+  const err = Error("PHoto not found");
+  err.errors = [`Photo with id of ${id} could not be found.`];
+  err.title = "Photo not found.";
+  err.status = 404;
+  return err;
+};
+
+router.put('/:id', asyncHandler(async(req,res, next)=>{
+  const {title, imageUrl, description, locationId} = req.body
+  const photo = await Photo.findOne({
+    where: {
+      id: req.params.id,
+    }
+  });
+
+  // if (req.user.id !== photo.userId ){
+  //   const err = new Error('unauthorized');
+  //   err.status = 401;
+  //   err.message = "You are not authrized to edit this photo.";
+  //   err.title = "Unauthorised";
+  //   throw err;
+  // }
+
+
+  if(photo){
+    await photo.update({
+    imageUrl, title, description, locationId
+    });
+    res.json({photo})
+  } else {
+    next()
+  }
+}))
+
+
+router.delete('/:id', asyncHandler(async(req, res)=>{
+  const photo = await Photo.findOne({
+    where: {
+      id: req.params.id,
+    }
+  });
+
+  if(photo){
+    await photo.destroy();
+    res.json({message: `Deleted photo with id of ${req.params.id}.`})
+  }
 }))
 
 
 
-
-
-
-
-
 module.exports = router;
+
+//for old put
+
+// const {title, description, locationId} = req.body
+// const photo = await Photo.findOne({
+//   where: {
+//     id: req.params.id,
+//   }
+// });
+
+
+//   await photo.update({////NEEDS TO BE LOWERCASE
+//   title, description, locationId
+//   });
+//   res.json({photo})
