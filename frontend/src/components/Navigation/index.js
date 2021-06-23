@@ -4,22 +4,29 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormPage from '../LoginFormPage';
 import './Navigation.css';
+import ExplorePhotoStream from '../ExplorePhotoStream';
+import UserHomePage from '../UserHomePage';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
 
   let sessionLinks;
   if (sessionUser) {
-    sessionLinks = (
-      <ProfileButton user={sessionUser} />
 
+    sessionLinks = (
+      <>
+       <NavLink to="/photos">Explore</NavLink>
+       <ProfileButton user={sessionUser} />
+      </>
     );
+    <UserHomePage />
+
 
   } else {
     sessionLinks = (
       <>
         {/* <LoginFormPage /> */}
-        <NavLink to="/photos">Explore</NavLink>
+
         <NavLink to="/login">Log In</NavLink>
         <NavLink to="/signup">Sign Up</NavLink>
       </>
@@ -30,6 +37,7 @@ function Navigation({ isLoaded }){
     <ul>
       <li>
         <NavLink exact to="/">Campr!🚙</NavLink>
+
         {isLoaded && sessionLinks}
       </li>
     </ul>

@@ -6,6 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import ExplorePhotoStream from "./components/ExplorePhotoStream"
+import UserHomePage from "./components/UserHomePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +22,9 @@ function App() {
         <Switch>
           <Route path='/photos'>
             <ExplorePhotoStream />
+          </Route>
+          <Route path="/user">
+            <UserHomePage />
           </Route>
           <Route path="/login">
             <LoginFormPage />

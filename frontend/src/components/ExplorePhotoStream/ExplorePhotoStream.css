@@ -1,14 +1,17 @@
 
-.each-photo{
-  height: 95%;
+.photo-container{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center
 }
 
 .photo-card{
   height: 200px;
   width: 200px;
 }
-.photo-container{
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center
+
+.each-photo{
+  height: 95%;
 }
+
+

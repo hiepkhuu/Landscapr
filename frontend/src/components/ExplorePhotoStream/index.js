@@ -31,6 +31,7 @@ const ExplorePhotoStream =() => {
       {photos.map((photo)=>(
         <div class='photo-card'>
           <img class='each-photo' src={photo.imageUrl} />
+          {/* <Link ></Link> */}
         </div>
 
       ))}
