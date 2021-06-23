@@ -12,11 +12,14 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <ProfileButton user={sessionUser} />
+
     );
+
   } else {
     sessionLinks = (
       <>
         {/* <LoginFormPage /> */}
+        <NavLink to="/photos">Explore</NavLink>
         <NavLink to="/login">Log In</NavLink>
         <NavLink to="/signup">Sign Up</NavLink>
       </>

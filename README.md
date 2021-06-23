@@ -1,6 +1,6 @@
 # Welcome to Campr! 🚙
 
-Campr is a web clone inspired by Flickr, where campers can document their trips and take photos of all things camp related. 
+Campr is a web clone inspired by Flickr, where campers can document their trips and take photos of all things camp related.
 This project uses Express, React, JS and Redux.
 
 ## Technology
@@ -13,7 +13,7 @@ This project uses Express, React, JS and Redux.
    - Users may sign-in, sign-up or log-out of their accounts
    - Users may also upload their photos as well as delete them
    - Users may create comments and delete them
-   - Once signed in, users will have their own homepage which includes their photostream and albums
+   - Once signed in, users will have their own homepage which includes their ExplorerPhotoStream and albums
 
 
 ## Project Design
@@ -22,7 +22,7 @@ This project uses Express, React, JS and Redux.
 
 
 
-## Coming Soon - Features/MVP 
+## Coming Soon - Features/MVP
   - tags
   - Following and liking users
   - Favorite photos
