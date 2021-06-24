@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Link, useHistory, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector} from 'react-redux'
 import { uploadPhoto } from '../../store/photos';
+import PhotoEditPage from '../PhotoEditPage'
 import './UpLoadPhoto.css'
 
 
@@ -21,6 +22,7 @@ const UpLoadPhoto = () =>{
 
   if (!sessionUser) return <Redirect to="/login" />;
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const photoData = {
@@ -35,9 +37,15 @@ const UpLoadPhoto = () =>{
       setTitle('');
       setDescription('');
       setImageUrl('');
-      history.push(`/photos/${createdPhoto.id}`)////// what is this
+      // history.push(`/photos/${createdPhoto.id}`)////// what is this
+      history.push(`/photos/edit/${createdPhoto.id}`)
+
     }
   }
+
+
+
+
 
 return (
   <div className='upload-form-page'>
@@ -92,7 +100,13 @@ return (
                   <button type="submit">Upload Photo</button>
                 </div>
             </form>
+
+
         </div>
+
+
+
+
 
  </div>
 )

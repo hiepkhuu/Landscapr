@@ -9,6 +9,7 @@ import ExplorePage from "./components/ExplorePage"
 import UserHomePage from "./components/UserHomePage";
 import PhotoDetail from "./components/PhotoDetail";
 import UpLoadPhoto from "./components/UpLoadPhoto";
+import PhotoEditPage from "./components/PhotoEditPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path={`/photos/:id`}>
             <PhotoDetail />
+          </Route>
+          <Route path={`/photos/edit/:id`}>
+            <PhotoEditPage />
           </Route>
         </Switch>
       )}

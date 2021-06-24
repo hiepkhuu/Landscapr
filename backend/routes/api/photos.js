@@ -18,7 +18,9 @@ router.get('/', asyncHandler(async(req, res)=>{
 }))
 
 router.get('/:id', asyncHandler(async(req, res)=>{
-  const photo = await Photo.findByPk(req.params.id)
+  const photo = await Photo.findByPk(req.params.id,{
+    includ:[User]
+  })
   return res.json(photo)
 }))
 
