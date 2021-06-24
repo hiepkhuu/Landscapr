@@ -28,43 +28,46 @@ const UpLoadPhoto = () =>{
       setTitle('');
       setDescription('');
       setImageUrl('');
-      history.push(`/photos/${createdPhoto.id}`)
+      history.push(`/photos/${createdPhoto.id}`)////// what is this
     }
   }
 
 return (
-  <div>
-    <form onSubmit={handleSubmit}>
-      <label>
-          Image URL
-          <input
-            type="text"
-            value={imageUrl}
-            placeholder="Image URL"
-            onChange={(e) => setImageUrl(e.target.value)}
-            required
-          />
-      </label>
-      <label>
-          Title
-          <input
-          type="text"
-          value={title}
-          placeholder="Title"
-          onChange={(e) => setTitle(e.target.value)}
-          />
-      </label>
-      <label>
-          Description
-          <input
-          type="text"
-          value={description}
-          placeholder="Caption"
-          onChange={(e) => setDescription(e.target.value)}
-          />
-      </label>
-      <button type="submit">Sign Up</button>
-    </form>
+  <div className='upload-form-page'>
+    <div className='upload-form-contaner'>
+      <div className='space-creator'> </div>
+        <form className='upload-form' onSubmit={handleSubmit}>
+          <label>
+              Image URL
+              <input
+                type="text"
+                value={imageUrl}
+                placeholder="Image URL"
+                onChange={(e) => setImageUrl(e.target.value)}
+                required
+              />
+          </label>
+          <label>
+              Title
+              <input
+              type="text"
+              value={title}
+              placeholder="Title"
+              onChange={(e) => setTitle(e.target.value)}
+              />
+          </label>
+          <label>
+              Description
+              <input
+              type="text"
+              value={description}
+              placeholder="Caption"
+              onChange={(e) => setDescription(e.target.value)}
+              />
+          </label>
+          <button type="submit">Sign Up</button>
+        </form>
+    </div>
 
  </div>
 )

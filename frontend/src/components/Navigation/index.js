@@ -16,10 +16,10 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
           <div>
-            <NavLink to="/explore">Explore</NavLink>
+            <NavLink className='navigation-link' to="/explore">Explore</NavLink>
           </div>
           <div>
-            <NavLink to="/upload">Up Load</NavLink>
+            <NavLink className='navigation-link' to="/upload">Up Load</NavLink>
           </div>
           <div>
             <ProfileButton user={sessionUser} />
@@ -34,15 +34,15 @@ function Navigation({ isLoaded }) {
       <>
         {/* <LoginFormPage /> */}
 
-        <NavLink to="/login">Log In</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
+        <NavLink className='navigation-link' to="/login">Log In</NavLink>
+        <NavLink className='navigation-link' to="/signup">Sign Up</NavLink>
       </>
     );
   }
 
   return (
     <div className='navigation-container'>
-        <NavLink exact to="/">Campr!🚙</NavLink>
+        <NavLink className='navigation-link-home' exact to="/">Campr!🚙</NavLink>
 
         {isLoaded && sessionLinks}
 

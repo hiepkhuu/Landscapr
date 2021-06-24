@@ -30,9 +30,7 @@ const PhotoDetail = () =>{
   return (
     <div className='singlephoto-detail-page'>
       <div className='singlephoto-container'>
-        <div className='photo-box'>
           <img className='single-photo' src={singlePhoto.imageUrl}></img>
-        </div>
       </div>
       <div>
         <p>photo details</p>
