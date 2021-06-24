@@ -39,33 +39,4 @@
     z-index: 1;
 } */
 
-.upload-form-page{
-  display: flex;
-  width:100%;
-  justify-content: center;
 
-
-}
-
-
-.upload-form-containers{
-  display: flex;
-  justify-content: center;
-}
-.upload-form{
-  margin-top: 100px;
-  width: 300px;
-  padding: 10px;
-  border: 1px solid black;
-  display: flexbox;
-  justify-content: center;
-  background-color: white;
-}
-
-.upload-lable{
-  margin: 10px;
-}
-
-.upload-input{
-  width: 250px;
-}

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Link, useHistory, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector} from 'react-redux'
 import { uploadPhoto } from '../../store/photos';
+import './UpLoadPhoto.css'
 
 
 // userId: 1,
