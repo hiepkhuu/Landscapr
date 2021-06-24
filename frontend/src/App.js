@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import ExplorePage from "./components/ExplorePage"
 import UserHomePage from "./components/UserHomePage";
 import PhotoDetail from "./components/PhotoDetail";
+import UpLoadPhoto from "./components/UpLoadPhoto";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ function App() {
             <UserHomePage />
           </Route>
           <Route path="/upload">
-            <UpLoad />
+            <UpLoadPhoto />
           </Route>
           <Route path='/explore'>
             <ExplorePage />

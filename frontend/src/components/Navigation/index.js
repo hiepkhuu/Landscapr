@@ -19,7 +19,7 @@ function Navigation({ isLoaded }) {
             <NavLink to="/explore">Explore</NavLink>
           </div>
           <div>
-            <button>Up Load</button>
+            <NavLink to="/upload">Up Load</NavLink>
           </div>
           <div>
             <ProfileButton user={sessionUser} />
