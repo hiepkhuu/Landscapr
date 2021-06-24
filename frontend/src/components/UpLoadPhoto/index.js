@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Link, useHistory, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector} from 'react-redux'
+import { uploadPhoto } from '../../store/photos';
 
 
 // userId: 1,
@@ -11,6 +12,7 @@ import { useDispatch, useSelector} from 'react-redux'
 
 const UpLoadPhoto = () =>{
   const dispatch = useDispatch();
+  const history = useHistory();
   const sessionUser = useSelector((state)=> state.session.user);
   const [imageUrl, setImageUrl] = useState('');
   const [title, setTitle] = useState('');
@@ -20,17 +22,25 @@ const UpLoadPhoto = () =>{
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+    const photoData = {imageUrl, title, description}
+    const createdPhoto = dispatch(uploadPhoto(photoData))
+    if(createdPhoto){
+      setTitle('');
+      setDescription('');
+      setImageUrl('');
+      history.push(`/photos/${createdPhoto.id}`)
+    }
   }
 
 return (
   <div>
     <form onSubmit={handleSubmit}>
       <label>
-          Image Url
+          Image URL
           <input
             type="text"
             value={imageUrl}
+            placeholder="Image URL"
             onChange={(e) => setImageUrl(e.target.value)}
             required
           />
@@ -40,6 +50,7 @@ return (
           <input
           type="text"
           value={title}
+          placeholder="Title"
           onChange={(e) => setTitle(e.target.value)}
           />
       </label>
@@ -48,10 +59,11 @@ return (
           <input
           type="text"
           value={description}
+          placeholder="Caption"
           onChange={(e) => setDescription(e.target.value)}
           />
       </label>
-
+      <button type="submit">Sign Up</button>
     </form>
 
  </div>

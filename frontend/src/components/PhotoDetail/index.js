@@ -8,9 +8,9 @@ import './PhotoDetail.css'
 const PhotoDetail = () =>{
     const dispatch = useDispatch();
     const history = useHistory();
-    const sessionUser = useSelector(state => state.session.user)
     const { id } = useParams();
 
+    const sessionUser = useSelector(state => state.session.user)
     const singlePhoto = useSelector(state => state.photos[id]);
 
     useEffect(()=>{
@@ -30,7 +30,15 @@ const PhotoDetail = () =>{
   return (
     <div className='singlephoto-detail-page'>
       <div className='singlephoto-container'>
-        <img className='single-photo' src={singlePhoto.imageUrl}></img>
+        <div className='photo-box'>
+          <img className='single-photo' src={singlePhoto.imageUrl}></img>
+        </div>
+      </div>
+      <div>
+        <p>photo details</p>
+      </div>
+      <div className='comment-container'>
+        <p>comment section</p>
       </div>
 
     </div>
