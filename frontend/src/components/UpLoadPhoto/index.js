@@ -18,12 +18,18 @@ const UpLoadPhoto = () =>{
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
-  if (!sessionUser) return <Redirect to="/" />;
+  if (!sessionUser) return <Redirect to="/login" />;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const photoData = {imageUrl, title, description}
-    const createdPhoto = dispatch(uploadPhoto(photoData))
+    const photoData = {
+      imageUrl,
+      title,
+      description,
+      userId: sessionUser.id
+    }
+
+    const createdPhoto = await dispatch(uploadPhoto(photoData))
     if(createdPhoto){
       setTitle('');
       setDescription('');
@@ -34,40 +40,58 @@ const UpLoadPhoto = () =>{
 
 return (
   <div className='upload-form-page'>
-    <div className='upload-form-contaner'>
-      <div className='space-creator'> </div>
-        <form className='upload-form' onSubmit={handleSubmit}>
-          <label>
-              Image URL
-              <input
-                type="text"
-                value={imageUrl}
-                placeholder="Image URL"
-                onChange={(e) => setImageUrl(e.target.value)}
-                required
-              />
-          </label>
-          <label>
-              Title
-              <input
-              type="text"
-              value={title}
-              placeholder="Title"
-              onChange={(e) => setTitle(e.target.value)}
-              />
-          </label>
-          <label>
-              Description
-              <input
-              type="text"
-              value={description}
-              placeholder="Caption"
-              onChange={(e) => setDescription(e.target.value)}
-              />
-          </label>
-          <button type="submit">Sign Up</button>
-        </form>
-    </div>
+
+        <div className='upload-form-contaner'>
+
+            <form className='upload-form' onSubmit={handleSubmit}>
+                <div className='upload-lable'>
+                  <label>
+                      Image URL
+                    <div>
+                      <input
+                        className='upload-input'
+                        type="text"
+                        value={imageUrl}
+                        placeholder="Past image address URL here."
+                        onChange={(e) => setImageUrl(e.target.value)}
+                        required
+                      />
+                    </div>
+                  </label>
+                </div>
+                <div className='upload-lable'>
+                  <label>
+                      Title
+                    <div>
+                      <input
+                      className='upload-input'
+                      type="text"
+                      value={title}
+                      placeholder="Title"
+                      onChange={(e) => setTitle(e.target.value)}
+                      />
+                    </div>
+                  </label>
+                </div>
+                <div className='upload-lable'>
+                  <label>
+                      Description
+                    <div>
+                      <input
+                      className='upload-input'
+                      type="text"
+                      value={description}
+                      placeholder="Caption"
+                      onChange={(e) => setDescription(e.target.value)}
+                      />
+                    </div>
+                  </label>
+                </div>
+                <div className='upload-lable'>
+                  <button type="submit">Upload Photo</button>
+                </div>
+            </form>
+        </div>
 
  </div>
 )

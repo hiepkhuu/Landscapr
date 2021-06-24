@@ -32,9 +32,9 @@ export const uploadPhoto = (data) => async dispatch =>{
   })
 
   if (response.ok){
-    const data = await response.json();
-    dispatch(addPhoto(data))
-    return data
+    const createdData = await response.json();
+    dispatch(addPhoto(createdData))
+    return createdData
   }
 }
 

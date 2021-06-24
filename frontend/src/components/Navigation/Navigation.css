@@ -45,12 +45,24 @@
   justify-content: center;
 }
 
-.space-creator{
-  height: 100px;
+
+.upload-form-containers{
+  display: flex;
+  justify-content: center;
+}
+.upload-form{
+  margin-top: 100px;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid black;
+  display: flexbox;
+  justify-content: center
 }
 
-.upload-form{
-  width: 400px;
-  padding: 10px;
-  
+.upload-lable{
+  margin: 10px;
+}
+
+.upload-input{
+  width: 250px;
 }
