@@ -5,8 +5,9 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-import ExplorePhotoStream from "./components/ExplorePhotoStream"
+import ExplorePage from "./components/ExplorePage"
 import UserHomePage from "./components/UserHomePage";
+import PhotoDetail from "./components/PhotoDetail";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,21 +21,24 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path='/photos'>
-            <ExplorePhotoStream />
-          </Route>
-          <Route path="/user">
-            <UserHomePage />
-          </Route>
           <Route path="/login">
             <LoginFormPage />
           </Route>
           <Route path="/signup">
             <SignupFormPage />
           </Route>
+          <Route path="/profile">
+            <UserHomePage />
+          </Route>
+          <Route path='/explore'>
+            <ExplorePage />
+          </Route>
+          <Route path={`/photos/:id`}>
+            <PhotoDetail />
+          </Route>
         </Switch>
       )}
-      {/* <ExplorePhotoStream /> */}
+      {/* <ExplorePage /> */}
     </>
   );
 }

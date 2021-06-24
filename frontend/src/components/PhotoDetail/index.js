@@ -1,0 +1,41 @@
+import React, {useEffect} from 'react';
+import { useHistory, useParams, Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { getSinglePhoto } from '../../store/photos';
+import './PhotoDetail.css'
+
+
+const PhotoDetail = () =>{
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const sessionUser = useSelector(state => state.session.user)
+    const { id } = useParams();
+
+    const singlePhoto = useSelector(state => state.photos[id]);
+
+    useEffect(()=>{
+      dispatch(getSinglePhoto(id))
+    },[dispatch])
+
+    if (!sessionUser) {
+      return (
+        <Redirect to='/login' />
+      )
+    }
+
+    if(!singlePhoto){
+      return null;
+    }
+
+  return (
+    <div className='singlephoto-detail-page'>
+      <div className='singlephoto-container'>
+        <img className='single-photo' src={singlePhoto.imageUrl}></img>
+      </div>
+
+    </div>
+
+  )
+}
+
+export default PhotoDetail;

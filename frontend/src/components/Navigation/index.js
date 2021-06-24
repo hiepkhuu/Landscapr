@@ -4,10 +4,10 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormPage from '../LoginFormPage';
 import './Navigation.css';
-import ExplorePhotoStream from '../ExplorePhotoStream';
+import ExplorePage from '../ExplorePage';
 import UserHomePage from '../UserHomePage';
 
-function Navigation({ isLoaded }){
+function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
 
   let sessionLinks;
@@ -15,8 +15,17 @@ function Navigation({ isLoaded }){
 
     sessionLinks = (
       <>
-       <NavLink to="/photos">Explore</NavLink>
-       <ProfileButton user={sessionUser} />
+       <div>
+          <div>
+            <NavLink to="/explore">Explore</NavLink>
+          </div>
+          <div>
+            <button>Up Load</button>
+          </div>
+          <div>
+            <ProfileButton user={sessionUser} />
+          </div>
+        </div>
       </>
     );
     <UserHomePage />
@@ -34,13 +43,12 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul>
-      <li>
+    <div>
         <NavLink exact to="/">Campr!🚙</NavLink>
 
         {isLoaded && sessionLinks}
-      </li>
-    </ul>
+   
+    </div>
   );
 }
 
