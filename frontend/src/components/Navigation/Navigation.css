@@ -43,6 +43,8 @@
   display: flex;
   width:100%;
   justify-content: center;
+
+
 }
 
 
@@ -56,7 +58,8 @@
   padding: 10px;
   border: 1px solid black;
   display: flexbox;
-  justify-content: center
+  justify-content: center;
+  background-color: white;
 }
 
 .upload-lable{
