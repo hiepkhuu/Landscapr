@@ -15,7 +15,6 @@ function Navigation({ isLoaded }) {
 
     sessionLinks = (
       <>
-       <div>
           <div>
             <NavLink to="/explore">Explore</NavLink>
           </div>
@@ -25,7 +24,6 @@ function Navigation({ isLoaded }) {
           <div>
             <ProfileButton user={sessionUser} />
           </div>
-        </div>
       </>
     );
     <UserHomePage />
@@ -43,11 +41,11 @@ function Navigation({ isLoaded }) {
   }
 
   return (
-    <div>
+    <div className='navigation-container'>
         <NavLink exact to="/">Campr!🚙</NavLink>
 
         {isLoaded && sessionLinks}
-   
+
     </div>
   );
 }

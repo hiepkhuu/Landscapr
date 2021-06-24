@@ -30,6 +30,9 @@ function App() {
           <Route path="/profile">
             <UserHomePage />
           </Route>
+          <Route path="/upload">
+            <UpLoad />
+          </Route>
           <Route path='/explore'>
             <ExplorePage />
           </Route>
