@@ -1,11 +1,60 @@
-import React, { useState } from 'react';
-import * as sessionActions from '../../store/session';
-import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useHistory, Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import './UserHomePage.css';
+import { getPhotos } from '../../store/photos'
+import PhotoDetail from '../PhotoDetail';
 
 
-const UserHomePage = () =>{
-  return null;
+
+const UserHomePage = () => {
+  const dispatch = useDispatch();
+  const sessionUser = useSelector(state => state.session.user);
+  const history = useHistory();
+
+  useEffect(() => {
+    dispatch(getPhotos())
+  }, [dispatch])
+
+  const photos = useSelector(state => {
+    return Object.values(state.photos)
+  })
+
+  if (!photos) return null;
+
+  if (!sessionUser){
+    return(
+      <Redirect to='/login' />
+    )
+  }
+
+  // const routeToSinglePhoto = (e) => {
+  //   e.preventDefault();
+  //   history.push(`/photos/${photo.id}`)
+  // }
+
+
+  return (
+    <div className='explore-page'>
+      <div className='explore-space-div'></div>
+        <div className='explore-gallery-container'>
+          {photos.map((photo) => (
+            <div key={photo.id} className='photo-container'>
+               <a href={`/photos/${photo.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  history.push(`/photos/${photo.id}`)
+                }}>
+                 <div className='photo-card'>
+                   <img className='each-photo' src={photo.imageUrl} />
+                 </div>
+
+               </a>
+             </div>
+            ))}
+        </div>
+    </div>
+  )
 }
 
-export default UserHomePage
+export default UserHomePage;

@@ -50,7 +50,7 @@ const ExplorePage = () => {
                  </div>
 
                </a>
-            </div>
+             </div>
             ))}
         </div>
     </div>

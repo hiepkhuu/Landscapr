@@ -6,6 +6,13 @@
 
 }
 
+.delete-photo-button:hover {
+  background-color: rgb(5, 5, 5);
+  color: white;
+  border-radius: 3px;
+  border: none;
+  padding: 5px;
+}
 
 .upload-form-containers{
   display: flex;

@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Redirect, useHistory } from 'react-router-dom';
-import { getSinglePhoto } from '../../store/photos';
+import { getSinglePhoto, removeSinglePhoto, updateSinglePhoto } from '../../store/photos';
+
 import './PhotoEditPage.css'
 
 
 const PhotoEditPage = () =>{
   const dispatch = useDispatch();
   const history = useHistory();
-  const [imageUrl, setImageUrl] = useState('');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
@@ -27,6 +27,30 @@ const PhotoEditPage = () =>{
     )
   }
 
+  const handleSubmit = async (e) =>{
+    // e.preventDefault();
+    const photoData = {
+      ...singlePhoto,
+      title,
+      description,
+      userId: sessionUser.id
+    }
+    const editedPhoto = await dispatch(updateSinglePhoto(photoData))
+    if (editedPhoto) {
+      setTitle('');
+      setDescription('');
+      // history.push(`/photos/${editedPhoto.id}`)////// what is this
+      history.push(`/edit/${singlePhoto.id}`)
+    }
+
+  }
+
+  const handleDelete = async (e) =>{
+    e.preventDefault();
+    dispatch(removeSinglePhoto(id))
+    history.push(`/profile`)
+  }
+
   if(!singlePhoto){
     return null;
   }
@@ -35,22 +59,7 @@ const PhotoEditPage = () =>{
     <div className='edit-form-page'>
         <div className='edit-form-contaner'>
 
-            <form className='edit-form' onSubmit=''>
-                <div className='edit-label'>
-                  <label>
-                      Image URL
-                    <div>
-                      <input
-                        className='edit-input'
-                        type="text"
-                        value={imageUrl}
-                        placeholder="Past image address URL here."
-                        onChange={(e) => setImageUrl(e.target.value)}
-                        required
-                      />
-                    </div>
-                  </label>
-                </div>
+            <form className='edit-form' onSubmit={handleSubmit}>
                 <div className='edit-label'>
                   <label>
                       Title
@@ -83,10 +92,16 @@ const PhotoEditPage = () =>{
                   <button type="submit">edit Photo</button>
                 </div>
             </form>
+          <div>
+            <h3>Title: {singlePhoto.title}</h3>
+            <h4>Description: {singlePhoto.description}</h4>
+          </div>
+          <button className='delete-photo-button' onClick={handleDelete}>Delete Photo</button>
         </div>
         <div className='edit-photo-box'>
           <img className='edit-photo'src={singlePhoto.imageUrl}></img>
         </div>
+
 
     </div>
   )
