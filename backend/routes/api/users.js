@@ -7,6 +7,7 @@ const { User } = require('../../db/models');
 const router = express.Router();
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
+const { ResultWithContext } = require('express-validator/src/chain');
 
 const validateSignup = [
   check('email')
@@ -53,6 +54,10 @@ router.post(
     });
   }),
 );
+
+// router.get('/:id', asyncHandler(async(req, res)=>{
+//   const user = await User.find
+// }))
 
 
 module.exports = router;

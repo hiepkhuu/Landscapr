@@ -26,6 +26,34 @@ module.exports = {
         lastName: faker.name.lastName(),
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
       },
+      {
+        email: faker.internet.email(),
+        username: 'FakeUser3',
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName(),
+        hashedPassword: bcrypt.hashSync(faker.internet.password()),
+      },
+      {
+        email: faker.internet.email(),
+        username: 'FakeUser4',
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName(),
+        hashedPassword: bcrypt.hashSync(faker.internet.password()),
+      },
+      {
+        email: faker.internet.email(),
+        username: 'FakeUser5',
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName(),
+        hashedPassword: bcrypt.hashSync(faker.internet.password()),
+      },
+      {
+        email: faker.internet.email(),
+        username: 'FakeUser6',
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName(),
+        hashedPassword: bcrypt.hashSync(faker.internet.password()),
+      },
     ], {});
   },
 

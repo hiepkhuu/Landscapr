@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useHistory, Redirect } from 'react-router-dom';
+import { useHistory, Redirect, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './UserHomePage.css';
 import { getPhotos } from '../../store/photos'
@@ -10,7 +10,27 @@ import PhotoDetail from '../PhotoDetail';
 const UserHomePage = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
+  const {userId} = useParams();
   const history = useHistory();
+
+  const userPhotos = useSelector(state => {
+    return Object.values(state.photos)
+
+  })
+
+    // console.log(typeof Number(userId))
+    // userPhotos.map(eachItem => {
+    //  console.log(typeof eachItem.userId)
+    // })
+
+    const filtereduserPhotos = userPhotos.filter(eachItem => eachItem.userId === Number(userId))
+
+  console.log(filtereduserPhotos)
+  // userPhotos.map(eachItem =>{
+  //   if (eachItem.userId === Number(userId)){
+  //     console.log('is this whate i loooking for',eachItem.imageUrl)
+  //   }
+  // })
 
   useEffect(() => {
     dispatch(getPhotos())
@@ -19,6 +39,7 @@ const UserHomePage = () => {
   const photos = useSelector(state => {
     return Object.values(state.photos)
   })
+
 
   if (!photos) return null;
 
@@ -38,22 +59,23 @@ const UserHomePage = () => {
     <div className='explore-page'>
       <div className='explore-space-div'></div>
         <div className='explore-gallery-container'>
-          {photos.map((photo) => (
-            <div key={photo.id} className='photo-container'>
-               <a href={`/photos/${photo.id}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  history.push(`/photos/${photo.id}`)
-                }}>
-                 <div className='photo-card'>
-                   <img className='each-photo' src={photo.imageUrl} />
-                 </div>
+          {filtereduserPhotos.map((photo) => (
+                <div key={photo.id} className='photo-container'>
+                  <a href={`/photos/${photo.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      history.push(`/photos/${photo.id}`)
+                    }}>
+                    <div className='photo-card'>
+                      <img className='each-photo' src={photo.imageUrl} />
+                    </div>
 
-               </a>
-             </div>
+                  </a>
+                </div>
             ))}
         </div>
     </div>
+
   )
 }
 

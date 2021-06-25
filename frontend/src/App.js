@@ -29,9 +29,6 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/profile">
-            <UserHomePage />
-          </Route>
           <Route path="/upload">
             <UpLoadPhoto />
           </Route>
@@ -43,6 +40,9 @@ function App() {
           </Route>
           <Route path={`/edit/:id`}>
             <PhotoEditPage />
+          </Route>
+          <Route exact path={`/:username/:userId`}>
+            <UserHomePage />
           </Route>
         </Switch>
       )}

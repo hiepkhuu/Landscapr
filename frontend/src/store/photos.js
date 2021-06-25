@@ -127,7 +127,7 @@ const photoReducer = (state = {}, action) => {
       return newState
     }
     case REMOVE_PHOTO: {
-      const newState = {...state}
+      
     }
     default:
       return state;

@@ -19,7 +19,7 @@ function Navigation({ isLoaded }) {
             <NavLink className='navigation-link' to="/explore">Explore</NavLink>
           </div>
           <div>
-            <NavLink className='navigation-link' to="/profile">You</NavLink>
+            <NavLink className='navigation-link' to={`/${sessionUser.username}/${sessionUser.id}`}>You</NavLink>
           </div>
           <div>
             <NavLink className='navigation-link' to="/upload">Up Load</NavLink>
