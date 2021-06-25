@@ -34,12 +34,12 @@ function SignupFormPage() {
     <div className='signup-form-page'>
       <div className='signup-form-container'>
         <form className='signup-form' onSubmit={handleSubmit}>
-          <div className='signup-lable'>
+          <div className='signup-label'>
             <ul>
               {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
           </div>
-          <div className='signup-lable'>
+          <div className='signup-label'>
             <label>
               Email
               <input
@@ -51,7 +51,7 @@ function SignupFormPage() {
               />
             </label>
           </div>
-          <div className='signup-lable'>
+          <div className='signup-label'>
             <label>
               First Name
               <input
@@ -63,7 +63,7 @@ function SignupFormPage() {
               />
             </label>
           </div>
-          <div className='signup-lable'>
+          <div className='signup-label'>
             <label>
               Last Name
               <input
@@ -75,7 +75,7 @@ function SignupFormPage() {
               />
             </label>
           </div>
-          <div className='signup-lable'>
+          <div className='signup-label'>
             <label>
               Username
               <input
@@ -87,7 +87,7 @@ function SignupFormPage() {
               />
             </label>
           </div>
-          <div className='signup-lable'>
+          <div className='signup-label'>
             <label>
               Password
               <input
@@ -99,7 +99,7 @@ function SignupFormPage() {
               />
             </label>
           </div>
-          <div className='signup-lable'>
+          <div className='signup-label'>
             <label>
               Confirm Password
               <input
@@ -111,7 +111,7 @@ function SignupFormPage() {
               />
             </label>
           </div>
-          <div className='signup-lable'>
+          <div className='signup-label'>
             <button type="submit">Sign Up</button>
           </div>
         </form>

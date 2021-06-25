@@ -25,6 +25,7 @@
 
 .each-photo{
   height: 95%;
+  box-shadow: 0px 0px 3px 0px grey;
 
 }
 

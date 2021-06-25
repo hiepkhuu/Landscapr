@@ -16,12 +16,14 @@
   margin-top: 100px;
   width: 300px;
   padding: 10px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   background-color: white;
+  box-shadow: 0px 0px 3px 0px grey;
+  border-radius: 5px;
 
 }
 
-.signup-lable{
+.signup-label{
   margin: 10px;
   margin-top: 20px;
   height: 30px;
