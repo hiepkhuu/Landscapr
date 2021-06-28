@@ -17,7 +17,7 @@ router.get('/', asyncHandler(async(req, res)=>{
   return res.json(allPhoto)
 }))
 
-router.get('/:id(\\d+)', asyncHandler(async(req, res)=>{
+router.get('/:id(\\d+)',asyncHandler(async(req, res)=>{
   const photo = await Photo.findByPk(req.params.id,{
     include:[User]
   })
@@ -38,7 +38,7 @@ const photoValidation = [
 ]
 
 //##POST /api/photos
-router.post('/', asyncHandler(async(req, res)=>{
+router.post('/', requireAuth,asyncHandler(async(req, res)=>{
   const {imageUrl, title, description, locationId, userId} = req.body
   const photoUpload = await Photo.create({
       userId, imageUrl, title, description, locationId
@@ -56,7 +56,7 @@ const photoNotFoundError = (id) => {
   return err;
 };
 
-router.put('/:id(\\d+)', asyncHandler(async(req,res, next)=>{
+router.put('/:id(\\d+)', requireAuth,asyncHandler(async(req,res, next)=>{
   const {title, imageUrl, description, locationId} = req.body
   const photo = await Photo.findOne({
     where: {
@@ -84,7 +84,7 @@ router.put('/:id(\\d+)', asyncHandler(async(req,res, next)=>{
 }))
 
 
-router.delete('/:id(\\d+)', asyncHandler(async(req, res)=>{
+router.delete('/:id(\\d+)',requireAuth, asyncHandler(async(req, res)=>{
   const photo = await Photo.findOne({
     where: {
       id: req.params.id,
