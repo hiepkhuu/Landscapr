@@ -12,6 +12,9 @@ const PhotoDetail = () =>{
 
     const sessionUser = useSelector(state => state.session.user)
     const singlePhoto = useSelector(state => state.photos[id]);
+    // const photo = useSelector(state => {
+    //   return Object.values(state.photos)
+    // })
 
     useEffect(()=>{
       dispatch(getSinglePhoto(id))
@@ -22,10 +25,18 @@ const PhotoDetail = () =>{
         <Redirect to='/login' />
       )
     }
-    console.log(singlePhoto)
+   
 
     if(!singlePhoto){
       return null;
+    }
+
+    const directToEditPage = () =>{
+      history.push(`/edit/${singlePhoto.id}`)
+    }
+
+    const redirectToHomepage = () =>{
+      history.push(`/${sessionUser.username}/${sessionUser.id}`)
     }
 
   return (
@@ -36,9 +47,9 @@ const PhotoDetail = () =>{
       <div className='photo-detail-container'>
         <div className='photo-details'>
             <div>
-              <h2>{singlePhoto.User?.username}</h2>
-            </div>
-            <div>
+              <div>
+                <h2>This should be username</h2>
+              </div>
               <div>
                 <h4>{singlePhoto.title}</h4>
               </div>
@@ -49,6 +60,12 @@ const PhotoDetail = () =>{
             <div className='comment-container'>
               <p>comment section</p>
             </div>
+            <button
+            onClick={directToEditPage}
+            >Edit Photo</button>
+            <button
+            onClick={redirectToHomepage}
+            >Back to Homepage</button>
         </div>
       </div>
 

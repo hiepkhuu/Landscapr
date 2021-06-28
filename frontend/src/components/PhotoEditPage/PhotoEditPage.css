@@ -1,7 +1,9 @@
 .photo-edit-page{
   /* margin-top: 150px; */
 }
-
+.edit-redirect-to-homepage{
+  margin-top:100px;
+}
 
 .edit-form-page{
   display: flex;
@@ -18,7 +20,7 @@
 
 }
 .edit-form{
-  margin-top: 150px;
+  margin-top: 30px;
   width: 300px;
   padding: 10px;
   /* border: 1px solid black; */

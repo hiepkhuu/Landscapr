@@ -12,6 +12,10 @@ const UserHomePage = () => {
   const sessionUser = useSelector(state => state.session.user);
   const {userId} = useParams();
   const history = useHistory();
+  
+    useEffect(() => {
+    dispatch(getPhotos())
+  }, [dispatch])
 
   const userPhotos = useSelector(state => {
     return Object.values(state.photos)
@@ -25,16 +29,14 @@ const UserHomePage = () => {
 
     const filtereduserPhotos = userPhotos.filter(eachItem => eachItem.userId === Number(userId))
 
-  console.log(filtereduserPhotos)
+  // console.log(filtereduserPhotos)
   // userPhotos.map(eachItem =>{
   //   if (eachItem.userId === Number(userId)){
   //     console.log('is this whate i loooking for',eachItem.imageUrl)
   //   }
   // })
 
-  useEffect(() => {
-    dispatch(getPhotos())
-  }, [dispatch])
+
 
   const photos = useSelector(state => {
     return Object.values(state.photos)

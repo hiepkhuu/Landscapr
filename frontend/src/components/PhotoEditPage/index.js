@@ -55,11 +55,24 @@ const PhotoEditPage = () =>{
     return null;
   }
 
+  const redirectToHomepage = () =>{
+    history.push(`/${sessionUser.username}/${sessionUser.id}`)
+  }
+
+  const redirectToPhotoPage = () =>{
+    history.push(`/photos/${singlePhoto.id}`)
+  }
+
+
+
   return (
     <div className='edit-form-page'>
-        <div className='edit-form-contaner'>
 
+        <div className='edit-form-contaner'>
+          <button className='edit-redirect-to-homepage' onClick={redirectToHomepage}>Back To Homepage</button>
+          <button className='edit-redirect-to-homepage' onClick={redirectToPhotoPage}>Back To Photo Page</button>
             <form className='edit-form' onSubmit={handleSubmit}>
+
                 <div className='edit-label'>
                   <label>
                       Title
@@ -89,7 +102,7 @@ const PhotoEditPage = () =>{
                   </label>
                 </div>
                 <div className='edit-label'>
-                  <button type="submit">edit Photo</button>
+                  <button type="submit">Submit Updates</button>
                 </div>
             </form>
           <div>
