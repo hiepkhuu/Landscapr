@@ -5,7 +5,7 @@ const { Comment } = require('../../db/models')
 
 const router = express.Router();
 
-router.get('/photos/:id(\\d+)', asyncHandler(async(req, res)=>{
+router.get('/photos/:id(\\d+)', requireAuth, asyncHandler(async(req, res)=>{
   const {id} = parseInt(req.params, 10)
   const allComments = await Comment.findAll({
     where: {photoId: id},
@@ -14,30 +14,44 @@ router.get('/photos/:id(\\d+)', asyncHandler(async(req, res)=>{
   return res.json(comments)
 }))
 
-router.post('/photos/:id(\\d+)', asyncHandler(async(req, res)=>{
+router.post('/photos/:id(\\d+)',requireAuth,  asyncHandler(async(req, res)=>{
   const {id} = parseInt(req.params, 10)
   const {comment, userId} = req.body
 
-  const newComment= await Comment.create({
+  const createComment= await Comment.create({
     userId, comment, photoId:id
   })
 
-  const comment = await Comment.findByPk(newComment.id, {
+  const newComment = await Comment.findByPk(createComment.id, {
     include: userId
   })
 
-  return req.json(commentUpload)
+  return req.json(newComment)
 }))
 
-router.put('/photos/:id(\\d+)', asyncHandler(async(req, res)=>{
+router.put('/photos/:id(\\d+)', requireAuth, asyncHandler(async(req, res)=>{
   const {id} = parseInt(req.params, 10)
-  const {comment, userId} = req.body
 
-  const comment = await Comment.findOne({
+  const updateComment = await Comment.findOne({
     where: {
       photoId:id
-    }
+    } })
+
+   if(updateComment){
+     await updateComment.update({comment})
+     return res.json(updateComment)
+   }
+
+}))
+
+router.delete('/:id', requireAuth, asyncHandler(async(req,res)=>{
+  const {id} = parseInt(req.params,10);
+  const comment = await Comment.findByPk({
+    where: {photoId: id}
   })
+
+  await comment.destroy();
+  res.status(204).end()
 }))
 
 

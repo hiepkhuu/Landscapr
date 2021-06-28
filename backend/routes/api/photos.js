@@ -93,7 +93,8 @@ router.delete('/:id(\\d+)', asyncHandler(async(req, res)=>{
 
   if(photo){
     await photo.destroy();
-    res.json({message: `Deleted photo with id of ${req.params.id}.`})
+    res.status(204).end()
+    // res.json({message: `Deleted photo with id of ${req.params.id}.`})
   }
 }))
 
