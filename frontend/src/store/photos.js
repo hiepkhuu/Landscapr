@@ -34,15 +34,11 @@ const addPhoto = photo => ({
 export const removeSinglePhoto = (id) => async dispatch =>{
   const response = await csrfFetch(`/api/photos/${id}`,{
     method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json'
-    },
   })
 
   if(response.ok){
-    const photo = await response.json();
 
-    dispatch(removePhoto(photo))
+    dispatch(removePhoto(id))
   }
 }
 

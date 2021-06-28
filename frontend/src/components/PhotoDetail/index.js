@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import { useHistory, useParams, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSinglePhoto } from '../../store/photos';
+import Comments from '../Comments'
 import './PhotoDetail.css'
 
 
@@ -25,7 +26,7 @@ const PhotoDetail = () =>{
         <Redirect to='/login' />
       )
     }
-   
+
 
     if(!singlePhoto){
       return null;
@@ -57,15 +58,15 @@ const PhotoDetail = () =>{
                 <p>{singlePhoto.description}</p>
               </div>
             </div>
-            <div className='comment-container'>
-              <p>comment section</p>
-            </div>
             <button
             onClick={directToEditPage}
             >Edit Photo</button>
             <button
             onClick={redirectToHomepage}
             >Back to Homepage</button>
+            <div className='comment-container'>
+              <Comments />
+            </div>
         </div>
       </div>
 

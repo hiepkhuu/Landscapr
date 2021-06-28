@@ -1,5 +1,5 @@
 import { csrfFetch } from './csrf'
-import { UPDATE_PHOTO } from './photos';
+
 
 export const LOAD_COMMENTS = "COMMENTS/LOAD_COMMENTS";
 export const REMOVE_COMMENT = "COMMENTS/REMOVE_Comment";
@@ -28,7 +28,7 @@ const removeComment = comment => ({
 
 /**THUNK - GET */
 export const getComments = (id) => async dispatch => {
-  const response = await csrfFetch(`api/comments/photos/${id}`)
+  const response = await csrfFetch(`/api/comments/photos/${id}`)
   if(response.ok){
     const comments = await response.json();
     dispatch(loadComments(comments))
@@ -89,7 +89,7 @@ const commentReducer = (state = {}, action) => {
   let allComments = {};
   switch (action.type){
     case LOAD_COMMENTS: {
-      action.comment.forEach(comment => {
+      action.comments.forEach(comment => {
         allComments[comment.id] = comment;
       });
       return {
