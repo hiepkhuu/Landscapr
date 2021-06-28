@@ -45,6 +45,8 @@ export const removeSinglePhoto = (id) => async dispatch =>{
     dispatch(removePhoto(photo))
   }
 }
+
+
 export const updateSinglePhoto = (data) => async dispatch =>{
   const response = await csrfFetch(`/api/photos/${data.id}`,{
     method: 'PUT',
@@ -127,7 +129,9 @@ const photoReducer = (state = {}, action) => {
       return newState
     }
     case REMOVE_PHOTO: {
-      
+      const deletePhoto = {...state}
+      delete deletePhoto[action.comment]
+      return deletePhoto
     }
     default:
       return state;

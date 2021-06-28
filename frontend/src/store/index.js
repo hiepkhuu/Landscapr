@@ -3,10 +3,12 @@ import thunk from 'redux-thunk';
 
 import sessionReducer from './session';
 import photoReducer from "./photos";
+import commentReducer from "./comment";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
-  photos: photoReducer
+  photos: photoReducer,
+  comments: commentReducer
 });
 
 
