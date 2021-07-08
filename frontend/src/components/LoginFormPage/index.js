@@ -34,7 +34,7 @@ function LoginFormPage() {
                   {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
               </div>
-              <div>
+              <div className='login-label'>
                 <label>
                   Username or Email
                   <input

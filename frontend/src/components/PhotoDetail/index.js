@@ -48,8 +48,14 @@ const PhotoDetail = () =>{
       <div className='photo-detail-container'>
         <div className='photo-details'>
             <div>
+                <button
+                onClick={directToEditPage}
+                >Edit Photo</button>
+                <button
+                onClick={redirectToHomepage}
+                >Back to Homepage</button>
               <div>
-                <h2>This should be username</h2>
+                <h2>{singlePhoto.User?.username}</h2>
               </div>
               <div>
                 <h4>{singlePhoto.title}</h4>
@@ -58,12 +64,12 @@ const PhotoDetail = () =>{
                 <p>{singlePhoto.description}</p>
               </div>
             </div>
-            <button
+            {/* <button
             onClick={directToEditPage}
             >Edit Photo</button>
             <button
             onClick={redirectToHomepage}
-            >Back to Homepage</button>
+            >Back to Homepage</button> */}
             <div className='comment-container'>
               <Comments />
             </div>

@@ -42,7 +42,7 @@ export const removeSinglePhoto = (id) => async dispatch =>{
   }
 }
 
-
+//EDIT PHOTO
 export const updateSinglePhoto = (data) => async dispatch =>{
   const response = await csrfFetch(`/api/photos/${data.id}`,{
     method: 'PUT',

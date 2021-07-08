@@ -1,10 +1,10 @@
 import { csrfFetch } from './csrf'
 
 
-export const LOAD_COMMENTS = "COMMENTS/LOAD_COMMENTS";
-export const REMOVE_COMMENT = "COMMENTS/REMOVE_Comment";
-export const UPDATE_COMMENT = "COMMENTS/UPDATE_Comment";
-export const ADD_COMMENT = "COMMENTS/ADD_Comment";
+const LOAD_COMMENTS = "comments/LOAD_COMMENTS";
+ const REMOVE_COMMENT = "comments/REMOVE_COMMENT";
+const UPDATE_COMMENT = "comments/UPDATE_COMMENT";
+const ADD_COMMENT = "comments/ADD_COMMENT";
 
 const loadComments = comments => ({
   type: LOAD_COMMENTS,
@@ -37,7 +37,7 @@ export const getComments = (id) => async dispatch => {
 
 /**THUNK ADD */
 export const uploadComment = (data) => async dispatch => {
-  const response = await csrfFetch(`/api/comments/photos/${data.id}`,{
+  const response = await csrfFetch(`/api/comments/photos/${data.photoId}`,{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ export const uploadComment = (data) => async dispatch => {
   if (response.ok){
     const createdData = await response.json();
     dispatch(addComment(createdData))
-    return createdData
+    // return createdData
   }
 }
 
@@ -99,7 +99,7 @@ const commentReducer = (state = {}, action) => {
     }
     case ADD_COMMENT: {
       const newState = {...state}
-      newState[action.photo.id] = action.comment
+      newState[action.comment.id] = action.comment
       return newState
     }
     case UPDATE_COMMENT: {
