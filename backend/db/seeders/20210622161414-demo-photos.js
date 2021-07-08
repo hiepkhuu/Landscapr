@@ -1,0 +1,140 @@
+'use strict';
+
+module.exports = {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.bulkInsert('Photos', [
+      {
+     userId: 1,
+     locationId: null,
+     imageUrl: 'https://images.unsplash.com/photo-1515876305430-f06edab8282a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FtcGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60',
+     title: 'Sunset',
+     description: 'Out by the lake',
+     createdAt: new Date(),
+     updatedAt: new Date(),
+    },
+    {
+      userId: 1,
+      locationId: null,
+      imageUrl: 'https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FtcGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=60',
+      title: 'Starry Night',
+      description: 'Feels like its just us',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+     },
+     {
+      userId: 1,
+      locationId: null,
+      imageUrl: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2FtcGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=60',
+      title: 'Canyon',
+      description: "Don't know where we going, but the canyon was nice",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+     },
+     {
+      userId: 2,
+      locationId: null,
+      imageUrl: 'https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y2FtcGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=60',
+      title: 'Just us',
+      description: 'Parked in our full metal camper!',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+     },
+     {
+      userId: 3,
+      locationId: null,
+      imageUrl: 'https://images.unsplash.com/photo-1527786356703-4b100091cd2c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2FtcGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=60',
+      title: 'Bright day',
+      description: 'Check out this diy camper top!',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+     },
+     {
+      userId: 4,
+      locationId: null,
+      imageUrl: 'https://images.unsplash.com/photo-1597257095947-c15b23285ed1?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FtcGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=60',
+      title: 'Old Skool',
+      description: 'Old camper, but she still workin fine for one of them beach days!',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+     },
+     {
+      userId: 5,
+      locationId: null,
+      imageUrl: 'https://images.unsplash.com/photo-1597891829363-0e246f08cd34?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2FtcGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+      title: 'Parked at home',
+      description: 'Though we not going anywhere yet, this baby is ready',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+     },
+     {
+      userId: 5,
+      locationId: null,
+      imageUrl: 'https://images.unsplash.com/photo-1580562491167-b0865b9d234e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2FtcGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=60',
+      title: 'Look to the sky',
+      description: 'Enjoy this moment',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+     },
+     {
+      userId: 4,
+      locationId: null,
+      imageUrl: 'https://images.unsplash.com/photo-1619677394722-6397960e590b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Y2FtcGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=60',
+      title: 'By the Lake',
+      description: 'Just wanted to show something on my camping trip!',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+     },
+     {
+      userId: 3,
+      locationId: null,
+      imageUrl: 'https://images.unsplash.com/photo-1543395136-75b39bc00e0e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNhbXBlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=60',
+      title: 'Fluffy Clouds',
+      description: 'Parked on the edge of adventure',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+     },
+     {
+      userId: 3,
+      locationId: null,
+      imageUrl: 'https://images.unsplash.com/photo-1598524898412-d66b744c7f03?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNhbXBlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=60',
+      title: 'Mountains',
+      description: 'Just arrived at our destination',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+     },
+     {
+      userId: 2,
+      locationId: null,
+      imageUrl: 'https://images.unsplash.com/photo-1597891829363-0e246f08cd34?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y2FtcGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+      title: 'Title for Photo',
+      description: 'This is photo description',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+     },
+     {
+      userId: 1,
+      locationId: null,
+      imageUrl: 'https://images.unsplash.com/photo-1534540378968-85a7b8fde19f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGNhbXBlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=60',
+      title: 'On the Road',
+      description: 'Looking back to the sunset',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+     },
+     {
+      userId: 1,
+      locationId: null,
+      imageUrl: 'https://images.unsplash.com/photo-1519980744-785dc86d4a7a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGNhbXBlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=60',
+      title: 'Simple Little Corner',
+      description: 'The only place I want to be',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+     },
+
+
+  ], {});
+  },
+
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.bulkDelete('Photos', null, {});
+  }
+};

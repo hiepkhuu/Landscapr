@@ -14,7 +14,7 @@ module.exports = {
         references: {model: 'Users'}
       },
       locationId: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER,
         references: {model: 'Locations'}
       },
