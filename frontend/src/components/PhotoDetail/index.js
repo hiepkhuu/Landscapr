@@ -2,8 +2,9 @@ import React, {useEffect} from 'react';
 import { useHistory, useParams, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSinglePhoto } from '../../store/photos';
-import Comments from '../Comments'
+import Comments from './Comments.js'
 import './PhotoDetail.css'
+import './Comments.css'
 
 
 const PhotoDetail = () =>{

@@ -20,6 +20,7 @@
 }
 
 .photo-detail-container{
+  margin-top: 15px;
   width:auto;
   display:flex;
   justify-content: center;

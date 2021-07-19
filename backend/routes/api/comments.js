@@ -48,10 +48,8 @@ router.put('/photos/:id', requireAuth, asyncHandler(async(req, res)=>{
 }))
 
 router.delete('/:id', requireAuth, asyncHandler(async(req,res)=>{
-  const {id} = parseInt(req.params,10);
-  const comment = await Comment.findByPk({
-    where: {photoId: id}
-  })
+  const {id} = req.params
+  const comment = await Comment.findByPk(id)
 
   await comment.destroy();
   res.status(204).end()
