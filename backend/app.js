@@ -15,6 +15,8 @@ const app = express();
 
 app.use(morgan('dev'));
 app.use(cookieParser());
+// app.use(express.json()); // replace this with two lines below
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(routes);// Connect all the routes
 

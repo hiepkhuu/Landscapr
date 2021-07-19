@@ -39,8 +39,8 @@ const PhotoEditPage = () =>{
     if (editedPhoto) {
       setTitle('');
       setDescription('');
-      // history.push(`/photos/${editedPhoto.id}`)////// what is this
-      history.push(`/edit/${singlePhoto.id}`)
+      history.push(`/photos/${editedPhoto.id}`)////// what is this
+      // history.push(`/edit/${singlePhoto.id}`)
     }
 
   }

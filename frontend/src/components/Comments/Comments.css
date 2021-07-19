@@ -6,3 +6,8 @@
 .comment-box{
  margin-top: 40px
 }
+
+.comment-content{
+  display:flex;
+  justify-content: space-between
+}

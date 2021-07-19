@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { useHistory, Redirect, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Comments.css';
-import { getComments, uploadComment } from '../../store/comments'
+import { getComments, uploadComment, deleteComment } from '../../store/comments'
 
 
 const Comments = () =>{
@@ -11,7 +11,7 @@ const Comments = () =>{
 
 
   const [comment, setComment]= useState('')
-
+  const [commentToDeleteId, setCommentToDeleteId] = useState('')
 
   const {id} = useParams()
 
@@ -49,16 +49,17 @@ const Comments = () =>{
       userId: sessionUser.id,
       photoId: id
     }
-
-
       const newComment = dispatch(uploadComment(commentData))
       if (newComment){
         setComment('')
       }
-
-
     }
 
+  const handleDelete = async (e)=>{
+    e.preventDefault()
+    const deleteComment = dispatch(deleteComment(id))
+
+  }
 
   return(
     <div>
@@ -68,8 +69,11 @@ const Comments = () =>{
           <div>
             <h3>{comment.User?.username}</h3>
           </div>
-          <div>
+          <div className='comment-content'>
             <p>{comment.comment}</p>
+            <form onSubmit={handleDelete}>
+              <button type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>Delete</button>
+            </form>
           </div>
           </div>
         ))}
