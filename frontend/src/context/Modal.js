@@ -1,6 +1,9 @@
+// frontend/src/context/Modal.js
 import React, { useContext, useRef, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './Modal.css';
+import './LoginFormModal/LoginForm.css'
+import './UploadPhotoModal/UploadPhotoForm.css'
 
 const ModalContext = React.createContext();
 

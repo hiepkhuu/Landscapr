@@ -9,13 +9,14 @@ import './PhotoEditPage.css'
 const PhotoEditPage = () =>{
   const dispatch = useDispatch();
   const history = useHistory();
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
 
   const {id} = useParams();
 
   const sessionUser = useSelector(state => state.session.user)
   const singlePhoto = useSelector(state => state.photos[id]);
+
+  const [title, setTitle] = useState(singlePhoto.title);
+  const [description, setDescription] = useState(singlePhoto.description);
 
   useEffect(() => {
     dispatch(getSinglePhoto(id))
@@ -81,7 +82,7 @@ const PhotoEditPage = () =>{
                       className='edit-input'
                       type="text"
                       value={title}
-                      placeholder="Title"
+                      // placeholder={"Title"}
                       onChange={(e) => setTitle(e.target.value)}
                       />
                     </div>
@@ -95,7 +96,7 @@ const PhotoEditPage = () =>{
                       className='edit-input'
                       type="text"
                       value={description}
-                      placeholder="Caption"
+                      // placeholder="Caption"
                       onChange={(e) => setDescription(e.target.value)}
                       />
                     </div>

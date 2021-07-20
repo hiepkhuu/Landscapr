@@ -21,7 +21,7 @@
 }
 .edit-form{
   margin-top: 30px;
-  width: 300px;
+  width: auto;
   padding: 10px;
   /* border: 1px solid black; */
   background-color: white;
@@ -37,7 +37,9 @@
 }
 
 .edit-input{
-  width: 250px;
+  width: 100%;
+  height: 100%;
+  color: grey
 }
 
 .edit-photo-box{

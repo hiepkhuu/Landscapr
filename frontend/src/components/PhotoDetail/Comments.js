@@ -2,13 +2,12 @@ import React, {useEffect, useState} from 'react';
 import { useHistory, Redirect, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Comments.css';
-import { getComments, uploadComment, deleteComment } from '../../store/comments'
+import { getComments, uploadComment, deleteComment} from '../../store/comments'
 
 
 const Comments = () =>{
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
-
 
   const [comment, setComment]= useState('')
   const [commentToDeleteId, setCommentToDeleteId] = useState('')
@@ -32,7 +31,6 @@ const Comments = () =>{
   }, [dispatch, id])
 
 
-  console.log('comments?',comments)
 
   if(!comments) return null;
 
@@ -66,12 +64,13 @@ const Comments = () =>{
       <div clssName='comment-container'>
         {filteredComments.map((comment)=>(
           <div className='comment-box'>
-          <div>
+          <div className='comment-box-username'>
             <h3>{comment.User?.username}</h3>
           </div>
           <div className='comment-content'>
             <p>{comment.comment}</p>
-            <form onSubmit={handleDelete}>
+            {/* {if (comment.userId !== sessionUser.id) false = true} */}
+            <form onSubmit={handleDelete} hidden={comment.userId !== sessionUser.id}>
               <button type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>Delete</button>
             </form>
           </div>

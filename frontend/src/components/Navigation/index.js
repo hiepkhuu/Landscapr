@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormPage from '../LoginFormPage';
+import LoginFormModal from '../../context/LoginFormModal';// for MODAL
+import UploadPhotoModal from '../../context/UploadPhotoModal';// for MODAL
 import './Navigation.css';
 import ExplorePage from '../ExplorePage';
 import UserHomePage from '../UserHomePage';
@@ -22,7 +24,8 @@ function Navigation({ isLoaded }) {
             <NavLink className='navigation-link' to={`/${sessionUser.username}/${sessionUser.id}`}>You</NavLink>
           </div>
           <div>
-            <NavLink className='navigation-link' to="/upload">Up Load</NavLink>
+            <UploadPhotoModal />
+            {/* <NavLink className='navigation-link' to="/upload">Up Load</NavLink> */}
           </div>
           <div>
             <ProfileButton user={sessionUser} />
@@ -37,7 +40,8 @@ function Navigation({ isLoaded }) {
       <>
         {/* <LoginFormPage /> */}
 
-        <NavLink className='navigation-link' to="/login">Log In</NavLink>
+        {/* <NavLink className='navigation-link' to="/login">Log In</NavLink> */}
+        <LoginFormModal />
         <NavLink className='navigation-link' to="/signup">Sign Up</NavLink>
       </>
     );

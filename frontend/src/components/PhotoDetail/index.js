@@ -51,6 +51,7 @@ const PhotoDetail = () =>{
             <div>
                 <button
                 onClick={directToEditPage}
+                hidden={singlePhoto.userId !== sessionUser.id}
                 >Edit Photo</button>
                 <button
                 onClick={redirectToHomepage}
