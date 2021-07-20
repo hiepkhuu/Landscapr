@@ -11,6 +11,7 @@ import UserHomePage from "./components/UserHomePage";
 import PhotoDetail from "./components/PhotoDetail";
 import UpLoadPhoto from "./components/UpLoadPhoto";
 import PhotoEditPage from "./components/PhotoEditPage"
+import SplashPage from "./components/SplashPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route exact path="/">
-
+            <SplashPage />
           </Route>
           {/* <Route exact path="/login">
             <LoginFormPage />
