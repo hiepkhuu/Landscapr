@@ -2,9 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
-import LoginFormPage from '../LoginFormPage';
+import LoginFormPage from '../x-LoginFormPage';
 import LoginFormModal from '../../context/LoginFormModal';// for MODAL
 import UploadPhotoModal from '../../context/UploadPhotoModal';// for MODAL
+import SignupFormModal from '../../context/SignupFormModal';// for MODAL
 import './Navigation.css';
 import ExplorePage from '../ExplorePage';
 import UserHomePage from '../UserHomePage';
@@ -43,7 +44,8 @@ function Navigation({ isLoaded }) {
         {/* <NavLink className='navigation-link' to="/login">Log In</NavLink> */}
         <LoginFormModal />
         {/* <NavLink className='navigation-link'> Demo Login</NavLink> */}
-        <NavLink className='navigation-link' to="/signup">Sign Up</NavLink>
+        {/* <NavLink className='navigation-link' to="/signup">Sign Up</NavLink> */}
+        <SignupFormModal />
       </>
     );
   }
