@@ -1,4 +1,4 @@
-/*
+
 .signup-form-page{
   display: flex;
   width:100%;
@@ -16,7 +16,7 @@
   margin-top: 100px;
   width: 300px;
   padding: 10px;
-  /* border: 1px solid black; */
+ border: 1px solid black;
   background-color: white;
   box-shadow: 0px 0px 3px 0px grey;
   border-radius: 5px;
@@ -31,4 +31,4 @@
 
 .signup-input{
   width: 250px;
-} */
+}

@@ -1,4 +1,4 @@
-/* .login-form-page{
+.login-form-page{
   display: flex;
   width:100%;
   justify-content: center;
@@ -28,4 +28,4 @@
 
 .login-input{
   width: 250px;
-} */
+}

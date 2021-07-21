@@ -5,6 +5,7 @@ import './Modal.css';
 import './LoginFormModal/LoginForm.css'
 import './UploadPhotoModal/UploadPhotoForm.css'
 import './SignupFormModal/SignupForm.css'
+import './CommentEditModal/CommentEdit.css'
 
 const ModalContext = React.createContext();
 

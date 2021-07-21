@@ -1,11 +1,11 @@
-.explore-page{
+/* .explore-page{
 
 }
 .explore-gallery-container{
   /* display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center */
-  position: relative;
+  /* position: relative;
   max-width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -16,17 +16,17 @@
 
 .explore-space-div{
   height: 100px;
-}
+} */
 /* .photo-card{
   height: 150px;
   width: 150px;
 
 } */
 
-.each-photo{
+/* .each-photo{
   height: 200px;
   box-shadow: 0px 0px 3px 0px grey;
 
-}
+}  */
 
 

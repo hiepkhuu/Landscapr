@@ -3,6 +3,7 @@ import { useHistory, Redirect, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Comments.css';
 import { getComments, uploadComment, deleteComment} from '../../store/comments'
+import CommentEditModal from '../../context/CommentEditModal';// for MODAL
 
 
 const Comments = () =>{
@@ -72,6 +73,7 @@ const Comments = () =>{
             {/* {if (comment.userId !== sessionUser.id) false = true} */}
             <form onSubmit={handleDelete} hidden={comment.userId !== sessionUser.id}>
               <button type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>Delete</button>
+              <CommentEditModal />
             </form>
           </div>
           </div>

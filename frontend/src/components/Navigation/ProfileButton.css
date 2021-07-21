@@ -1,0 +1,13 @@
+.profile-dropdown{
+
+  margin-top: 155px;
+  background-color: white;
+  padding: 5px 10px 10px 10px;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid black
+}
+
+.profile-dropdown button{
+  text-decoration: none;
+}
