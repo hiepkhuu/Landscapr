@@ -1,32 +1,22 @@
-/* .explore-page{
+.user-page{
+  padding: 65px 0px 0px 0px
 
 }
-.explore-gallery-container{
-  /* display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center */
-  /* position: relative;
-  max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr
+.user-gallery-container{
+
 }
 
-.explore-space-div{
-  height: 100px;
-} */
-/* .photo-card{
-  height: 150px;
-  width: 150px;
+.user-space-div{
 
-} */
+}
 
-/* .each-photo{
+.user-photo-card{
+
+}
+
+.user-photo-card img{
   height: 200px;
-  box-shadow: 0px 0px 3px 0px grey;
-
-}  */
+  width: auto
+}
 
 

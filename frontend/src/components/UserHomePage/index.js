@@ -12,7 +12,7 @@ const UserHomePage = () => {
   const sessionUser = useSelector(state => state.session.user);
   const {userId} = useParams();
   const history = useHistory();
-  
+
     useEffect(() => {
     dispatch(getPhotos())
   }, [dispatch])
@@ -58,18 +58,21 @@ const UserHomePage = () => {
 
 
   return (
-    <div className='explore-page'>
-      <div className='explore-space-div'></div>
-        <div className='explore-gallery-container'>
+    <div className='user-page'>
+      <div className='user-space-div'></div>
+      <div className='user-info-header'>
+        <p>user info will be here</p>
+      </div>
+        <div className='user-gallery-container'>
           {filtereduserPhotos.map((photo) => (
-                <div key={photo.id} className='photo-container'>
+                <div key={photo.id} className='user-photo-container'>
                   <a href={`/photos/${photo.id}`}
                     onClick={(e) => {
                       e.preventDefault();
                       history.push(`/photos/${photo.id}`)
                     }}>
-                    <div className='photo-card'>
-                      <img className='each-photo' src={photo.imageUrl} />
+                    <div className='user-photo-card'>
+                      <img src={photo.imageUrl} />
                     </div>
 
                   </a>
