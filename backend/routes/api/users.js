@@ -14,7 +14,12 @@ router.get(
   '/:id(\\d+)',
   requireAuth,
   asyncHandler(async (req, res) => {
-    const user = await User.findByPk(req.params.id);
+    // const user = await User.findOne({
+    //   where: {
+    //     id: req.params.id,
+    //   }
+    // });
+    const user = await User.findByPk(req.params.id)
     return res.json(user);
   }),
 );
