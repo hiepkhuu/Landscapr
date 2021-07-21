@@ -24,6 +24,7 @@ function Navigation({ isLoaded }) {
           </div>
           <div>
             <NavLink className='navigation-link' to={`/${sessionUser.username}/${sessionUser.id}`}>You</NavLink>
+            {/* <NavLink className='navigation-link' to={`/photos/${sessionUser.username}`}>You</NavLink> */}
           </div>
           <div>
             {/* <UploadPhotoModal /> */}
