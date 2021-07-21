@@ -62,7 +62,7 @@ const Comments = () =>{
 
   return(
     <div>
-      <div clssName='comment-container'>
+      <div clsssName='comment-container'>
         {filteredComments.map((comment)=>(
           <div className='comment-box'>
           <div className='comment-box-username'>

@@ -12,16 +12,16 @@ const loadUser = user => ({
 export const getUser = (id) => async dispatch =>{
   const response = await csrfFetch(`/api/users/${id}`)
   if(response.ok){
-    dispatch(loadUser(id))
+    const user = await response.json();
+    dispatch(loadUser(user))
   }
 }
 
 const userReducer = (state ={}, action)=>{
-  let newState;
+  let newState = {};
   switch (action.type) {
     case LOAD_USER:
-      newState = Object.assign({}, state);
-      newState.user = action.payload;
+      newState[action.user.id] = action.user;
       return newState;
     default:
       return state;

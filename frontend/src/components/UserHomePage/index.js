@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './UserHomePage.css';
 import { getPhotos } from '../../store/photos'
 import PhotoDetail from '../PhotoDetail';
+import { getUser } from '../../store/users';
 
 
 
@@ -15,13 +16,17 @@ const UserHomePage = () => {
 
     useEffect(() => {
     dispatch(getPhotos())
-  }, [dispatch])
+    dispatch(getUser(Number(userId)))
+  }, [dispatch,userId])
 
   const userPhotos = useSelector(state => {
     return Object.values(state.photos)
-
   })
 
+  const userInfo = useSelector(state => {
+    return Object.values(state.user)
+  })
+  console.log('#######',userInfo[0].username)
     // console.log(typeof Number(userId))
     // userPhotos.map(eachItem => {
     //  console.log(typeof eachItem.userId)
@@ -61,7 +66,7 @@ const UserHomePage = () => {
     <div className='user-page'>
       <div className='user-space-div'></div>
       <div className='user-info-header'>
-        <p>user info will be here</p>
+        <p>{userInfo.username}</p>
       </div>
         <div className='user-gallery-container'>
           {filtereduserPhotos.map((photo) => (
