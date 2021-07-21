@@ -13,7 +13,7 @@ function SplashPage() {
   const handleDemoLogin = async (e) => {
     e.preventDefault()
     const demoUser = {
-      credential: "Demo-lition",
+      credential: "Demo-Username",
       password: "password"
     }
     await dispatch(login(demoUser))
@@ -29,13 +29,16 @@ function SplashPage() {
             <form onSubmit={handleDemoLogin}>
               <button>demo user</button>
             </form>
-
-
           </div>
         </div>
       </>
     )
+  } else {
+    return (
+      <Redirect to='explore' />
+    )
   }
+
 
 }
 
