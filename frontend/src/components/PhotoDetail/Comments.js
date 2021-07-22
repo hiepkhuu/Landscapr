@@ -73,7 +73,7 @@ const Comments = () =>{
             {/* {if (comment.userId !== sessionUser.id) false = true} */}
             <form onSubmit={handleDelete} hidden={comment.userId !== sessionUser.id}>
               <button type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>Delete</button>
-              <CommentEditModal />
+              {/* <CommentEditModal /> */}
             </form>
           </div>
           </div>

@@ -73,7 +73,7 @@ const PhotoDetail = () =>{
             onClick={redirectToHomepage}
             >Back to Homepage</button> */}
             <div className='comment-container'>
-              {/* <Comments /> */}
+              <Comments />
             </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ const LOAD_COMMENTS = "comments/LOAD_COMMENTS";
  const REMOVE_COMMENT = "comments/REMOVE_COMMENT";
 const UPDATE_COMMENT = "comments/UPDATE_COMMENT";
 const ADD_COMMENT = "comments/ADD_COMMENT";
+const GET_SINGLE_COMMENT = "comments/GET_SINGLE_COMMENT"
 
 const loadComments = comments => ({
   type: LOAD_COMMENTS,
@@ -26,12 +27,27 @@ const removeComment = comment => ({
   comment
 })
 
+const getSingleComment = comment => ({
+  type: GET_SINGLE_COMMENT,
+  comment
+})
+
 /**THUNK - GET */
 export const getComments = (id) => async dispatch => {
   const response = await csrfFetch(`/api/comments/photos/${id}`)
   if(response.ok){
     const comments = await response.json();
     dispatch(loadComments(comments))
+  }
+}
+
+/** THUNK_GET SINGLE COMMENT */
+
+export const getSingleComment = (id) => async dispatch => {
+  const response = await csrfFetch(`/api/comments/photos/${id}`)
+  if(response.ok){
+    const comment = await response.json();
+    dispatch(getSingleComment(comment))
   }
 }
 

@@ -33,13 +33,22 @@ router.post('/photos/:id', requireAuth, asyncHandler(async(req, res)=>{
 }))
 
 router.put('/photos/:id', requireAuth, asyncHandler(async(req, res)=>{
-  const {id} = parseInt(req.params, 10)
+  // const {id} = Number(req.params.id)
   const {comment, userId} = req.body
 
   const updateComment = await Comment.findOne({
     where: {
-      photoId:id
+      photoId: req.params.id
     } })
+
+    //if yoou are not the owner of comment, you can't edi tit
+    // if (req.user.id !== comment.userId){
+    //   const err = new Error('unauthorized');
+    //   err.status = 401;
+    //   err.message = "You are not authrized to edit this comment.";
+    //   err.title = "Unauthorised";
+    //   throw err;
+    // }
 
    if(updateComment){
      await updateComment.update({comment})
