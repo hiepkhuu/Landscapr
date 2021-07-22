@@ -49,7 +49,7 @@ module.exports = (sequelize, DataTypes) => {
     /*PROTECT USER'S INFO */
     defaultScope: {
       attributes: {
-        exclude: ['hashedPassword', 'createdAt', 'updatedAt'],//took out email!!
+        exclude: ['hashedPassword', 'createdAt', 'updatedAt'],//took out email!![1]
       },
     },
      /*PROTECT USER'S INFO */

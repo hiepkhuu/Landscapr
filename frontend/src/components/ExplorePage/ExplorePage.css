@@ -1,11 +1,18 @@
+
+
 .explore-page{
- padding-top: 60px;
+ /* padding-top: 60px; */
  /* height: 1000px; */
  /* width:80%; */
  display: flex;
  justify-content: center;
+ flex-direction: column;
 }
-
+.behind-nav{
+  height:50px;
+  background-color: black;
+  width: 100%;
+}
 
 .explore-gallery-container{
   display: grid;

@@ -67,7 +67,7 @@ const UserHomePage = () => {
       <div className='user-space-div'>
       {userInfo.map((user)=>(
         <div className='user-info-header'>
-          <p className='profile-headshot'>Image</p>
+          <p className='profile-headshot'></p>
           <div>
            <h1>{user.firstName} {user.lastName}</h1>
            <p className='username-div'>{user.username}</p>

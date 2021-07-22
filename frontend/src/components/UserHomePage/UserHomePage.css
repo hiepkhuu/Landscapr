@@ -1,6 +1,11 @@
+.user-page{
+
+
+}
+
 .user-space-div{
   background-color: rgb(148, 148, 148);
-  height: 250px;
+  height: 300px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -17,7 +22,8 @@
 }
 .profile-headshot{
 
-  background-image: url('./rocks-wallpaper.jpg');
+  background-image: url('./cellphone-animation.png');
+  background-size: cover;
   height: 80px;
   width: 80px;
   border-radius: 50px;
@@ -38,10 +44,7 @@
   padding-top: 0px;
   color:white;
 }
-.user-page{
-  padding: 50px 0px 0px 0px
 
-}
 .user-gallery-container{
 
 }

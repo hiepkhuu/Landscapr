@@ -33,11 +33,12 @@ function SplashPage() {
         </div>
       </>
     )
-  } else {
-    return (
-      <Redirect to='explore' />
-    )
   }
+
+    return (
+      <Redirect to='/explore' />
+    )
+
 
 
 }

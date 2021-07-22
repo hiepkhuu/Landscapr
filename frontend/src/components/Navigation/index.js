@@ -45,7 +45,7 @@ function Navigation({ isLoaded }) {
 
         <NavLink className='navigation-link' to="/login">Log In</NavLink>
         {/* <LoginFormModal /> */}
-        <NavLink className='navigation-link'> Demo Login</NavLink>
+        <NavLink className='navigation-link' to='/explore'> Demo Login</NavLink>
         <NavLink className='navigation-link' to="/signup">Sign Up</NavLink>
         {/* <SignupFormModal /> */}
       </>
