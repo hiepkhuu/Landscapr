@@ -43,7 +43,7 @@ export const getComments = (id) => async dispatch => {
 
 /** THUNK_GET SINGLE COMMENT */
 
-export const getSingleComment = (id) => async dispatch => {
+export const loadSingleComment = (id) => async dispatch => {
   const response = await csrfFetch(`/api/comments/photos/${id}`)
   if(response.ok){
     const comment = await response.json();
@@ -108,6 +108,10 @@ const commentReducer = (state = {}, action) => {
         ...allComments,
         ...state,
       }
+    }
+    case GET_SINGLE_COMMENT: {
+      allComments[action.comment.id] = action.comment
+      return allComments
     }
     case ADD_COMMENT: {
       const newState = {...state}
