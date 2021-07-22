@@ -26,7 +26,7 @@ const UserHomePage = () => {
   const userInfo = useSelector(state => {
     return Object.values(state.user)
   })
-  console.log('#######',userInfo)
+  // console.log('#######',userInfo)
     // console.log(typeof Number(userId))
     // userPhotos.map(eachItem => {
     //  console.log(typeof eachItem.userId)
@@ -64,15 +64,17 @@ const UserHomePage = () => {
 
   return (
     <div className='user-page'>
-      <div className='user-space-div'></div>
+      <div className='user-space-div'>
       {userInfo.map((user)=>(
         <div className='user-info-header'>
-        <p>{user.username}</p>
-        <p>{user.firstName}</p>
-        <p>{user.lastName}</p>
-        <p>{user.email}</p>
+          <p className='profile-headshot'>Image</p>
+          <div>
+           <h1>{user.firstName} {user.lastName}</h1>
+           <p className='username-div'>{user.username}</p>
+          </div>
         </div>
       ))}
+      </div>
         <div className='user-gallery-container'>
           {filtereduserPhotos.map((photo) => (
                 <div key={photo.id} className='user-photo-container'>

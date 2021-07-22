@@ -1,5 +1,45 @@
+.user-space-div{
+  background-color: rgb(148, 148, 148);
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-image: url('rocks-wallpaper.jpg');
+  background-size: cover;
+
+}
+
+.user-info-header{
+  display:flex;
+  width: 80%;
+  margin: 0px 0px 20px 0px;
+
+}
+.profile-headshot{
+
+  background-image: url('./rocks-wallpaper.jpg');
+  height: 80px;
+  width: 80px;
+  border-radius: 50px;
+  padding:10px;
+  margin: 0px 10px 0px 10px;
+}
+
+.user-info-header h1 {
+  color:white;
+  padding:0px 0px 10px 0px;
+  margin-bottom: 0px;
+  font-weight:100;
+  font-size: 32px;
+  /* margin: 0px 10px 0px 10px; */
+}
+.username-div{
+  margin-top: 0px;
+  padding-top: 0px;
+  color:white;
+}
 .user-page{
-  padding: 65px 0px 0px 0px
+  padding: 50px 0px 0px 0px
 
 }
 .user-gallery-container{

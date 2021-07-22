@@ -23,6 +23,7 @@ router.get(
     return res.json(user);
   }),
 );
+
 const validateSignup = [
   check('email')
     .exists({ checkFalsy: true })
