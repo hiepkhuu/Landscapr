@@ -1,25 +1,18 @@
 
-.upload-form-page{
+.signup-form-page{
   display: flex;
   width:100%;
   justify-content: center;
-  flex-direction: column;
+
 }
 
-.delete-photo-button:hover {
-  background-color: rgb(5, 5, 5);
-  color: white;
-  border-radius: 3px;
-  border: none;
-  padding: 5px;
-}
 
-.upload-form-containers{
+.signup-form-containers{
   display: flex;
   justify-content: center;
 
 }
-.upload-form{
+.signup-form{
   margin-top: 100px;
   width: 300px;
   padding: 10px;
@@ -30,12 +23,12 @@
 
 }
 
-.upload-label{
+.signup-label{
   margin: 10px;
   margin-top: 20px;
   height: 30px;
 }
 
-.upload-input{
+.signup-input{
   width: 250px;
 }

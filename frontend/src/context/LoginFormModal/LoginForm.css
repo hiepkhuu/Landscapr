@@ -1,41 +1,31 @@
-
-.upload-form-page{
+.login-form-page{
   display: flex;
   width:100%;
   justify-content: center;
-  flex-direction: column;
 }
 
-.delete-photo-button:hover {
-  background-color: rgb(5, 5, 5);
-  color: white;
-  border-radius: 3px;
-  border: none;
-  padding: 5px;
-}
-
-.upload-form-containers{
+.login-form-container{
   display: flex;
   justify-content: center;
-
 }
-.upload-form{
+
+.login-form{
   margin-top: 100px;
   width: 300px;
   padding: 10px;
-  /* border: 1px solid black; */
   background-color: white;
   box-shadow: 0px 0px 3px 0px grey;
   border-radius: 5px;
-
 }
 
-.upload-label{
+
+.login-label{
   margin: 10px;
   margin-top: 20px;
   height: 30px;
 }
 
-.upload-input{
+
+.login-input{
   width: 250px;
 }

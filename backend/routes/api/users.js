@@ -9,6 +9,21 @@ const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 const { ResultWithContext } = require('express-validator/src/chain');
 
+//GET // api/Users
+router.get(
+  '/:id(\\d+)',
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    // const user = await User.findOne({
+    //   where: {
+    //     id: req.params.id,
+    //   }
+    // });
+    const user = await User.findByPk(req.params.id)
+    return res.json(user);
+  }),
+);
+
 const validateSignup = [
   check('email')
     .exists({ checkFalsy: true })
@@ -55,6 +70,7 @@ router.post(
   }),
 );
 
+
 // router.get('/:id', asyncHandler(async(req, res)=>{
 //   const user = await User.find
 // }))
@@ -77,3 +93,7 @@ module.exports = router;
 //     password: ''
 //   })
 // }).then(res => res.json()).then(data => console.log(data));
+
+
+//test get user
+// fetch('/api/users/1').then(res => res.json()).then(data => console.log(data));

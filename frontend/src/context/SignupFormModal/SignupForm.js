@@ -32,7 +32,6 @@ function SignupFormPage() {
 
   return (
     <div className='signup-form-page'>
-      <div className='behind-nav'></div>
       <div className='signup-form-container'>
         <form className='signup-form' onSubmit={handleSubmit}>
           <div className='signup-label'>

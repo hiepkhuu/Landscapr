@@ -4,12 +4,14 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
+
 import Navigation from "./components/Navigation";
 import ExplorePage from "./components/ExplorePage"
 import UserHomePage from "./components/UserHomePage";
 import PhotoDetail from "./components/PhotoDetail";
 import UpLoadPhoto from "./components/UpLoadPhoto";
 import PhotoEditPage from "./components/PhotoEditPage"
+import SplashPage from "./components/SplashPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,8 +25,8 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-           <Route exact path="/">
-
+          <Route exact path="/">
+            <SplashPage />
           </Route>
           <Route exact path="/login">
             <LoginFormPage />

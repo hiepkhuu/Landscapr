@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import { getSinglePhoto, uploadPhoto } from '../../store/photos';
-import './UpLoadPhoto.css'
+// import './UpLoadPhotoForm.css'
 
 
 // userId: 1,
@@ -20,12 +20,6 @@ const UpLoadPhoto = () => {
   const [description, setDescription] = useState('');
 
 
-  // let id;
-  // const singlePhoto = useSelector(state => state.photos[id])
-
-  // useEffect(() => {
-  //   dispatch(getSinglePhoto(id))
-  // }, [dispatch])
 
   if (!sessionUser) return <Redirect to="/login" />;
 
@@ -51,38 +45,9 @@ const UpLoadPhoto = () => {
   }
 
 
-
-  // let editedPhoto;
-  // if (singlePhoto){
-  //   editedPhoto =(
-  //         <div className='editForm-container'>
-  //           <div classsName='photo-to-edit'>
-  //             <img src='createdPhoto.imageURL'></img>
-  //           </div>
-  //             <p>you will be editing form here</p>
-  //         </div>
-  //       )
-  // }
-  // if (!singlePhoto) {
-  //   return null;
-  // }
-
-
-  // let editedPhoto;
-  // if(createdPhoto){
-  //   editedPhoto =(
-  //     <div className='editForm-container'>
-  //       <div classsName='photo-to-edit'>
-  //         <img src='createdPhoto.imageURL'></img>
-  //       </div>
-  //         <p>you will be editing form here</p>
-  //     </div>
-  //   )
-  // }
-
   return (
     <div className='upload-form-page'>
-      <div className='behind-nav'></div>
+
       <div className='upload-form-contaner'>
 
         <form className='upload-form' onSubmit={handleSubmit}>

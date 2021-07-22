@@ -3,7 +3,11 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormPage from '../LoginFormPage';
+import LoginFormModal from '../../context/LoginFormModal';// for MODAL
+import UploadPhotoModal from '../../context/UploadPhotoModal';// for MODAL
+import SignupFormModal from '../../context/SignupFormModal';// for MODAL
 import './Navigation.css';
+import './ProfileButton.css'
 import ExplorePage from '../ExplorePage';
 import UserHomePage from '../UserHomePage';
 
@@ -20,8 +24,10 @@ function Navigation({ isLoaded }) {
           </div>
           <div>
             <NavLink className='navigation-link' to={`/${sessionUser.username}/${sessionUser.id}`}>You</NavLink>
+            {/* <NavLink className='navigation-link' to={`/photos/${sessionUser.username}`}>You</NavLink> */}
           </div>
           <div>
+            {/* <UploadPhotoModal /> */}
             <NavLink className='navigation-link' to="/upload">Up Load</NavLink>
           </div>
           <div>
@@ -38,7 +44,10 @@ function Navigation({ isLoaded }) {
         {/* <LoginFormPage /> */}
 
         <NavLink className='navigation-link' to="/login">Log In</NavLink>
+        {/* <LoginFormModal /> */}
+        <NavLink className='navigation-link' to='/explore'> Demo Login</NavLink>
         <NavLink className='navigation-link' to="/signup">Sign Up</NavLink>
+        {/* <SignupFormModal /> */}
       </>
     );
   }

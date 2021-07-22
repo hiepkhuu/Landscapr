@@ -36,6 +36,7 @@ const ExplorePage = () => {
 
   return (
     <div className='explore-page'>
+      <div className='behind-nav'></div>
       <div className='explore-space-div'></div>
         <div className='explore-gallery-container'>
           {photos.map((photo) => (

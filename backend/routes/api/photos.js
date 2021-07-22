@@ -2,6 +2,8 @@ const express = require('express');
 const asyncHandler = require('express-async-handler')
 const { handleValidationErrors } = require('../../utils/validation');
 const {requireAuth} = require('../../utils/auth');
+const {singlePublicFileUpload} = require('../../awsS3')
+const {singleMulterUpload} = require('../../awsS3')
 
 const {check} = require('express-validator')
 
@@ -57,20 +59,22 @@ const photoNotFoundError = (id) => {
 };
 
 router.put('/:id(\\d+)', requireAuth,asyncHandler(async(req,res, next)=>{
-  const {title, imageUrl, description, locationId} = req.body
+  const {title, imageUrl, description, locationId, userId} = req.body
+
   const photo = await Photo.findOne({
     where: {
       id: req.params.id,
     }
   });
 
-  // if (req.user.id !== photo.userId ){
-  //   const err = new Error('unauthorized');
-  //   err.status = 401;
-  //   err.message = "You are not authrized to edit this photo.";
-  //   err.title = "Unauthorised";
-  //   throw err;
-  // }
+  //if you're not the owner of photo, you can't edit it
+  if (req.user.id !== photo.userId ){
+    const err = new Error('unauthorized');
+    err.status = 401;
+    err.message = "You are not authrized to edit this photo.";
+    err.title = "Unauthorised";
+    throw err;
+  }
 
 
   if(photo){

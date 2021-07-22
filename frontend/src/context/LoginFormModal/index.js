@@ -1,16 +1,17 @@
+// frontend/src/components/LoginFormModal/index.js
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
-import UploadPhotoForm from './UploadPhotoForm';
+import LoginForm from './LoginForm';
 
 function LoginFormModal() {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Upload</button>
+      <button onClick={() => setShowModal(true)}>Log In</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <UploadPhotoForm />
+          <LoginForm />
         </Modal>
       )}
     </>

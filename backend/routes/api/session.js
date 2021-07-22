@@ -19,20 +19,7 @@ const validateLogin = [
   handleValidationErrors,
 ];
 
-//## GET /api/session   for // restoreUSer
-//Restore session user
-router.get(
-  '/',
-  restoreUser,
-  (req, res) => {
-    const { user } = req;
-    if (user) {
-      return res.json({
-        user: user.toSafeObject()
-      });
-    } else return res.json({});
-  }
-);
+
 
 
 //this is for USERS-LOGIN
@@ -70,7 +57,20 @@ router.delete(
   }
 );
 
-
+//## GET /api/session   for // restoreUSer
+//Restore session user
+router.get(
+  '/',
+  restoreUser,
+  (req, res) => {
+    const { user } = req;
+    if (user) {
+      return res.json({
+        user: user.toSafeObject()
+      });
+    } else return res.json({});
+  }
+);
 
 module.exports = router;
 

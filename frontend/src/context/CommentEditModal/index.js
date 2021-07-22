@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
-import UploadPhotoForm from './UploadPhotoForm';
+import CommentEdit from './CommentEdit';
 
-function LoginFormModal() {
+function CommentEditModal() {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Upload</button>
+      <button onClick={() => setShowModal(true)}>Edit Comment</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <UploadPhotoForm />
+          <CommentEdit />
         </Modal>
       )}
     </>
   );
 }
 
-export default LoginFormModal;
+export default CommentEditModal;

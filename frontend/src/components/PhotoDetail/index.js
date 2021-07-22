@@ -2,8 +2,9 @@ import React, {useEffect} from 'react';
 import { useHistory, useParams, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSinglePhoto } from '../../store/photos';
-import Comments from '../Comments'
+import Comments from './Comments.js'
 import './PhotoDetail.css'
+import './Comments.css'
 
 
 const PhotoDetail = () =>{
@@ -50,6 +51,7 @@ const PhotoDetail = () =>{
             <div>
                 <button
                 onClick={directToEditPage}
+                hidden={singlePhoto.userId !== sessionUser.id}
                 >Edit Photo</button>
                 <button
                 onClick={redirectToHomepage}
@@ -71,7 +73,7 @@ const PhotoDetail = () =>{
             onClick={redirectToHomepage}
             >Back to Homepage</button> */}
             <div className='comment-container'>
-              <Comments />
+              {/* <Comments /> */}
             </div>
         </div>
       </div>
