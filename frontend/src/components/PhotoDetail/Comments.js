@@ -15,13 +15,16 @@ const Comments = () =>{
   const [commentToDeleteId, setCommentToDeleteId] = useState('')
   const [editedComment, setEditedComment] = useState('')
   const [editedCommentId, setEditedCommentId] = useState('')
+  const [editForm, setEditForm] = useState(false)
+
+  const openEditComments = () => {
+    if (editForm) return;
+    setEditedCommentId(true);
+  };
 
   let {id} = useParams()
   id = Number(id)
 
-  // const comments = useSelector(state => {
-  //   return Object.values(state.comments)  //[id]
-  // })
 
   const comments = useSelector(state =>{
     return Object.values( state.comments)
@@ -36,7 +39,17 @@ const Comments = () =>{
 
   }, [dispatch,id])
 
+  useEffect(() => {
+    if (!openEditComments) return;
 
+    const closeEditComments = () => {
+      setEditForm(false);
+    }
+
+    document.addEventListener('click', closeEditComments);
+
+    return () => document.removeEventListener('click', closeEditComments);
+  }, [openEditComments]);
 
   if(!comments) return null;
 
@@ -81,6 +94,8 @@ const Comments = () =>{
 
   }
 
+
+
   return(
     <div>
       <div clsssName='comment-container'>
@@ -94,7 +109,9 @@ const Comments = () =>{
             <p>{comment.comment}</p>
             {/* {if (comment.userId !== sessionUser.id) false = true} */}
             <form onSubmit={handleDelete} hidden={comment.userId !== sessionUser.id}>
-              <button type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>Delete</button>
+              <button type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>
+                <div className='delete-icon'></div>
+              </button>
               {/* <CommentEditModal /> */}
               {/* <EditSingleComment /> */}
               <div>
@@ -102,7 +119,10 @@ const Comments = () =>{
                </div>
             </form>
             <div>
-            <form className='comment-edit-form' onSubmit={handleEditSubmit} hidden={comment.userId !== sessionUser.id}>
+              <>
+                <button className="edit-icon"></button>
+                {openEditComments && (
+                  <form className='comment-edit-form' onSubmit={handleEditSubmit} hidden={comment.userId !== sessionUser.id}>
                     <textarea
                     placeholder='new comment'
                     type='textarea'
@@ -111,9 +131,10 @@ const Comments = () =>{
                     style={{width:200}}
                     ></textarea>
                     <button type='submit' onClick={e=> setEditedCommentId(comment.id)}>Edit Comment</button>
-            </form>
-
-      </div>
+                  </form>
+                )}
+               </>
+            </div>
           </div>
           </div>
         ))}
