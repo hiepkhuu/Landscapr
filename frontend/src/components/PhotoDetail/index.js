@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { useHistory, useParams, Redirect } from 'react-router-dom';
+import { useHistory, useParams, Redirect, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSinglePhoto } from '../../store/photos';
 import Comments from './Comments.js'

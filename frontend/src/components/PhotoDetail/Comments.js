@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { useHistory, Redirect, useParams } from 'react-router-dom';
+import { useHistory, Redirect, useParams, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Comments.css';
 import { getComments, editComment ,uploadComment, deleteComment} from '../../store/comments'
@@ -87,6 +87,7 @@ const Comments = () =>{
         {filteredComments.map((comment)=>(
           <div className='comment-box'>
           <div className='comment-box-username'>
+            <Link to={`/${comment.User?.username}/${comment.userId}`}>{comment.User?.username}</Link>
             <h3>{comment.User?.username}</h3>
           </div>
           <div className='comment-content'>
