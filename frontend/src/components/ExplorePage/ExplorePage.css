@@ -1,9 +1,6 @@
 
 
 .explore-page{
- /* padding-top: 60px; */
- /* height: 1000px; */
- /* width:80%; */
 
 }
 .behind-nav{
@@ -18,14 +15,19 @@
   justify-content: center;
   align-items: center;
 }
+.explore-gallery-container{
+  display: flex;
+  justify-content: center;
+}
 .photo-container{
   display: flex;
   flex-wrap: wrap;
   margin: 0.2vmin;
+  width: 80%;
 }
 
 .photo-card{
-  height: 20vh;
+  height: 50vh;
   flex-grow: 1;
   margin: 0.2vmin;
 }

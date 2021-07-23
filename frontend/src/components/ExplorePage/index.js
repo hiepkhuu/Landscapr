@@ -37,8 +37,9 @@ const ExplorePage = () => {
   return (
     <div className='explore-page'>
       <div className='behind-nav'></div>
-        {/* <div className='explore-gallery-container'> */}
         <div className='explore-space-div'>Explore</div>
+        <div className='explore-gallery-container'>
+
           <div className= 'photo-container'>
           {photos.map((photo) => (
             <div key={photo.id} className='photo-card'>
@@ -52,7 +53,7 @@ const ExplorePage = () => {
              </div>
             ))}
           </div>
-        {/* </div> */}
+        </div>
     </div>
   )
 }
