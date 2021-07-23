@@ -49,10 +49,10 @@ const PhotoDetail = () =>{
         </div>
           <img className='single-photo' src={singlePhoto.imageUrl}></img>
         </div>
-       
+
       <div className='photo-detail-container'>
         <div className='photo-details'>
-            <div>
+            <div clasName='details-header'>
                 <button
                 onClick={directToEditPage}
                 hidden={singlePhoto.userId !== sessionUser.id}

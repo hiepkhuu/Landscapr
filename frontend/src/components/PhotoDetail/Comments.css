@@ -6,30 +6,31 @@
 
 .user-link{
   margin: 10px 0px 5px 0px;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 14px;
   color: rgb(42, 42, 156);
   text-decoration: none;
 }
 .comment-box{
   margin-top: 20px;
+  padding:10px;
 }
 .comment-box:hover{
   background-color: white;
-
+  
 }
 
 .comment-content{
   display:flex;
   justify-content: space-between;
-  margin: 0px 0px 15px 0px
+  margin: 0px 0px 10px 0px;
+
 }
 
 .comment-content p{
-  margin:0px;
-  font-size: 14px;
+  margin:0px auto 0px 0px;
+  font-size: 13px;
 }
-
 
 .comment-form{
   display: flex;
@@ -39,6 +40,10 @@
 
 .comment-form button{
   width: 80px;
+}
+.modify-section{
+  display:flex;
+  /* padding-left:200px; */
 }
 
 .fas.fa-trash-alt,
