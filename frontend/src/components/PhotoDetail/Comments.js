@@ -115,20 +115,23 @@ const Comments = () =>{
           </div>
           <div className='comment-content'>
             <p>{comment.comment}</p>
-            {/* {if (comment.userId !== sessionUser.id) false = true} */}
-            <form onSubmit={handleDelete} hidden={comment.userId !== sessionUser.id}>
-              <button type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>
-               <i class="fas fa-trash-alt"></i>
-              </button>
-              {/* <CommentEditModal /> */}
-              {/* <EditSingleComment /> */}
-              <div>
+            <div className='modify-section'>
+              <form onSubmit={handleDelete} hidden={comment.userId !== sessionUser.id}>
+                <button hidden={true} type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>
+                <i class="fas fa-trash-alt"></i>
+                </button>
 
-               </div>
-            </form>
+                {/* <CommentEditModal /> */}
+                {/* <EditSingleComment /> */}
+                <div>
+
+                </div>
+              </form>
+              <button hidden={true}  onClick={openMenu}><i class="far fa-edit"></i></button>
+            </div>
             <div>
               <>
-                  <button  onClick={openMenu}><i class="far fa-edit"></i></button>
+
                   {showMenu && (
                     <form className='comment-edit-form' onSubmit={handleEditSubmit} hidden={comment.userId !== sessionUser.id}>
                       <textarea
