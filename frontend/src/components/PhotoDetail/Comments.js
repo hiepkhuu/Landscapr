@@ -157,7 +157,7 @@ const Comments = () =>{
             type='textarea'
             value={comment}
             onChange={e => setComment(e.target.value)}
-            style={{width:500,height: 100}}
+            style={{width:480,height: 100}}
             ></textarea>
             <button onClick={handleSubmit}>Comment</button>
         </form>

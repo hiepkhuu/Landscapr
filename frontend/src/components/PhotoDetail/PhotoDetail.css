@@ -12,7 +12,7 @@
 }
 .explore-link{
   height: 40px;
-  margin: 60px 280px 0px 10px;
+  margin: 60px 0px 0px 10px;
   color:white;
 }
 
@@ -28,7 +28,7 @@
   box-shadow: 0px 0px 5px 0px rgb(0, 0, 0);
 }
 .right-container{
-  margin: 0px 0px 0px 300px;
+  margin: 0px 0px 0px 0px;
 }
 
 .photo-detail-container{
