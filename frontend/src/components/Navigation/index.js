@@ -11,6 +11,9 @@ import './ProfileButton.css'
 import ExplorePage from '../ExplorePage';
 import UserHomePage from '../UserHomePage';
 
+//images
+// import cloud from "../public/images/cloud-upload.png"
+
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
 
@@ -28,7 +31,10 @@ function Navigation({ isLoaded }) {
           </div>
           <div>
             {/* <UploadPhotoModal /> */}
-            <NavLink className='navigation-link' to="/upload">Up Load</NavLink>
+            {/* <img src={require('./images/cloud-upload.jpg')}/> */}
+            <NavLink className='navigation-link' to="/upload">
+              <div className='upload-icon'></div>
+            </NavLink>
           </div>
           <div>
             <ProfileButton user={sessionUser} />
