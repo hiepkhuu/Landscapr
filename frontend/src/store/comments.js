@@ -38,6 +38,7 @@ export const getComments = (id) => async dispatch => {
   if(response.ok){
     const comments = await response.json();
     dispatch(loadComments(comments))
+    return comments
   }
 }
 
@@ -70,7 +71,7 @@ export const uploadComment = (data) => async dispatch => {
 
 /**THUNK UPDATE */
 export const editComment = (data) => async dispatch => {
-  const response = await csrfFetch(`/api/comments/photos/${data.id}`, {
+  const response = await csrfFetch(`/api/comments/${data.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'

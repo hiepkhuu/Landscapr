@@ -1,99 +1,109 @@
-import React, {useEffect, useState} from 'react';
-import { useHistory, Redirect, useParams } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import './Comments.css';
-import { getComments, editComment} from '../../store/comments'
-import CommentEditModal from '../../context/CommentEditModal';// for MODAL
+// import React, {useEffect, useState} from 'react';
+// import { useHistory, Redirect, useParams } from 'react-router-dom';
+// import { useSelector, useDispatch } from 'react-redux';
+// import './Comments.css';
+// import { getComments, editComment, loadSingleComment} from '../../store/comments'
+// import CommentEditModal from '../../context/CommentEditModal';// for MODAL
 
 
-const editComment = () =>{
-  const dispatch = useDispatch();
-  const sessionUser = useSelector(state => state.session.user);
-
-  const [comment, setComment]= useState('')
-  // const [commentToDeleteId, setCommentToDeleteId] = useState('')
-
-  const {id} = useParams()
-
-  // const comments = useSelector(state => {
-  //   return Object.values(state.comments)  //[id]
-  // })
-
-  // const comments = useSelector(state =>{
-  //   return Object.values( state.comments)
-  // })
-
-  // const filteredComments = comments.filter(eachComment => eachComment.userId === sessionUser.id)
-  // const filteredComments = comments.filter(eachComment => eachComment.photoId === Number(id))
+// const EditSingleComment = () =>{
+//   const dispatch = useDispatch();
+//   const {id} = useParams()
+//   const sessionUser = useSelector(state => state.session.user);
+//   const singleComment = useSelector(state => state.comments[id])
 
 
-  useEffect(()=>{
-    dispatch(getComments(id))
-  }, [dispatch, id])
+//   const [editedComment, setEditedComment] = useState('')//delete
+//   const [editedCommentId, setEditedCommentId] = useState('')//delete
+
+
+//   const [comment, setComment]= useState(singleComment.comment)
+//   // const [commentToDeleteId, setCommentToDeleteId] = useState('')
+
+//   console.log('#####3', singleComment)
+
+//   // const comments = useSelector(state => {
+//   //   return Object.values(state.comments)  //[id]
+//   // })
+
+//   // const comments = useSelector(state =>{
+//   //   return Object.values( state.comments)
+//   // })
+
+//   // const filteredComments = comments.filter(eachComment => eachComment.userId === sessionUser.id)
+//   // const filteredComments = comments.filter(eachComment => eachComment.photoId === Number(id))
+
+
+//   useEffect(()=>{
+//     dispatch(getComments(id))
+//   }, [dispatch, id])
 
 
 
-  if(!comments) return null;
+//   if(!singleComment) return null;
 
-  if(!sessionUser){
-    return(
-      <Redirect to='/login' />
-    )
-  }
+//   if(!sessionUser){
+//     return(
+//       <Redirect to='/login' />
+//     )
+//   }
 
-  const handleSubmit = async (e)=>{
-    e.preventDefault();
-    const commentData = {
-      comment: comment,
-      userId: sessionUser.id,
-      photoId: id
-    }
-      const newComment = dispatch(editComment(commentData))
-      if (newComment){
-        setComment('')
-      }
-    }
 
-  // const handleDelete = async (e)=>{
-  //   e.preventDefault()
-  //   dispatch(deleteComment(commentToDeleteId))
+//   const handleEditSubmit = async (e)=>{
+//     e.preventDefault();
+//     const editData = {
+//       comment: editedComment,
+//       userId: sessionUser.id,
+//       photoId: id,
+//       id: editedCommentId
+//     }
+//       const newComment = await dispatch(editComment(editData))
+//       if (newComment){
+//         setEditedComment('')
+//       }
+//     }
 
-  // }
+//   // const handleDelete = async (e)=>{
+//   //   e.preventDefault()
+//   //   dispatch(deleteComment(commentToDeleteId))
 
-  return(
-    <div>
-      {/* <div clsssName='comment-container'>
-        {filteredComments.map((comment)=>(
-          <div className='comment-box'>
-          <div className='comment-box-username'>
-            <h3>{comment.User?.username}</h3>
-          </div>
-          <div className='comment-content'>
-            <p>{comment.comment}</p>
-            {if (comment.userId !== sessionUser.id) false = true}
-            <form onSubmit={handleDelete} hidden={comment.userId !== sessionUser.id}>
-              <button type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>Delete</button>
-              <CommentEditModal />
-            </form>
-          </div>
-          </div>
-        ))}
+//   // }
 
-      </div> */}
-      <div>
-        <form className='comment-form' onSubmit={handleSubmit}>
-            <textarea placeholder='Add a comment'
-            type='textarea'
-            value={comment}
-            onChange={e => setComment(e.target.value)}
-            style={{width:200}}
-            ></textarea>
-            <button onClick={handleSubmit}>Edit Comment</button>
-        </form>
+//   return(
+//     <div>
+//       {/* <div clsssName='comment-container'>
+//         {filteredComments.map((comment)=>(
+//           <div className='comment-box'>
+//           <div className='comment-box-username'>
+//             <h3>{comment.User?.username}</h3>
+//           </div>
+//           <div className='comment-content'>
+//             <p>{comment.comment}</p>
+//             {if (comment.userId !== sessionUser.id) false = true}
+//             <form onSubmit={handleDelete} hidden={comment.userId !== sessionUser.id}>
+//               <button type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>Delete</button>
+//               <CommentEditModal />
+//             </form>
+//           </div>
+//           </div>
+//         ))}
 
-      </div>
-    </div>
-  )
-}
+//       </div> */}
+//       <div>
+//             <form className='comment-edit-form' onSubmit={handleEditSubmit}>
+//                     <textarea
+//                     placeholder='new comment'
+//                     type='textarea'
+//                     value={editedComment}
+//                     onChange={e => setEditedComment(e.target.value)}
+//                     style={{width:200}}
+//                     ></textarea>
+//                     <button type='submit' onClick={e=> setEditedCommentId(comment.id)}>Edit Comment</button>
+//             </form>
 
-export default editComment;
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default EditSingleComment;
