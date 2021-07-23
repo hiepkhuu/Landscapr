@@ -13,7 +13,7 @@ function SplashPage() {
   const handleDemoLogin = async (e) => {
     e.preventDefault()
     const demoUser = {
-      credential: "Demo-Username",
+      credential: "Demo-User",
       password: "password"
     }
     await dispatch(login(demoUser))

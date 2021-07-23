@@ -93,7 +93,7 @@ module.exports = router;
 //     "Content-Type": "application/json",
 //     "XSRF-TOKEN": `nzr1rDdO-0Qx3y9xIxS3PyD8lvWw1kTHXQUc`
 //   },
-//   body: JSON.stringify({ credential: 'demo@user.io', password: 'password' })
+//   body: JSON.stringify({ credential: '', password: 'password' })
 // }).then(res => res.json()).then(data => console.log(data));
 
 //test user credentialfield

@@ -13,6 +13,17 @@
   /* box-shadow: 0px 2px 2px 0px rgb(0, 0, 0); */
 }
 
+.logo-home{
+  display:flex;
+}
+.lanscapr-logo{
+  background-image: url('./landscapr-logo-dots.png');
+  width:30px;
+  height:20px;
+  margin:1px 7px 0px 0px;
+  background-size: cover;
+}
+
 .navigation-link{
   color:white;
   text-decoration: none;
