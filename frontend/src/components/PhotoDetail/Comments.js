@@ -43,7 +43,7 @@ const Comments = () =>{
       setShowMenu(false);
     };
 
-    document.addEventListener('click', closeMenu);
+    document.addEventListener('submit', closeMenu);
 
     return () => document.removeEventListener("click", closeMenu);
   }, [dispatch,id, showMenu])
@@ -111,15 +111,14 @@ const Comments = () =>{
         {filteredComments.map((comment)=>(
           <div className='comment-box'>
           <div className='comment-box-username'>
-            <Link to={`/${comment.User?.username}/${comment.userId}`}>{comment.User?.username}</Link>
-            <h3>{comment.User?.username}</h3>
+            <Link className='user-link' to={`/${comment.User?.username}/${comment.userId}`}>{comment.User?.username}</Link>
           </div>
           <div className='comment-content'>
             <p>{comment.comment}</p>
             {/* {if (comment.userId !== sessionUser.id) false = true} */}
             <form onSubmit={handleDelete} hidden={comment.userId !== sessionUser.id}>
               <button type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>
-                <div className='delete-icon'></div>
+               <i class="fas fa-trash-alt"></i>
               </button>
               {/* <CommentEditModal /> */}
               {/* <EditSingleComment /> */}
@@ -129,7 +128,7 @@ const Comments = () =>{
             </form>
             <div>
               <>
-                  <button className="edit-icon" onClick={openMenu}></button>
+                  <button  onClick={openMenu}><i class="far fa-edit"></i></button>
                   {showMenu && (
                     <form className='comment-edit-form' onSubmit={handleEditSubmit} hidden={comment.userId !== sessionUser.id}>
                       <textarea
@@ -155,7 +154,7 @@ const Comments = () =>{
             type='textarea'
             value={comment}
             onChange={e => setComment(e.target.value)}
-            style={{width:200}}
+            style={{width:500,height: 100}}
             ></textarea>
             <button onClick={handleSubmit}>Comment</button>
         </form>

@@ -1,13 +1,22 @@
 
 .comment-container{
-  border-top: 1px solid rgb(119, 118, 118);
+  border-top: 1px solid rgb(216, 214, 214);
   margin: 15px 0px 100px 0px;
 }
 
-.comment-box-username h3{
+.user-link{
   margin: 10px 0px 5px 0px;
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 300;
+  font-size: 14px;
+  color: rgb(42, 42, 156);
+  text-decoration: none;
+}
+.comment-box{
+  margin-top: 20px;
+}
+.comment-box:hover{
+  background-color: white;
+
 }
 
 .comment-content{
@@ -21,23 +30,19 @@
   font-size: 14px;
 }
 
+
 .comment-form{
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  margin-top:30px;
 }
 
 .comment-form button{
   width: 80px;
 }
-.delete-icon{
-  background-image: url('./delete.png');
-  height:30px;
-  width: 40px;
-  background-size: cover;
-}
-.edit-icon{
-  background-image: url('./edit.png');
-  height:30px;
-  width: 40px;
-  background-size: cover;
+
+.fas.fa-trash-alt,
+.far.fa-edit{
+  height:10px;
+  width: 10px;
 }
