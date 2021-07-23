@@ -37,23 +37,22 @@ const ExplorePage = () => {
   return (
     <div className='explore-page'>
       <div className='behind-nav'></div>
-      <div className='explore-space-div'></div>
-        <div className='explore-gallery-container'>
+        {/* <div className='explore-gallery-container'> */}
+        <div className='explore-space-div'>Explore</div>
+          <div className= 'photo-container'>
           {photos.map((photo) => (
-            <div key={photo.id} className='photo-container'>
+            <div key={photo.id} className='photo-card'>
                <a href={`/photos/${photo.id}`}
                 onClick={(e) => {
                   e.preventDefault();
                   history.push(`/photos/${photo.id}`)
                 }}>
-                 <div className='photo-card'>
-                   <img className='each-photo' src={photo.imageUrl} />
-                 </div>
-
+                   <img src={photo.imageUrl} />
                </a>
              </div>
             ))}
-        </div>
+          </div>
+        {/* </div> */}
     </div>
   )
 }
