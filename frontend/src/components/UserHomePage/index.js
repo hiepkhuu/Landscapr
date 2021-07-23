@@ -75,22 +75,23 @@ const UserHomePage = () => {
         </div>
       ))}
       </div>
-        <div className='user-gallery-container'>
-          {filtereduserPhotos.map((photo) => (
-                <div key={photo.id} className='user-photo-container'>
-                  <a href={`/photos/${photo.id}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      history.push(`/photos/${photo.id}`)
-                    }}>
-                    <div className='user-photo-card'>
-                      <img src={photo.imageUrl} />
-                    </div>
+      <div className='sub-nav'>About Photostream Albums Faves Galleries Groups Stats Camera Roll </div>
+      <div className='user-gallery-container'>
+        {filtereduserPhotos.map((photo) => (
+              <div key={photo.id} className='user-photo-container'>
+                <a href={`/photos/${photo.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    history.push(`/photos/${photo.id}`)
+                  }}>
+                  <div className='user-photo-card'>
+                    <img src={photo.imageUrl} />
+                  </div>
 
-                  </a>
-                </div>
-            ))}
-        </div>
+                </a>
+              </div>
+          ))}
+      </div>
     </div>
 
   )

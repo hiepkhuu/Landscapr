@@ -10,17 +10,21 @@ const PhotoEditPage = () =>{
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const {id} = useParams();
+  let {id} = useParams();
+  id = Number(id)
 
   const sessionUser = useSelector(state => state.session.user)
-  const singlePhoto = useSelector(state => state.photos[id]);
+  // const singlePhoto = useSelector(state => state.photos[id]);
+  const singlePhoto = useSelector(state =>{
+    return Object.values(state.photos)
+  })
 
-  const [title, setTitle] = useState(singlePhoto.title);
-  const [description, setDescription] = useState(singlePhoto.description);
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
 
   useEffect(() => {
     dispatch(getSinglePhoto(id))
-  }, [dispatch])
+  }, [dispatch,id])
 
   if (!sessionUser) {
     return (
@@ -29,7 +33,7 @@ const PhotoEditPage = () =>{
   }
 
   const handleSubmit = async (e) =>{
-    // e.preventDefault();
+    e.preventDefault();
     const photoData = {
       ...singlePhoto,
       title,
@@ -40,7 +44,7 @@ const PhotoEditPage = () =>{
     if (editedPhoto) {
       setTitle('');
       setDescription('');
-      history.push(`/photos/${editedPhoto.id}`)////// what is this
+      // history.push(`/photos/${editedPhoto.id}`)////// what is this
       // history.push(`/edit/${singlePhoto.id}`)
     }
 
@@ -106,15 +110,21 @@ const PhotoEditPage = () =>{
                   <button type="submit">Submit Updates</button>
                 </div>
             </form>
-          <div>
-            <h3>Title: {singlePhoto.title}</h3>
-            <h4>Description: {singlePhoto.description}</h4>
-          </div>
+          {singlePhoto.map((photo)=>(
+            <>
+            <div>
+              <h3>Title: {photo.title}</h3>
+              <h4>Description: {photo.description}</h4>
+            </div>
+            <div className='edit-photo-box'>
+              <img className='edit-photo'src={photo.imageUrl}></img>
+            </div>
+            </>
+          ))}
+
           <button className='delete-photo-button' onClick={handleDelete}>Delete Photo</button>
         </div>
-        <div className='edit-photo-box'>
-          <img className='edit-photo'src={singlePhoto.imageUrl}></img>
-        </div>
+
 
 
     </div>

@@ -35,17 +35,24 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
+      {/* <img src='./cellphone-animation-2'></img> */}
+      <button className="user-headshot-btn"onClick={openMenu}>
+        {/* <div > </div> */}
+        {/* <div  ></div> */}
+        {/* <img src='./cellphone-animation-2'></img> */}
       </button>
+
       {showMenu && (
-        <div className="profile-dropdown">
-          <p>{user.username}</p>
-          <p>{user.email}</p>
-          <div>
-            <button onClick={logout}>
-              <Link to='/'>Log Out</Link>
-            </button>
+        <div>
+          <div clssName='triangle-dropdown'>hello</div>
+          <div className="profile-dropdown">
+            <p>{user.username}</p>
+            <p>{user.email}</p>
+            <div>
+              <button onClick={logout}>
+                <Link to='/'>Log Out</Link>
+              </button>
+            </div>
           </div>
         </div>
       )}

@@ -2,18 +2,22 @@ import React, {useEffect, useState} from 'react';
 import { useHistory, Redirect, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import './Comments.css';
-import { getComments, uploadComment, deleteComment} from '../../store/comments'
-import CommentEditModal from '../../context/CommentEditModal';// for MODAL
-
+import { getComments, editComment ,uploadComment, deleteComment} from '../../store/comments'
+// import CommentEditModal from '../../context/CommentEditModal';// for MODAL
+// import EditSingleComment from './edit';
 
 const Comments = () =>{
   const dispatch = useDispatch();
+  const history = useHistory()
   const sessionUser = useSelector(state => state.session.user);
 
   const [comment, setComment]= useState('')
   const [commentToDeleteId, setCommentToDeleteId] = useState('')
+  const [editedComment, setEditedComment] = useState('')
+  const [editedCommentId, setEditedCommentId] = useState('')
 
-  const {id} = useParams()
+  let {id} = useParams()
+  id = Number(id)
 
   // const comments = useSelector(state => {
   //   return Object.values(state.comments)  //[id]
@@ -24,12 +28,13 @@ const Comments = () =>{
   })
 
   // const filteredComments = comments.filter(eachComment => eachComment.userId === sessionUser.id)
-  const filteredComments = comments.filter(eachComment => eachComment.photoId === Number(id))
+  const filteredComments = comments.filter(eachComment => eachComment.photoId === id)
 
 
   useEffect(()=>{
     dispatch(getComments(id))
-  }, [dispatch, id])
+
+  }, [dispatch,id])
 
 
 
@@ -48,15 +53,31 @@ const Comments = () =>{
       userId: sessionUser.id,
       photoId: id
     }
-      const newComment = dispatch(uploadComment(commentData))
+      const newComment = await dispatch(uploadComment(commentData))
       if (newComment){
         setComment('')
       }
     }
 
+    const handleEditSubmit = async (e)=>{
+      e.preventDefault();
+      const editData = {
+        comment: editedComment,
+        userId: sessionUser.id,
+        photoId: id,
+        id: editedCommentId
+      }
+        const newComment = await dispatch(editComment(editData))
+        if (newComment){
+          setEditedComment('')
+          console.log(newComment)
+          // history.push(`/photos/${Number(id)}}`)
+        }
+      }
+
   const handleDelete = async (e)=>{
     e.preventDefault()
-    dispatch(deleteComment(commentToDeleteId))
+    await dispatch(deleteComment(commentToDeleteId))
 
   }
 
@@ -73,8 +94,25 @@ const Comments = () =>{
             {/* {if (comment.userId !== sessionUser.id) false = true} */}
             <form onSubmit={handleDelete} hidden={comment.userId !== sessionUser.id}>
               <button type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>Delete</button>
-              <CommentEditModal />
+              {/* <CommentEditModal /> */}
+              {/* <EditSingleComment /> */}
+              <div>
+
+               </div>
             </form>
+            <div>
+            <form className='comment-edit-form' onSubmit={handleEditSubmit} hidden={comment.userId !== sessionUser.id}>
+                    <textarea
+                    placeholder='new comment'
+                    type='textarea'
+                    value={editedComment}
+                    onChange={e => setEditedComment(e.target.value)}
+                    style={{width:200}}
+                    ></textarea>
+                    <button type='submit' onClick={e=> setEditedCommentId(comment.id)}>Edit Comment</button>
+            </form>
+
+      </div>
           </div>
           </div>
         ))}

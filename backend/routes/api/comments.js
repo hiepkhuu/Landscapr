@@ -32,17 +32,23 @@ router.post('/photos/:id', requireAuth, asyncHandler(async(req, res)=>{
   return res.json(newComment)
 }))
 
-router.put('/photos/:id', requireAuth, asyncHandler(async(req, res)=>{
-  const {id} = parseInt(req.params, 10)
-  const {comment, userId} = req.body
+router.put('/:id', requireAuth, asyncHandler(async(req, res)=>{
+  // const {id} = Number(req.params.id)
+  const {comment, id, userId, photoId} = req.body
 
-  const updateComment = await Comment.findOne({
-    where: {
-      photoId:id
-    } })
+  const updateComment = await Comment.findByPk(id)
+
+    //if yoou are not the owner of comment, you can't edi tit
+    // if (req.user.id !== comment.userId){
+    //   const err = new Error('unauthorized');
+    //   err.status = 401;
+    //   err.message = "You are not authrized to edit this comment.";
+    //   err.title = "Unauthorised";
+    //   throw err;
+    // }
 
    if(updateComment){
-     await updateComment.update({comment})
+     await updateComment.update({comment, userId, photoId})
      return res.json(updateComment)
    }
 
@@ -58,3 +64,13 @@ router.delete('/:id', requireAuth, asyncHandler(async(req,res)=>{
 
 
 module.exports = router;
+
+
+// fetch('/api/comments/photos/1', {
+//   method: 'PUT',
+//   headers: {
+//     "Content-Type": "application/json",
+//     "XSRF-TOKEN":`l7qZU4tL-u7CJXv_YYAXA4kQjNiJ80hVj3xQ`
+//   },
+//   body: JSON.stringify({ comment: 'This photo sucks' })
+// }).then(res => res.json()).then(data => console.log(data));
