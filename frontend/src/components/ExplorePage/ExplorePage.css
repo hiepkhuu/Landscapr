@@ -27,7 +27,7 @@
 }
 
 .photo-card{
-  height: 50vh;
+  height: 30vh;
   flex-grow: 1;
   margin: 0.2vmin;
 }
