@@ -15,11 +15,11 @@ const Comments = () =>{
   const [commentToDeleteId, setCommentToDeleteId] = useState('')
   const [editedComment, setEditedComment] = useState('')
   const [editedCommentId, setEditedCommentId] = useState('')
-  const [editForm, setEditForm] = useState(false)
+  const [showMenu, setShowMenu] = useState(false);
 
-  const openEditComments = () => {
-    if (editForm) return;
-    setEditedCommentId(true);
+  const openMenu = () => {
+    if (showMenu) return;
+    setShowMenu(true);
   };
 
   let {id} = useParams()
@@ -37,19 +37,28 @@ const Comments = () =>{
   useEffect(()=>{
     dispatch(getComments(id))
 
-  }, [dispatch,id])
+    if (!showMenu) return;
 
-  useEffect(() => {
-    if (!openEditComments) return;
+    const closeMenu = () => {
+      setShowMenu(false);
+    };
 
-    const closeEditComments = () => {
-      setEditForm(false);
-    }
+    document.addEventListener('click', closeMenu);
 
-    document.addEventListener('click', closeEditComments);
+    return () => document.removeEventListener("click", closeMenu);
+  }, [dispatch,id, showMenu])
 
-    return () => document.removeEventListener('click', closeEditComments);
-  }, [openEditComments]);
+  // useEffect(() => {
+  //   if (!editForm) return;
+
+  //   const closeEditComments = () => {
+  //     setEditForm(false);
+  //   }
+
+  //   document.addEventListener('click', closeEditComments);
+
+  //   return () => document.removeEventListener('click', closeEditComments);
+  // }, [editForm]);
 
   if(!comments) return null;
 
@@ -120,19 +129,19 @@ const Comments = () =>{
             </form>
             <div>
               <>
-                <button className="edit-icon"></button>
-                {openEditComments && (
-                  <form className='comment-edit-form' onSubmit={handleEditSubmit} hidden={comment.userId !== sessionUser.id}>
-                    <textarea
-                    placeholder='new comment'
-                    type='textarea'
-                    value={editedComment}
-                    onChange={e => setEditedComment(e.target.value)}
-                    style={{width:200}}
-                    ></textarea>
-                    <button type='submit' onClick={e=> setEditedCommentId(comment.id)}>Edit Comment</button>
-                  </form>
-                )}
+                  <button className="edit-icon" onClick={openMenu}></button>
+                  {showMenu && (
+                    <form className='comment-edit-form' onSubmit={handleEditSubmit} hidden={comment.userId !== sessionUser.id}>
+                      <textarea
+                      placeholder='new comment'
+                      type='textarea'
+                      value={editedComment}
+                      onChange={e => setEditedComment(e.target.value)}
+                      style={{width:200}}
+                      ></textarea>
+                      <button type='submit' onClick={e=> setEditedCommentId(comment.id)}>Edit Comment</button>
+                    </form>
+                  )}
                </>
             </div>
           </div>
