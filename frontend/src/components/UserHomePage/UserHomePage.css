@@ -59,24 +59,33 @@
 
 }
 .user-gallery-container{
-  padding-top:5px;
-background-color: #f3f5f6;
-display:flex;
+  display: flex;
   justify-content: center;
 
 }
 
-.user-space-div{
-
+.user-photo-container{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.2vmin;
+  width: 80%;
 }
 
 .user-photo-card{
-
+  height: 30vh;
+  flex-grow: 1;
+  margin: 0.2vmin;
 }
 
+.user-photo-card:last-child{
+  flex-grow:10;
+}
 .user-photo-card img{
-  height: 200px;
-  width: auto
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+  border-radius: 1px;
 }
 
 

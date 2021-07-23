@@ -64,7 +64,7 @@ function Navigation({ isLoaded }) {
 
   return (
     <div className='navigation-container'>
-        <NavLink className='navigation-link-home' exact to="/">Campr!🚙</NavLink>
+        <NavLink className='navigation-link-home link' exact to="/">Landscapr</NavLink>
 
         {isLoaded && sessionLinks}
 

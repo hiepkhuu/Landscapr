@@ -16,7 +16,7 @@
 .navigation-link{
   color:white;
   text-decoration: none;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .navigation-link-home{

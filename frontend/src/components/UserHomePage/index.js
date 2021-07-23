@@ -77,8 +77,9 @@ const UserHomePage = () => {
       </div>
       <div className='sub-nav'>About Photostream Albums Faves Galleries Groups Stats Camera Roll </div>
       <div className='user-gallery-container'>
-        {filtereduserPhotos.map((photo) => (
-              <div key={photo.id} className='user-photo-container'>
+        <div className='user-photo-container'>
+           {filtereduserPhotos.map((photo) => (
+              <div key={photo.id} className='user-photo-card'>
                 <a href={`/photos/${photo.id}`}
                   onClick={(e) => {
                     e.preventDefault();
@@ -90,7 +91,8 @@ const UserHomePage = () => {
 
                 </a>
               </div>
-          ))}
+            ))}
+         </div>
       </div>
     </div>
 
