@@ -12,6 +12,8 @@ import PhotoDetail from "./components/PhotoDetail";
 import UpLoadPhoto from "./components/UpLoadPhoto";
 import PhotoEditPage from "./components/PhotoEditPage"
 import SplashPage from "./components/SplashPage";
+import Albums from "./components/Albums";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -48,6 +50,9 @@ function App() {
           </Route>
           <Route exact path={`/:username/:userId`}>
             <UserHomePage />
+          </Route>
+          <Route exact path={`/:username/:userId/albums`}>
+            <Albums />
           </Route>
           <Route>
             <p>page not found</p>

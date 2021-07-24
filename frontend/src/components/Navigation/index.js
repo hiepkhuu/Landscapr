@@ -26,7 +26,6 @@ function Navigation({ isLoaded }) {
             <div>
               <NavLink className='navigation-link' to={`/${sessionUser.username}/${sessionUser.id}`}>You</NavLink>
               {/* <NavLink className='navigation-link' to={`/photos/${sessionUser.username}`}>You</NavLink> */}
-
             </div>
             <div>
               <NavLink className='navigation-link' to="/explore">Explore</NavLink>
@@ -52,10 +51,8 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         {/* <LoginFormPage /> */}
-
         <NavLink className='navigation-link' to="/login">Log In</NavLink>
         {/* <LoginFormModal /> */}
-       
         <NavLink className='navigation-link' to="/signup">Sign Up</NavLink>
         {/* <SignupFormModal /> */}
       </>

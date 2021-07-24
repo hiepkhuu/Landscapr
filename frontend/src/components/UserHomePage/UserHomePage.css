@@ -58,9 +58,16 @@
 .sub-nav:hover{
   cursor: pointer;
 }
-.sub-nav.btn{
-  border-bottom: 3px solid green;
+.sub-nav.albums,
+.sub-nav.photos {
+  /* border-bottom: 3px solid green; */
+  text-decoration: none;
+}
 
+.sub-nav.albums:hover,
+.sub-nav.photos:hover {
+  border-bottom: 3px solid green;
+  text-decoration: none;
 }
 .user-gallery-container{
   display: flex;

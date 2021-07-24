@@ -12,6 +12,7 @@ router.use('/photos', photosRouter);
 router.use('/albums', albumsRouter);
 router.use('/comments', commentsRouter);
 
+
 //to test your routes
 // router.get ('/photos', function(req, res){
 //   res.send('this works')

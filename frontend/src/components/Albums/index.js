@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
-import { useHistory, Redirect, useParams, Link, NavLink } from 'react-router-dom';
+import { useHistory, Redirect, useParams,Link, NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import './UserHomePage.css';
 import { getPhotos } from '../../store/photos'
 import PhotoDetail from '../PhotoDetail';
 import { getUser } from '../../store/users';
+//uses UserHomePage css
+import './Albums.css'
 
-
-
-const UserHomePage = () => {
+const Albums = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const {userId} = useParams();
@@ -43,8 +42,6 @@ const UserHomePage = () => {
     )
   }
 
-
-
   return (
     <div className='user-page'>
       <div className='user-space-div'>
@@ -59,34 +56,15 @@ const UserHomePage = () => {
       ))}
       </div>
       <div className='sub-nav'>
-        <div >
+      <div>
           <NavLink className='sub-nav albums' to={`/${sessionUser.username}/${sessionUser.id}/albums`}>Albums</NavLink>
         </div>
-        <div >
+        <div>
           <NavLink className='sub-nav photos' to={`/${sessionUser.username}/${sessionUser.id}`} >Photo Stream</NavLink>
         </div>
       </div>
-      <div className='user-gallery-container'>
-        <div className='user-photo-container'>
-           {filtereduserPhotos.map((photo) => (
-              <div key={photo.id} className='user-photo-card'>
-                <a href={`/photos/${photo.id}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    history.push(`/photos/${photo.id}`)
-                  }}>
-                  <div className='user-photo-card'>
-                    <img src={photo.imageUrl} />
-                  </div>
-
-                </a>
-              </div>
-            ))}
-         </div>
-      </div>
     </div>
-
   )
 }
 
-export default UserHomePage;
+export default Albums;
