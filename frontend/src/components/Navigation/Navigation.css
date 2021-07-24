@@ -10,14 +10,13 @@
   position: fixed;
   z-index: 1;
   font-weight: 100;
-  /* box-shadow: 0px 2px 2px 0px rgb(0, 0, 0); */
 }
 
 .logo-home{
   display:flex;
 }
 .lanscapr-logo{
-  background-image: url('./landscapr-logo-dots.png');
+  background-image: url('./images/landscapr-logo-dots.png');
   width:30px;
   height:20px;
   margin:1px 7px 0px 0px;
@@ -27,7 +26,6 @@
 .navigation-link{
   color:white;
   text-decoration: none;
-  /* font-weight: bold; */
 }
 
 .navigation-link-home{
@@ -42,26 +40,9 @@
   width: 150px;
   justify-content: space-around
 }
-/* .navigation-container{
-  width: 100%;
-    height: 50px;
-    background-color: #18181b;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
-    top: 0;
-    position: fixed;
-    z-index: 1;
-} */
-
 
 .upload-icon{
-  background-image: url('./cloud-upload.jpg');
+  background-image: url('./images/cloud-upload.jpg');
   height:30px;
   width: 40px;
   background-size: cover;

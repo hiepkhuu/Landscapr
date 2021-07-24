@@ -28,11 +28,6 @@ const ExplorePage = () => {
     )
   }
 
-  // const routeToSinglePhoto = (e) => {
-  //   e.preventDefault();
-  //   history.push(`/photos/${photo.id}`)
-  // }
-
 
   return (
     <div className='explore-page'>

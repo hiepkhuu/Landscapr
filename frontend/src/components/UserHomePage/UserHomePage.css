@@ -9,8 +9,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  /* background-image: url('rocks-wallpaper.jpg'); */
-  background-image: url('./beach-shore.jpg');
+  background-image: url('./images/beach-shore.jpg');
   background-size: cover;
 
 }
@@ -22,9 +21,7 @@
 
 }
 .profile-headshot{
-
-  background-image: url('./cellphone-animation-2.jpg');
-
+  background-image: url('./images/cellphone-animation-2.jpg');
   background-size: cover;
   height: 70px;
   width: 70px;
@@ -40,7 +37,6 @@
   margin-bottom: 0px;
   font-weight:100;
   font-size: 32px;
-  /* margin: 0px 10px 0px 10px; */
 }
 .username-div{
   margin-top: 0px;
@@ -51,7 +47,6 @@
 .sub-nav{
   height:35px;
   background-color: white;
-  /* box-shadow: 0px 2px 3px 0px rgb(95, 95, 95); */
   border-bottom:1px solid rgb(214, 214, 214);
   padding-top: 15px;
   display:flex;

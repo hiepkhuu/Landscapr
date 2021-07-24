@@ -5,12 +5,6 @@ import { getSinglePhoto, uploadPhoto } from '../../store/photos';
 import './UpLoadPhoto.css'
 
 
-// userId: 1,
-// locationId: null,
-// imageUrl: 'https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-// title: 'Title for Photo',
-// description: 'This is photo description',
-
 const UpLoadPhoto = () => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -19,13 +13,6 @@ const UpLoadPhoto = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
-
-  // let id;
-  // const singlePhoto = useSelector(state => state.photos[id])
-
-  // useEffect(() => {
-  //   dispatch(getSinglePhoto(id))
-  // }, [dispatch])
 
   if (!sessionUser) return <Redirect to="/login" />;
 
@@ -51,34 +38,6 @@ const UpLoadPhoto = () => {
   }
 
 
-
-  // let editedPhoto;
-  // if (singlePhoto){
-  //   editedPhoto =(
-  //         <div className='editForm-container'>
-  //           <div classsName='photo-to-edit'>
-  //             <img src='createdPhoto.imageURL'></img>
-  //           </div>
-  //             <p>you will be editing form here</p>
-  //         </div>
-  //       )
-  // }
-  // if (!singlePhoto) {
-  //   return null;
-  // }
-
-
-  // let editedPhoto;
-  // if(createdPhoto){
-  //   editedPhoto =(
-  //     <div className='editForm-container'>
-  //       <div classsName='photo-to-edit'>
-  //         <img src='createdPhoto.imageURL'></img>
-  //       </div>
-  //         <p>you will be editing form here</p>
-  //     </div>
-  //   )
-  // }
 
   return (
     <div className='upload-form-page'>

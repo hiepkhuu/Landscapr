@@ -14,7 +14,7 @@ const PhotoEditPage = () =>{
   id = Number(id)
 
   const sessionUser = useSelector(state => state.session.user)
-  // const singlePhoto = useSelector(state => state.photos[id]);
+
   const singlePhoto = useSelector(state =>{
     return Object.values(state.photos)
   })
@@ -44,8 +44,6 @@ const PhotoEditPage = () =>{
     if (editedPhoto) {
       setTitle('');
       setDescription('');
-      // history.push(`/photos/${editedPhoto.id}`)////// what is this
-      // history.push(`/edit/${singlePhoto.id}`)
     }
 
   }
@@ -86,7 +84,6 @@ const PhotoEditPage = () =>{
                       className='edit-input'
                       type="text"
                       value={title}
-                      // placeholder={"Title"}
                       onChange={(e) => setTitle(e.target.value)}
                       />
                     </div>
@@ -100,7 +97,6 @@ const PhotoEditPage = () =>{
                       className='edit-input'
                       type="text"
                       value={description}
-                      // placeholder="Caption"
                       onChange={(e) => setDescription(e.target.value)}
                       />
                     </div>

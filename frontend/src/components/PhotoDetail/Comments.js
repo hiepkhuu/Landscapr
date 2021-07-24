@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import './Comments.css';
 import { getComments, editComment ,uploadComment, deleteComment} from '../../store/comments'
 // import CommentEditModal from '../../context/CommentEditModal';// for MODAL
-// import EditSingleComment from './edit';
 
 const Comments = () =>{
   const dispatch = useDispatch();
@@ -48,17 +47,6 @@ const Comments = () =>{
     return () => document.removeEventListener("click", closeMenu);
   }, [dispatch,id, showMenu])
 
-  // useEffect(() => {
-  //   if (!editForm) return;
-
-  //   const closeEditComments = () => {
-  //     setEditForm(false);
-  //   }
-
-  //   document.addEventListener('click', closeEditComments);
-
-  //   return () => document.removeEventListener('click', closeEditComments);
-  // }, [editForm]);
 
   if(!comments) return null;
 

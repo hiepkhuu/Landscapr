@@ -35,11 +35,7 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      {/* <img src='./cellphone-animation-2'></img> */}
       <button className="user-headshot-btn"onClick={openMenu}>
-        {/* <div > </div> */}
-        {/* <div  ></div> */}
-        {/* <img src='./cellphone-animation-2'></img> */}
       </button>
 
       {showMenu && (
