@@ -6,22 +6,31 @@ import PhotoDetail from '../PhotoDetail';
 import { getUser } from '../../store/users';
 //uses UserHomePage css
 import './Albums.css'
+import { getAlbums } from '../../store/albums';
 
-const Albums = () => {
+const UserAlbums = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
-  const {userId} = useParams();
+  let {userId} = useParams();
+  userId = Number(userId)
   const history = useHistory();
 
     useEffect(() => {
     dispatch(getPhotos())
     dispatch(getUser(Number(userId)))
+    dispatch(getAlbums())
   }, [dispatch,userId])
 
   const userPhotos = useSelector(state => {
     return Object.values(state.photos)
   })
 
+  const albums = useSelector(state => {
+    return Object.values(state.albums)
+  })
+
+  const filteredAlbums = albums.filter(album => album.userId === userId)
+  console.log(filteredAlbums)
   const userInfo = useSelector(state => {
     return Object.values(state.user)
   })
@@ -57,14 +66,33 @@ const Albums = () => {
       </div>
       <div className='sub-nav'>
       <div>
-          <NavLink className='sub-nav albums' to={`/${sessionUser.username}/${sessionUser.id}/albums`}>Albums</NavLink>
+          <NavLink className='sub-nav albums' id='click-album' to={`/${sessionUser.username}/${sessionUser.id}/albums`}>Albums</NavLink>
         </div>
         <div>
           <NavLink className='sub-nav photos' to={`/${sessionUser.username}/${sessionUser.id}`} >Photo Stream</NavLink>
         </div>
       </div>
+      <div className='album-gallery-container'>
+        <div className='album-container'>
+           {filteredAlbums.map((album) => (
+              <div className='user-album-card'>
+                {/* <a href={`/photos/${photo.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    history.push(`/photos/${photo.id}`)
+                  }}> */}
+                  <div>
+                    <p>{album.title}</p>
+                    <p>{album.caption}</p>
+                  </div>
+
+                {/* </a> */}
+              </div>
+            ))}
+         </div>
+      </div>
     </div>
   )
 }
 
-export default Albums;
+export default UserAlbums;

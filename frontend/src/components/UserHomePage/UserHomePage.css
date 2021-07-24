@@ -69,6 +69,9 @@
   border-bottom: 3px solid green;
   text-decoration: none;
 }
+#click-photo{
+  border-bottom: 3px solid green;
+}
 .user-gallery-container{
   display: flex;
   justify-content: center;
@@ -86,10 +89,11 @@
   height: 30vh;
   flex-grow: 1;
   margin: 0.2vmin;
+
 }
 
 .user-photo-card:last-child{
-  flex-grow:10;
+  flex-grow: 10;
 }
 .user-photo-card img{
   max-height: 100%;

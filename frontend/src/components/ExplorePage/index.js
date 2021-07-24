@@ -43,7 +43,7 @@ const ExplorePage = () => {
                   e.preventDefault();
                   history.push(`/photos/${photo.id}`)
                 }}>
-                   <img src={photo.imageUrl} />
+                   <img  src={photo.imageUrl} />
                </a>
              </div>
             ))}

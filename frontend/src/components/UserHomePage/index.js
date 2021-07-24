@@ -63,7 +63,7 @@ const UserHomePage = () => {
           <NavLink className='sub-nav albums' to={`/${sessionUser.username}/${sessionUser.id}/albums`}>Albums</NavLink>
         </div>
         <div >
-          <NavLink className='sub-nav photos' to={`/${sessionUser.username}/${sessionUser.id}`} >Photo Stream</NavLink>
+          <NavLink className='sub-nav photos' id='click-photo' to={`/${sessionUser.username}/${sessionUser.id}`} >Photo Stream</NavLink>
         </div>
       </div>
       <div className='user-gallery-container'>
@@ -75,10 +75,7 @@ const UserHomePage = () => {
                     e.preventDefault();
                     history.push(`/photos/${photo.id}`)
                   }}>
-                  <div className='user-photo-card'>
                     <img src={photo.imageUrl} />
-                  </div>
-
                 </a>
               </div>
             ))}

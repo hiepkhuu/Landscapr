@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Redirect, useHistory } from 'react-router-dom';
+
 import { getSinglePhoto, removeSinglePhoto, updateSinglePhoto } from '../../store/photos';
+
 
 import './PhotoEditPage.css'
 
@@ -19,11 +21,13 @@ const PhotoEditPage = () =>{
     return Object.values(state.photos)
   })
 
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
   useEffect(() => {
     dispatch(getSinglePhoto(id))
+
   }, [dispatch,id])
 
   if (!sessionUser) {
@@ -31,6 +35,8 @@ const PhotoEditPage = () =>{
       <Redirect to='/login' />
     )
   }
+
+
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
