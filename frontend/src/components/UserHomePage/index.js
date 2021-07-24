@@ -26,21 +26,8 @@ const UserHomePage = () => {
   const userInfo = useSelector(state => {
     return Object.values(state.user)
   })
-  // console.log('#######',userInfo)
-    // console.log(typeof Number(userId))
-    // userPhotos.map(eachItem => {
-    //  console.log(typeof eachItem.userId)
-    // })
 
     const filtereduserPhotos = userPhotos.filter(eachItem => eachItem.userId === Number(userId))
-
-  // console.log(filtereduserPhotos)
-  // userPhotos.map(eachItem =>{
-  //   if (eachItem.userId === Number(userId)){
-  //     console.log('is this whate i loooking for',eachItem.imageUrl)
-  //   }
-  // })
-
 
 
   const photos = useSelector(state => {
@@ -56,10 +43,6 @@ const UserHomePage = () => {
     )
   }
 
-  // const routeToSinglePhoto = (e) => {
-  //   e.preventDefault();
-  //   history.push(`/photos/${photo.id}`)
-  // }
 
 
   return (
@@ -75,7 +58,11 @@ const UserHomePage = () => {
         </div>
       ))}
       </div>
-      <div className='sub-nav'>About Photostream Albums Faves Galleries Groups Stats Camera Roll </div>
+      <div className='sub-nav'>
+        <div className='sub-nav btn'>
+          <p>Photo Stream</p>
+        </div>
+      </div>
       <div className='user-gallery-container'>
         <div className='user-photo-container'>
            {filtereduserPhotos.map((photo) => (

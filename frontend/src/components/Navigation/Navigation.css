@@ -15,6 +15,7 @@
 .logo-home{
   display:flex;
 }
+
 .lanscapr-logo{
   background-image: url('./images/landscapr-logo-dots.png');
   width:30px;
