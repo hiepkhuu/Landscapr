@@ -105,7 +105,7 @@ const Comments = () =>{
             <p>{comment.comment}</p>
             <div className='modify-section'>
               <form onSubmit={handleDelete} hidden={comment.userId !== sessionUser.id}>
-                <button hidden={true} type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>
+                <button  type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>
                 <i class="fas fa-trash-alt"></i>
                 </button>
 
@@ -115,7 +115,7 @@ const Comments = () =>{
 
                 </div>
               </form>
-              <button hidden={true}  onClick={openMenu}><i class="far fa-edit"></i></button>
+              <button  hidden={comment.userId !== sessionUser.id} onClick={openMenu}><i class="far fa-edit"></i></button>
             </div>
             <div>
               <>
