@@ -27,7 +27,7 @@ function LoginFormPage() {
 
   return (
     <div clasName='login-form-page'>
-      <div className='behind-nav'></div>
+     
       <div className='login-form-container'>
         <form className='login-form' onSubmit={handleSubmit}>
               <div className='login-label'>
