@@ -17,6 +17,7 @@
 }
 
 .login-form{
+
   display:flex;
   flex-direction: column;
   width: 22rem;
@@ -25,37 +26,60 @@
   border-radius: 5px;
   height: auto;
   padding:20px;
+  justify-content: center
 
 }
 
+.login-form p {
+  display: flex;
+  justify-content: center;
+}
 
+.logo-holder{
+  display:flex;
+  justify-content: center;
+}
+.logo-holder div{
 
+  background-image: url('./images/logo-white.png');
+  height: 30px;
+  width: 40px;
+  background-size: cover;
+
+}
 
 input::placeholder{
   opacity:0;
 }
+.login-label input{
+  height:2rem;
+  padding: 1rem 0rem 0rem 1rem;
+}
+.login-label{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
 
-.login-form input{
-  width:100%;
-  padding:10px 0px;
-  margin-top:0px;
-  /* height:40px; */
-  /* border:none; */
-  /* outline:none; */
 
+.login-label label{
+  position: absolute;
+  pointer-events: none;
+  transform: translate(0, 13px) scale(1);
+  transform-origin: top left;
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  color: #6f81a5;
+  font-size: 16px;
+  line-height: 1;
+  left: 16px;
 }
-.login-form span{
-  position:absolute;
-    top:0;
-    left:0;
-    transform:translateY(30px);
-    font-size:0.825em;
-    transition-duration:300ms;
+
+.login-label:focus-within label {
+  transform: translate(0, 7px) scale(0.8);
+  color: #0a53e4;
 }
-.login-form label{
-  margin-bottom:15px;
-  position:relative;
-}
+
+
 
 .login-form button{
   padding:15px 0px;
@@ -67,8 +91,4 @@ input::placeholder{
   border-radius:3px;
 }
 
-label:focus-within > span,
-input:not(:placeholder-shown) + span{
-    color:purple;
-    transform:translateY(0px);
-}
+

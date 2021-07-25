@@ -30,13 +30,19 @@ function LoginFormPage() {
 
       <div className='login-form-container'>
         <form className='login-form' onSubmit={handleSubmit}>
-              <div className='login-label'>
+              <div className=''>
                 <ul>
                   {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
               </div>
+              <div className='logo-holder'>
+                <div ></div>
+              </div>
+              <div>
+                <p>Log in to Flickr</p>
+              </div>
               <div className='login-label'>
-                <label for='email'>
+
                   <input
                     type="text"
                     value={credential}
@@ -45,11 +51,11 @@ function LoginFormPage() {
                     placeholder='email'
                     id='email'
                   />
-                    <span className='input-text'>Email Address</span>
-                </label>
+                  <label for='email'>Email Address </label>
+
               </div>
               <div className='login-label'>
-                <label for='password'>
+
                   <input
                     type="password"
                     value={password}
@@ -58,10 +64,10 @@ function LoginFormPage() {
                     placeholder='password'
                     id='password'
                   />
-                  <span>password</span>
-                </label>
+                  <label for='password'>password </label>
+
               </div>
-          <button type="submit">Log In</button>
+          <button type="submit">Sign In</button>
         </form>
       </div>
     </div>
