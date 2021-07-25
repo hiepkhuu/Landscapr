@@ -27,7 +27,7 @@ function LoginFormPage() {
 
   return (
     <div clasName='login-form-page'>
-     
+
       <div className='login-form-container'>
         <form className='login-form' onSubmit={handleSubmit}>
               <div className='login-label'>
@@ -36,27 +36,29 @@ function LoginFormPage() {
                 </ul>
               </div>
               <div className='login-label'>
-                <label>
-                  Username or Email
+                <label for='email'>
                   <input
-                    className='login-input'
                     type="text"
                     value={credential}
                     onChange={(e) => setCredential(e.target.value)}
                     required
+                    placeholder='email'
+                    id='email'
                   />
+                    <span className='input-text'>Email Address</span>
                 </label>
               </div>
               <div className='login-label'>
-                <label>
-                  Password
+                <label for='password'>
                   <input
-                    className='login-input'
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    placeholder='password'
+                    id='password'
                   />
+                  <span>password</span>
                 </label>
               </div>
           <button type="submit">Log In</button>
