@@ -14,12 +14,13 @@
   padding: 5px;
 }
 
-.upload-form-containers{
+.upload-form-container{
   display: flex;
   justify-content: center;
 
 }
 .upload-form{
+  align-self: center;
   margin-top: 100px;
   width: 300px;
   padding: 10px;

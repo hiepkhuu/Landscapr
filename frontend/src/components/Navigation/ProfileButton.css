@@ -1,12 +1,18 @@
 .profile-dropdown{
 
-  margin-top: 125px;
-  background-color: white;
+  margin: 125px 0px 0px 0px;
+  background: rgb(255, 255, 255);
   padding: 5px 10px 10px 10px;
   color: black;
   border-radius: 5px;
-  border: 1px solid black
+  border: 1px solid black;
+
 }
+/* .user-headshot-btn{
+  border-radius: 70px;
+  width:30px;
+  height:30px
+} */
 .user-headshot-btn{
   background-image: url('./images/cellphone-animation-2.jpg');
   height:30px;
@@ -14,6 +20,7 @@
   background-size: cover;
   opacity: solid !important;
   border-radius: 50px;
+  border:0px;
 }
 .triangle-dropdown{
   color:white;

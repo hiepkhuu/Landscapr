@@ -47,4 +47,9 @@
   height:30px;
   width: 40px;
   background-size: cover;
+  margin-right: 20px;
+}
+
+.cloud-profile-section{
+  display: flex;
 }

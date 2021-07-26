@@ -42,7 +42,7 @@ const UpLoadPhoto = () => {
   return (
     <div className='upload-form-page'>
       <div className='behind-nav'></div>
-      <div className='upload-form-contaner'>
+      <div className='upload-form-container'>
 
         <form className='upload-form' onSubmit={handleSubmit}>
           <div className='upload-label'>

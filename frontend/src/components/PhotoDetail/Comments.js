@@ -105,8 +105,9 @@ const Comments = () =>{
             <p>{comment.comment}</p>
             <div className='modify-section'>
               <form onSubmit={handleDelete} hidden={comment.userId !== sessionUser.id}>
-                <button  type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>
-                <i class="fas fa-trash-alt"></i>
+                <button className='trash-icon' type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>
+                {/* <i class="fas fa-trash-alt"></i> */}
+                delete
                 </button>
 
                 {/* <CommentEditModal /> */}
@@ -115,25 +116,27 @@ const Comments = () =>{
 
                 </div>
               </form>
-              <button  hidden={comment.userId !== sessionUser.id} onClick={openMenu}><i class="far fa-edit"></i></button>
+              <button  className='edit-icon'hidden={comment.userId !== sessionUser.id} onClick={openMenu}>
+                {/* <i class="far fa-edit"></i> */}
+                edit
+              </button>
             </div>
-            <div>
-              <>
 
+              <div className='edit-form-container'>
                   {showMenu && (
                     <form className='comment-edit-form' onSubmit={handleEditSubmit} hidden={comment.userId !== sessionUser.id}>
                       <textarea
-                      placeholder='new comment'
+                      placeholder=''
                       type='textarea'
                       value={editedComment}
                       onChange={e => setEditedComment(e.target.value)}
                       style={{width:200}}
                       ></textarea>
-                      <button type='submit' onClick={e=> setEditedCommentId(comment.id)}>Edit Comment</button>
+                      <button type='submit' onClick={e=> setEditedCommentId(comment.id)}>submit</button>
                     </form>
                   )}
-               </>
-            </div>
+              </div>
+
           </div>
           </div>
         ))}

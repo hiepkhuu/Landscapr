@@ -80,6 +80,7 @@ const PhotoEditPage = () =>{
         <div className='edit-form-contaner'>
           <button className='edit-redirect-to-homepage' onClick={redirectToHomepage}>Back To Homepage</button>
           <button className='edit-redirect-to-homepage' onClick={redirectToPhotoPage}>Back To Photo Page</button>
+
             <form className='edit-form' onSubmit={handleSubmit}>
 
                 <div className='edit-label'>
@@ -112,17 +113,19 @@ const PhotoEditPage = () =>{
                   <button type="submit">Submit Updates</button>
                 </div>
             </form>
-          {singlePhoto.map((photo)=>(
-            <>
             <div>
-              <h3>Title: {photo.title}</h3>
-              <h4>Description: {photo.description}</h4>
+              {singlePhoto.map((photo)=>(
+                <>
+                <div className='photo-description'>
+                  <h3>Title: {photo.title}</h3>
+                  <h3>Description: {photo.description}</h3>
+                </div>
+                <div className='edit-photo-box'>
+                  <img className='edit-photo'src={photo.imageUrl}></img>
+                </div>
+                </>
+              ))}
             </div>
-            <div className='edit-photo-box'>
-              <img className='edit-photo'src={photo.imageUrl}></img>
-            </div>
-            </>
-          ))}
 
           <button className='delete-photo-button' onClick={handleDelete}>Delete Photo</button>
         </div>

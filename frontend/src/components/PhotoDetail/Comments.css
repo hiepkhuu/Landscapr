@@ -1,6 +1,6 @@
 
 .comment-container{
-  border-top: 1px solid rgb(216, 214, 214);
+  border-top: 1px solid rgb(194, 193, 193);
   margin: 15px 0px 100px 0px;
 }
 
@@ -11,6 +11,7 @@
   color: rgb(42, 42, 156);
   text-decoration: none;
 }
+
 .comment-box{
   margin-top: 20px;
   padding:10px;
@@ -43,6 +44,17 @@
 }
 .modify-section{
   display:flex;
+}
+.comment-edit-form{
+  display: flex;
+  flex-direction: column
+}
+.comment-edit-form button{
+  align-self: flex-end;
+  width:65px;
+}
+.edit-icon{
+  height:21px
 }
 
 .fas.fa-trash-alt,

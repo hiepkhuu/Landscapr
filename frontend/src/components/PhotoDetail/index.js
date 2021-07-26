@@ -47,16 +47,21 @@ const PhotoDetail = () =>{
         <div className='explore-link'>
           <a onClick={redirectToHomepage}>Back to Homepage</a>
         </div>
-          <img className='single-photo' src={singlePhoto.imageUrl}></img>
+        <div className='single-photo'>
+          <img  src={singlePhoto.imageUrl}></img>
         </div>
+        <div className='btn-edit'>
+            <button
+            onClick={directToEditPage}
+            hidden={singlePhoto.userId !== sessionUser.id}
+            >Edit Photo</button>
+        </div>
+      </div>
 
       <div className='photo-detail-container'>
         <div className='photo-details'>
-            <div clasName='details-header'>
-                <button
-                onClick={directToEditPage}
-                hidden={singlePhoto.userId !== sessionUser.id}
-                >Edit Photo</button>
+            <div className='details-header'>
+
               <div>
                 <Link className='user-link-header' to={`/${singlePhoto.User?.username}/${singlePhoto.userId}`}>{singlePhoto.User?.username}</Link>
               </div>

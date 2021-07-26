@@ -1,27 +1,40 @@
 
 .singlephoto-container{
   display:flex;
+  flex-direction: column;
   width:100%;
-  height: 740px;
+  height: 800px;
   background-color: #292b2c;
 }
 
 .explore-link{
   height: 40px;
   margin: 60px 0px 0px 10px;
+  padding:5px;
   color:white;
+  width: 150px;
+
+
 }
 
 .explore-link:hover{
-  cursor: pointer
+  cursor: pointer;
+  font-size: 17px;
 }
-
 .single-photo{
-  height: 550px;
-  width: auto;
+  display:flex;
+  justify-content: center;
+}
+.single-photo img{
+  height: auto;
+  max-width: 50rem;
   margin: 20px;
-  margin-top: 110px;
+  margin-top: 70px;
   box-shadow: 0px 0px 5px 0px rgb(0, 0, 0);
+}
+.btn-edit{
+  display:inherit;
+  justify-content: center;
 }
 .right-container{
   margin: 0px 0px 0px 0px;
@@ -39,7 +52,7 @@
 }
 
 .details-header div{
-  padding:0px;
+  padding-left:10px;
 }
 .user-link-header{
   margin: 10px 0px 5px 0px;
@@ -54,7 +67,8 @@
 
 .photo-title{
   font-size: 17px;
-  font-weight: 200
+  font-weight: 200;
+  margin: 10px 0px;
 }
 
 .photo-description{

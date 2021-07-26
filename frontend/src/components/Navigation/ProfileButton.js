@@ -35,8 +35,10 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button className="user-headshot-btn"onClick={openMenu}>
-      </button>
+
+        <button className="user-headshot-btn" onClick={openMenu}>
+          <div></div>
+        </button>
 
       {showMenu && (
         <div>
