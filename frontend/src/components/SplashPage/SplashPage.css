@@ -14,11 +14,33 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
+  animation: slide 15s infinite;
+}
+
+@keyframes slide {
+
+  20% {
+    background-image: url('./images/splash-1.jpg');
+  }
+  40%{
+    background-image: url('./images//green-lake.jpg')
+  }
+
+  60%{
+    background-image: url('./images/moonrise.jpg')
+  }
+  80%{
+    background-image: url('./images/mysterious-forest.jpg')
+  }
+  100%{
+    background-image: url('./images/snowy-mt.jpg')
+  }
 }
 .splash-photo h1{
   color: white;
-  font-size: 5rem;
-  font-weight: 300;
+  font-size: 4rem;
+  font-weight: 500;
   margin: 0px;
 
 
@@ -29,7 +51,7 @@
   height:auto;
   padding:10px 20px;
   margin-bottom: 5px;
-  border-radius: 50px;
+  border-radius: 5px;
 }
 .splash-page-container button{
   align-items: center;
