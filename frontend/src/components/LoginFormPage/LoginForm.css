@@ -54,6 +54,13 @@ input::placeholder{
 .login-label input{
   height:2rem;
   padding: 1rem 0rem 0rem 1rem;
+  border-radius: 3px;
+  border: 0.5px solid rgb(173, 172, 172);
+  margin-top:5px;
+}
+
+.login-label:focus input{
+  border: 6px solid blue;
 }
 .login-label{
   position: relative;
@@ -65,7 +72,7 @@ input::placeholder{
 .login-label label{
   position: absolute;
   pointer-events: none;
-  transform: translate(0, 13px) scale(1);
+  transform: translate(0, 17px) scale(1);
   transform-origin: top left;
   transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
   color: #6f81a5;
@@ -75,7 +82,7 @@ input::placeholder{
 }
 
 .login-label:focus-within label {
-  transform: translate(0, 7px) scale(0.8);
+  transform: translate(0, 10px) scale(0.8);
   color: #0a53e4;
 }
 
@@ -83,12 +90,19 @@ input::placeholder{
 
 .login-form button{
   padding:15px 0px;
-  margin-top:20px;
-  background:rgb(41, 106, 202);
+  margin:20px 0px 30px 0px;
+  background:rgb(48, 120, 226);
   color:#fff;
-  border:1px solid rgb(41, 106, 202);
+  border:1px solid rgb(48, 120, 226);
   cursor:pointer;
   border-radius:3px;
 }
 
-
+.login-form button:hover{
+  background: rgb(52, 129, 245);
+}
+.signup-link{
+  text-decoration: none;
+ margin-left: 0.5rem;
+ color:#3663bd;
+}
