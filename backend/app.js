@@ -30,6 +30,16 @@ app.use(
   })
 );
 
+// Security Middleware
+if (!isProduction) {
+  // enable cors only in development
+  app.use(cors());
+}
+// helmet helps set a variety of headers to better secure your app
+app.use(helmet({
+  contentSecurityPolicy: false
+}));
+
 
 app.use(routes);// Connect all the routes
 
@@ -69,15 +79,6 @@ app.use((err, _req, res, _next) => {
 });
 
 
-// Security Middleware
-if (!isProduction) {
-  // enable cors only in development
-  app.use(cors());
-}
-// helmet helps set a variety of headers to better secure your app
-app.use(helmet({
-  contentSecurityPolicy: false
-}));
 
 
 
