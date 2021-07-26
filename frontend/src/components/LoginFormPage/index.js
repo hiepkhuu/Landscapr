@@ -39,7 +39,7 @@ function LoginFormPage() {
                 <div ></div>
               </div>
               <div>
-                <p>Log in to Flickr</p>
+                <p>Log in to Flickr.</p>
               </div>
               <div className='login-label'>
 

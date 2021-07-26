@@ -21,12 +21,24 @@
 .user-album-card{
   height: 30vh;
   flex-grow: 1;
-  margin: 0.2vmin;
-  background-color:rgb(194, 211, 194)
+  margin: 1vmin;
+  background-color:rgb(205, 206, 205);
+
+}
+.user-album-card{
+  padding:10px 0px;
+
 }
 
 .user-album-card:last-child{
   flex-grow:10;
+}
+
+.album-card-info p{
+  font-size: 0.9rem;
+  margin:0px;
+  padding: 0px 10px;
+
 }
 .user-album-card div{
   max-height: 100%;

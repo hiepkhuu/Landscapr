@@ -40,7 +40,7 @@
 }
 
 .edit-photo-box{
-  margin: 40px 0px;
+  margin: 5px 0px;
   display: flex;
   justify-content: center
 }
@@ -49,14 +49,16 @@
   max-height: auto;
   max-width:100%;
   box-shadow: 0px 0px 3px 0px grey;
-  margin-top: 50px;
+  margin-top: 10px;
 
 }
 
-.photo-description{
-  background-color: rgb(216, 230, 238);
+.photo-description-box{
+  background-color: rgb(223, 222, 222);
   padding:10px 20px;
   margin-top:10px;
   border-radius: 5px;
-
+}
+.photo-description-box h3{
+  font-weight: 100
 }

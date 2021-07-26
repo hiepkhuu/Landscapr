@@ -50,10 +50,12 @@
 .photo-details{
   width: 500px;
 }
-
-.details-header div{
-  padding-left:10px;
+.details-header{
+  background-color: rgb(231, 228, 228);
+  padding:10px;
+  border-radius: 3px;
 }
+
 .user-link-header{
   margin: 10px 0px 5px 0px;
   font-weight: 300;

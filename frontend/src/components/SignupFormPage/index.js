@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
@@ -35,14 +35,18 @@ function SignupFormPage() {
       <div className='behind-nav'></div>
       <div className='signup-form-container'>
         <form className='signup-form' onSubmit={handleSubmit}>
-          <div className='signup-label'>
+          <div className=''>
             <ul>
               {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
           </div>
+          <div className='logo-holder'>
+                <div ></div>
+              </div>
+              <div>
+                <p>Sign up on Flickr!</p>
+              </div>
           <div className='signup-label'>
-            <label>
-              Email
               <input
                 className='signup-input'
                 type="text"
@@ -50,11 +54,9 @@ function SignupFormPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-            </label>
+              <label>Email</label>
           </div>
           <div className='signup-label'>
-            <label>
-              First Name
               <input
                 className='signup-input'
                 type="text"
@@ -62,11 +64,9 @@ function SignupFormPage() {
                 onChange={(e) => setFirstName(e.target.value)}
                 required
               />
-            </label>
+              <label>First Name</label>
           </div>
           <div className='signup-label'>
-            <label>
-              Last Name
               <input
                 className='signup-input'
                 type="text"
@@ -74,11 +74,9 @@ function SignupFormPage() {
                 onChange={(e) => setLastName(e.target.value)}
                 required
               />
-            </label>
+              <label>Last Name</label>
           </div>
           <div className='signup-label'>
-            <label>
-              Username
               <input
                 className='signup-input'
                 type="text"
@@ -86,11 +84,9 @@ function SignupFormPage() {
                 onChange={(e) => setUsername(e.target.value)}
                 required
               />
-            </label>
+              <label>Username</label>
           </div>
           <div className='signup-label'>
-            <label>
-              Password
               <input
                 className='signup-input'
                 type="password"
@@ -98,11 +94,9 @@ function SignupFormPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-            </label>
+              <label>Password</label>
           </div>
           <div className='signup-label'>
-            <label>
-              Confirm Password
               <input
                 className='signup-input'
                 type="password"
@@ -110,10 +104,14 @@ function SignupFormPage() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
-            </label>
+              <label>Sign Up</label>
           </div>
-          <div className='signup-label'>
+
             <button type="submit">Sign Up</button>
+            <div >
+            <p>Already Have an Account?
+              <Link className='login-link' to='/login'>Log in here.</Link>
+            </p>
           </div>
         </form>
       </div>

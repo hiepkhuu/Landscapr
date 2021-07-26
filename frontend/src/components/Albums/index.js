@@ -81,7 +81,7 @@ const UserAlbums = () => {
                     e.preventDefault();
                     history.push(`/photos/${photo.id}`)
                   }}> */}
-                  <div>
+                  <div className='album-card-info'>
                     <p>{album.title}</p>
                     <p>{album.caption}</p>
                   </div>

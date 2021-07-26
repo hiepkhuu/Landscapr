@@ -116,7 +116,7 @@ const PhotoEditPage = () =>{
             <div>
               {singlePhoto.map((photo)=>(
                 <>
-                <div className='photo-description'>
+                <div className='photo-description-box'>
                   <h3>Title: {photo.title}</h3>
                   <h3>Description: {photo.description}</h3>
                 </div>
