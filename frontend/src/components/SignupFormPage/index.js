@@ -32,7 +32,7 @@ function SignupFormPage() {
 
   return (
     <div className='signup-form-page'>
-      <div className='behind-nav'></div>
+      {/* <div className='behind-nav'></div> */}
       <div className='signup-form-container'>
         <form className='signup-form' onSubmit={handleSubmit}>
           <div className=''>
@@ -44,7 +44,7 @@ function SignupFormPage() {
                 <div ></div>
               </div>
               <div>
-                <p>Sign up on Flickr!</p>
+                <p>Sign up on Landscapr!</p>
               </div>
           <div className='signup-label'>
               <input

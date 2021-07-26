@@ -39,7 +39,7 @@ function LoginFormPage() {
                 <div ></div>
               </div>
               <div>
-                <p>Log in to Flickr.</p>
+                <p>Log in to Landscapr.</p>
               </div>
               <div className='login-label'>
 
@@ -69,7 +69,7 @@ function LoginFormPage() {
               </div>
           <button type="submit">Sign In</button>
           <div >
-            <p>Not a Flicker memeber?
+            <p>Not a Landscapr member?
               <Link className='signup-link' to='/signup'>Sign up here.</Link>
             </p>
           </div>
