@@ -37,7 +37,7 @@ function ProfileButton({ user }) {
     <>
 
         <button className="user-headshot-btn" onClick={openMenu}>
-          <div></div>
+          {/* <div></div> */}
         </button>
 
       {showMenu && (

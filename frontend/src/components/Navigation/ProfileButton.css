@@ -1,8 +1,8 @@
 .profile-dropdown{
-
-  margin: 125px 0px 0px 0px;
+  position:absolute;
+  margin: 0px 0px 0px 0px;
   background: rgb(255, 255, 255);
-  padding: 5px 10px 10px 10px;
+  padding: 0px 10px 10px 10px;
   color: black;
   border-radius: 3px;
   border: 1px solid black;
@@ -21,13 +21,14 @@
   opacity: solid !important;
   border-radius: 50px;
   border:0px;
+  
 }
-.triangle-dropdown{
+/* .triangle-dropdown{
   color:white;
   height: 10px;
   width:10px;
   background-color: white;
-}
+} */
 .profile-dropdown button{
   text-decoration: none;
 }

@@ -107,7 +107,6 @@ const Comments = () =>{
               <form onSubmit={handleDelete} hidden={comment.userId !== sessionUser.id}>
                 <button className='trash-icon' type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>
                 {/* <i class="fas fa-trash-alt"></i> */}
-                delete
                 </button>
 
                 {/* <CommentEditModal /> */}
@@ -118,7 +117,7 @@ const Comments = () =>{
               </form>
               <button  className='edit-icon'hidden={comment.userId !== sessionUser.id} onClick={openMenu}>
                 {/* <i class="far fa-edit"></i> */}
-                edit
+                
               </button>
             </div>
 
@@ -148,7 +147,7 @@ const Comments = () =>{
             type='textarea'
             value={comment}
             onChange={e => setComment(e.target.value)}
-            style={{width:480,height: 100}}
+            style={{width:400,height: 70}}
             ></textarea>
             <button onClick={handleSubmit}>Comment</button>
         </form>

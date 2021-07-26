@@ -37,24 +37,25 @@ const PhotoDetail = () =>{
       history.push(`/edit/${singlePhoto.id}`)
     }
 
-    const redirectToHomepage = () =>{
-      history.push(`/${sessionUser.username}/${sessionUser.id}`)
-    }
+    // const redirectToHomepage = () =>{
+    //   history.push(`/${sessionUser.username}/${sessionUser.id}`)
+    // }
 
   return (
     <div className='singlephoto-detail-page'>
       <div className='singlephoto-container'>
         <div className='explore-link'>
-          <a onClick={redirectToHomepage}>Back to Homepage</a>
+          <Link className='explore-link link' to='/explore'>Back to Explore</Link>
         </div>
         <div className='single-photo'>
           <img  src={singlePhoto.imageUrl}></img>
         </div>
         <div className='btn-edit'>
-            <button
-            onClick={directToEditPage}
+            <Link
+            className='btn-edit link'
+            to={`/edit/${singlePhoto.id}`}
             hidden={singlePhoto.userId !== sessionUser.id}
-            >Edit Photo</button>
+            >Edit Photo</Link>
         </div>
       </div>
 
