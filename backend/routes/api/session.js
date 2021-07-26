@@ -1,12 +1,12 @@
 const express = require('express')
+const router = express.Router();
 const asyncHandler = require('express-async-handler');//wrap asynchronous route handlers and custom middlewares.
-
-const { setTokenCookie, restoreUser } = require('../../utils/auth');
-const { User } = require('../../db/models');
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
+const { setTokenCookie, restoreUser } = require('../../utils/auth');
+const { User } = require('../../db/models');
 
-const router = express.Router();
+
 
 const validateLogin = [
   check('credential')
