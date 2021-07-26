@@ -18,6 +18,19 @@ app.use(cookieParser());
 // app.use(express.json()); // replace this with two lines below
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+// Set the _csrf token and create req.csrfToken method
+app.use(
+  csurf({
+    cookie: {
+      secure: isProduction,
+      sameSite: isProduction && "Lax",
+      httpOnly: true,
+    },
+  })
+);
+
+
 app.use(routes);// Connect all the routes
 
 //IMPORT ERROR HANDLERS//
@@ -66,16 +79,7 @@ app.use(helmet({
   contentSecurityPolicy: false
 }));
 
-// Set the _csrf token and create req.csrfToken method
-app.use(
-  csurf({
-    cookie: {
-      secure: isProduction,
-      sameSite: isProduction && "Lax",
-      httpOnly: true,
-    },
-  })
-);
+
 
 
 module.exports = app;
