@@ -12,7 +12,6 @@ const { ResultWithContext } = require('express-validator/src/chain');
 //GET // api/Users
 router.get(
   '/:id(\\d+)',
-  requireAuth,
   asyncHandler(async (req, res) => {
     // const user = await User.findOne({
     //   where: {
