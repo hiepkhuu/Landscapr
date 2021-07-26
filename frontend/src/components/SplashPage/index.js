@@ -26,6 +26,9 @@ function SplashPage() {
         <div className='splash-page-container'>
 
           <div className='splash-photo'>
+            <div>
+              <h1>Find your inspiration.</h1>
+            </div>
             <form onSubmit={handleDemoLogin}>
               <button>demo user</button>
             </form>
