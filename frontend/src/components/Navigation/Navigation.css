@@ -12,6 +12,11 @@
   font-weight: 100;
 }
 
+@media screen and (max-width:500px){
+  .navigation-link.explore{
+   visibility: collapse
+  }
+}
 .logo-home{
   display:flex;
 }
@@ -38,8 +43,11 @@
 
 .explore-you-link{
   display: flex;
-  width: 150px;
+  width: auto;
   justify-content: space-around
+}
+.navigation-link.navlink{
+  margin: 0px 10px;
 }
 
 .upload-icon{

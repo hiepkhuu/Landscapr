@@ -24,11 +24,11 @@ function Navigation({ isLoaded }) {
       <>
           <div className='explore-you-link'>
             <div>
-              <NavLink className='navigation-link' to={`/${sessionUser.username}/${sessionUser.id}`}>You</NavLink>
+              <NavLink className='navigation-link navlink' to={`/${sessionUser.username}/${sessionUser.id}`}>You</NavLink>
               {/* <NavLink className='navigation-link' to={`/photos/${sessionUser.username}`}>You</NavLink> */}
             </div>
-            <div>
-              <NavLink className='navigation-link' to="/explore">Explore</NavLink>
+            <div className='navigation-link explore'>
+              <NavLink className='navigation-link navlink' to="/explore">Explore</NavLink>
             </div>
           </div>
 

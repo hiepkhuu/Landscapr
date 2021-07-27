@@ -64,9 +64,9 @@ const Comments = () =>{
       photoId: id
     }
       const newComment = await dispatch(uploadComment(commentData))
-      if (newComment){
-        setComment('')
-      }
+      // if (newComment){
+        await setComment('')
+      // }
     }
 
     const handleEditSubmit = async (e)=>{
@@ -78,11 +78,11 @@ const Comments = () =>{
         id: editedCommentId
       }
         const newComment = await dispatch(editComment(editData))
-        if (newComment){
-          setEditedComment('')
+
+          await setEditedComment('')
           console.log(newComment)
           // history.push(`/photos/${Number(id)}}`)
-        }
+        
       }
 
   const handleDelete = async (e)=>{
@@ -91,6 +91,10 @@ const Comments = () =>{
 
   }
 
+  const handleCancelEdit = async (e) =>{
+    e.preventDefault()
+    await setShowMenu(false)
+  }
 
 
   return(
@@ -117,7 +121,7 @@ const Comments = () =>{
               </form>
               <button  className='edit-icon'hidden={comment.userId !== sessionUser.id} onClick={openMenu}>
                 {/* <i class="far fa-edit"></i> */}
-                
+
               </button>
             </div>
 
@@ -132,7 +136,11 @@ const Comments = () =>{
                       style={{width:200}}
                       ></textarea>
                       <button type='submit' onClick={e=> setEditedCommentId(comment.id)}>submit</button>
+
+                      <button onClick={handleCancelEdit}>Cancel</button>
+
                     </form>
+
                   )}
               </div>
 
