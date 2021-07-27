@@ -120,8 +120,8 @@ const PhotoEditPage = () =>{
                         </div>
                     </form>
                     <div className='photo-description-box'>
-                      <h3>Title: {singlePhoto.title}</h3>
-                      <h3>Description: {singlePhoto.description}</h3>
+                      <h3><span>Title:</span> {singlePhoto.title}</h3>
+                      <h3><span>Description:</span> {singlePhoto.description}</h3>
                     </div>
                     <button className='delete-photo-button' onClick={handleDelete}>Delete Photo</button>
             </div>
