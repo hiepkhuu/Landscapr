@@ -1,6 +1,6 @@
 .profile-dropdown{
   position:absolute;
-  margin: 25px 0px;
+  margin: 10px 0px;
   background-color: white;
   padding: 0px 10px 10px 10px;
   color: black;
@@ -17,12 +17,12 @@
   height:30px
 } */
 .user-headshot-btn{
-  position:absolute;
+  /* position:absolute; */
   background-color: white;
   background-image: url('./images/cellphone-animation-2.jpg');
   height:30px;
   width:30px;
-  margin-top: -15px;
+  margin: 0px 0px 0px 0px;
   background-size: cover;
   border-radius: 50px;
   border:0px;

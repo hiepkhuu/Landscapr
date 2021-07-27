@@ -32,16 +32,17 @@ function Navigation({ isLoaded }) {
             </div>
           </div>
 
-          <div>
+          <div className='cloud-profile-section'>
             {/* <UploadPhotoModal /> */}
             {/* <img src={require('./images/cloud-upload.jpg')}/> */}
             <NavLink className='navigation-link' to="/upload">
               <div className='upload-icon'></div>
             </NavLink>
+            <div>
+                <ProfileButton user={sessionUser} />
+            </div>
           </div>
-          <div>
-            <ProfileButton user={sessionUser} />
-          </div>
+
       </>
     );
     <UserHomePage />
