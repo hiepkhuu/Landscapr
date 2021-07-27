@@ -83,6 +83,7 @@ export const getPhotos = () => async dispatch =>{
   if(response.ok){
     const photos = await response.json();
     dispatch(loadPhotos(photos))
+    return photos;
   }
 }
 
@@ -91,6 +92,7 @@ export const getSinglePhoto = (id) => async dispatch => {
   if(response.ok){
     const photo = await response.json();
     dispatch(loadSinglePhoto(photo))
+    return photo;
   }
 }
 
