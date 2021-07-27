@@ -1,4 +1,5 @@
-/* .photo-edit-page{
+.photo-edit-page{
+  /* margin-top: 150px; */
 
 }
 .edit-redirect-to-homepage{
@@ -8,7 +9,7 @@
 .edit-form-page{
   display: flex;
   width:100%;
-
+  /* justify-content: center; */
 
 }
 
@@ -62,4 +63,4 @@
 }
 .photo-description-box h3{
   font-weight: 100
-} */
+}

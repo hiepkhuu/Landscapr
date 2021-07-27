@@ -3,6 +3,7 @@ import { useHistory, useParams, Redirect, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSinglePhoto } from '../../store/photos';
 import Comments from './Comments.js'
+import EditPhotoModal from '../../context/EditPhotoModal';// for MODAL
 import './PhotoDetail.css'
 import './Comments.css'
 
@@ -50,13 +51,14 @@ const PhotoDetail = () =>{
         <div className='single-photo'>
           <img  src={singlePhoto.imageUrl}></img>
         </div>
-        <div className='btn-edit'>
+        < EditPhotoModal/>
+        {/* <div className='btn-edit'>
             <Link
             className='btn-edit link'
             to={`/edit/${singlePhoto.id}`}
             hidden={singlePhoto.userId !== sessionUser.id}
             >Edit Photo</Link>
-        </div>
+        </div> */}
       </div>
 
       <div className='photo-detail-container'>

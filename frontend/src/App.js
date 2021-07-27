@@ -45,9 +45,9 @@ function App() {
           <Route path={`/photos/:id`}>
             <PhotoDetail />
           </Route>
-          <Route path={`/edit/:id`}>
+          {/* <Route path={`/edit/:id`}>
             <PhotoEditPage />
-          </Route>
+          </Route> */}
           <Route exact path={`/:username/:userId`}>
             <UserHomePage />
           </Route>

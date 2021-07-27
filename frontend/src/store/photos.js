@@ -55,7 +55,7 @@ export const updateSinglePhoto = (data) => async dispatch =>{
   if (response.ok){
     const createdData = await response.json();
     dispatch(updatePhoto(createdData))
-    return createdData
+    // return createdData
   }
 }
 
