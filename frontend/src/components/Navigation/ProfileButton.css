@@ -6,8 +6,10 @@
   color: black;
   border-radius: 2px;
   border: 1px solid black;
+}
 
-
+.logout-link{
+  text-decoration: none;
 }
 /* .user-headshot-btn{
   border-radius: 70px;

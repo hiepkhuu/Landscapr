@@ -9,15 +9,10 @@
 .edit-form-page{
   display: flex;
   width:100%;
-  /* justify-content: center; */
-
 }
-
 
 .edit-form-container{
   margin:0px 0px 0px 20px;
-
-
 }
 .edit-form{
   margin: 30px 0px 30px 0px;
@@ -71,3 +66,4 @@
 .delete-photo-button{
   margin:10px;
 }
+

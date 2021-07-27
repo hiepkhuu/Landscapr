@@ -10,7 +10,7 @@ import ExplorePage from "./components/ExplorePage"
 import UserHomePage from "./components/UserHomePage";
 import PhotoDetail from "./components/PhotoDetail";
 import UpLoadPhoto from "./components/UpLoadPhoto";
-import PhotoEditPage from "./components/PhotoEditPage"
+// import PhotoEditPage from "./components/PhotoEditPage"
 import SplashPage from "./components/SplashPage";
 import Albums from "./components/Albums";
 

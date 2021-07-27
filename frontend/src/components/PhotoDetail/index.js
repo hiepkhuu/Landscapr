@@ -50,8 +50,11 @@ const PhotoDetail = () =>{
         </div>
         <div className='single-photo'>
           <img  src={singlePhoto.imageUrl}></img>
+
         </div>
-        < EditPhotoModal/>
+        <div className='edit-photo-button'>
+          < EditPhotoModal/>
+        </div>
         {/* <div className='btn-edit'>
             <Link
             className='btn-edit link'
