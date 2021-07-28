@@ -84,8 +84,8 @@ const PhotoEditPage = () =>{
           {/* {singlePhoto.map((photo)=>( */}
             <>
                 <div className='edit-form-container'>
-                  <button className='edit-redirect-to-homepage' onClick={redirectToHomepage}>Back To Homepage</button>
-                  <button className='edit-redirect-to-homepage' onClick={redirectToPhotoPage}>Back To Photo Page</button>
+                    <button className='edit-redirect-to-homepage' onClick={redirectToHomepage}>Back To Homepage</button>
+                    <button className='edit-redirect-to-homepage' onClick={redirectToPhotoPage}>Back To Photo Page</button>
 
                     <form className='edit-form' onSubmit={handleSubmit}>
 

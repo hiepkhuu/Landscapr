@@ -44,11 +44,13 @@
 .explore-you-link{
   display: flex;
   width: auto;
-  justify-content: space-around
+  justify-content: space-around;
+  margin-right: 50px;
 }
 .navigation-link.navlink{
   margin: 0px 10px;
 }
+
 
 .upload-icon{
   background-image: url('./images/cloud-upload.jpg');
@@ -60,4 +62,8 @@
 
 .cloud-profile-section{
   display: flex;
+}
+
+.navigation-link.login{
+  margin-right:80px;
 }

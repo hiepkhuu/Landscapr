@@ -52,9 +52,9 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         {/* <LoginFormPage /> */}
-        <NavLink className='navigation-link' to="/login">Log In</NavLink>
+        <NavLink className='navigation-link login' to="/login">Log In</NavLink>
         {/* <LoginFormModal /> */}
-        <NavLink className='navigation-link' to="/signup">Sign Up</NavLink>
+        <NavLink className='navigation-link signup' to="/signup">Sign Up</NavLink>
         {/* <SignupFormModal /> */}
       </>
     );
