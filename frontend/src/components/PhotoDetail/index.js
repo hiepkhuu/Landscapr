@@ -57,6 +57,7 @@ const PhotoDetail = () =>{
       <div className='singlephoto-container'>
         <div className='explore-link'>
           <Link className='explore-link link' to='/explore'>Back to Explore</Link>
+          {/* <Link to={`/photos/${singlePhoto.id - 1}`}> previous </Link> */}
         </div>
         <div className='single-photo'>
           <img  src={singlePhoto.imageUrl}></img>
