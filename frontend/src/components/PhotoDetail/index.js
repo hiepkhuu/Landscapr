@@ -42,6 +42,16 @@ const PhotoDetail = () =>{
     //   history.push(`/${sessionUser.username}/${sessionUser.id}`)
     // }
 
+    let showEditButton;
+    if (singlePhoto.userId === sessionUser.id){
+      showEditButton = (
+        <div className='edit-photo-button' >
+          < EditPhotoModal />
+        </div>
+      )
+    }
+
+
   return (
     <div className='singlephoto-detail-page'>
       <div className='singlephoto-container'>
@@ -52,9 +62,7 @@ const PhotoDetail = () =>{
           <img  src={singlePhoto.imageUrl}></img>
 
         </div>
-        <div className='edit-photo-button'>
-          < EditPhotoModal/>
-        </div>
+        {showEditButton}
         {/* <div className='btn-edit'>
             <Link
             className='btn-edit link'
