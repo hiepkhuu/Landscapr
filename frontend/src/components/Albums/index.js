@@ -90,6 +90,13 @@ const UserAlbums = () => {
                 {/* </a> */}
               </div>
             ))}
+            <button className='user-album-card'>
+                  <div className='album-photo-cover'>add Album</div>
+                  <div className='album-card-info'>
+                    {/* <p>ittle</p>
+                    <p>caption</p> */}
+                  </div>
+            </button>
          </div>
       </div>
     </div>

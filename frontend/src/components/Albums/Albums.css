@@ -60,3 +60,6 @@
   vertical-align: bottom;
   border-radius: 1px;
 }
+.user-album-card:hover{
+  cursor: pointer;
+}
