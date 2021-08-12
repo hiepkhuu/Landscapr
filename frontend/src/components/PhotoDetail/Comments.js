@@ -4,22 +4,23 @@ import { useSelector, useDispatch } from 'react-redux';
 import './Comments.css';
 import { getComments, editComment ,uploadComment, deleteComment} from '../../store/comments'
 // import CommentEditModal from '../../context/CommentEditModal';// for MODAL
+import EditCommentModal from '../../context/EditCommentModal';// for MODAL
 
 const Comments = () =>{
   const dispatch = useDispatch();
   const history = useHistory()
   const sessionUser = useSelector(state => state.session.user);
 
-  const [comment, setComment]= useState('')
+  const [comment, setComment] = useState('')
   const [commentToDeleteId, setCommentToDeleteId] = useState('')
-  const [editedComment, setEditedComment] = useState('')
-  const [editedCommentId, setEditedCommentId] = useState('')
-  const [showMenu, setShowMenu] = useState(false);
+  // const [editedComment, setEditedComment] = useState('')
+  // const [editedCommentId, setEditedCommentId] = useState('')
+  // const [showMenu, setShowMenu] = useState(false);
 
-  const openMenu = () => {
-    if (showMenu) return;
-    setShowMenu(true);
-  };
+  // const openMenu = () => {
+  //   if (showMenu) return;
+  //   setShowMenu(true);
+  // };
 
   let {id} = useParams()
   id = Number(id)
@@ -36,17 +37,17 @@ const Comments = () =>{
   useEffect(()=>{
     dispatch(getComments(id))
 
-    if (!showMenu) return;
+    // if (!showMenu) return;
 
-    const closeMenu = () => {
-      setShowMenu(false);
-    };
+    // const closeMenu = () => {
+    //   setShowMenu(false);
+    // };
 
-    document.addEventListener('submit', closeMenu);
+    // document.addEventListener('submit', closeMenu);
 
-    return () => document.removeEventListener("click", closeMenu);
-  }, [dispatch,id, showMenu])
-
+    // return () => document.removeEventListener("click", closeMenu);
+  }, [dispatch,id])
+  // [dispatch,id, showMenu]
 
   if(!comments) return null;
 
@@ -69,21 +70,21 @@ const Comments = () =>{
       // }
     }
 
-    const handleEditSubmit = async (e)=>{
-      e.preventDefault();
-      const editData = {
-        comment: editedComment,
-        userId: sessionUser.id,
-        photoId: id,
-        id: editedCommentId
-      }
-        const newComment = await dispatch(editComment(editData))
+    // const handleEditSubmit = async (e)=>{
+    //   e.preventDefault();
+    //   const editData = {
+    //     comment: editedComment,
+    //     userId: sessionUser.id,
+    //     photoId: id,
+    //     id: editedCommentId
+    //   }
+    //     const newComment = await dispatch(editComment(editData))
 
-          await setEditedComment('')
-          console.log(newComment)
-          // history.push(`/photos/${Number(id)}}`)
-        
-      }
+    //       await setEditedComment('')
+    //       console.log(newComment)
+    //       // history.push(`/photos/${Number(id)}}`)
+
+    //   }
 
   const handleDelete = async (e)=>{
     e.preventDefault()
@@ -91,10 +92,10 @@ const Comments = () =>{
 
   }
 
-  const handleCancelEdit = async (e) =>{
-    e.preventDefault()
-    await setShowMenu(false)
-  }
+  // const handleCancelEdit = async (e) =>{
+  //   e.preventDefault()
+  //   await setShowMenu(false)
+  // }
 
 
   return(
@@ -119,13 +120,14 @@ const Comments = () =>{
 
                 </div>
               </form>
-              <button  className='edit-icon'hidden={comment.userId !== sessionUser.id} onClick={openMenu}>
+              < EditCommentModal comment={comment} id={id} />
+              {/* <button  className='edit-icon'hidden={comment.userId !== sessionUser.id} onClick={openMenu}> */}
                 {/* <i class="far fa-edit"></i> */}
 
-              </button>
+              {/* </button> */}
             </div>
 
-              <div className='edit-form-container'>
+              {/* <div className='edit-form-container'>
                   {showMenu && (
                     <form className='comment-edit-form' onSubmit={handleEditSubmit} hidden={comment.userId !== sessionUser.id}>
                       <textarea
@@ -142,7 +144,7 @@ const Comments = () =>{
                     </form>
 
                   )}
-              </div>
+              </div> */}
 
           </div>
           </div>

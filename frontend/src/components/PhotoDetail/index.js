@@ -1,55 +1,56 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useHistory, useParams, Redirect, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSinglePhoto } from '../../store/photos';
 import Comments from './Comments.js'
 import EditPhotoModal from '../../context/EditPhotoModal';// for MODAL
+
 import './PhotoDetail.css'
 import './Comments.css'
 
 
-const PhotoDetail = () =>{
-    const dispatch = useDispatch();
-    const history = useHistory();
-    const { id } = useParams();
+const PhotoDetail = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const { id } = useParams();
 
-    const sessionUser = useSelector(state => state.session.user)
-    const singlePhoto = useSelector(state => state.photos[id]);
-    // const photo = useSelector(state => {
-    //   return Object.values(state.photos)
-    // })
+  const sessionUser = useSelector(state => state.session.user)
+  const singlePhoto = useSelector(state => state.photos[id]);
+  // const photo = useSelector(state => {
+  //   return Object.values(state.photos)
+  // })
 
-    useEffect(()=>{
-      dispatch(getSinglePhoto(id))
-    },[dispatch])
+  useEffect(() => {
+    dispatch(getSinglePhoto(id))
+  }, [dispatch])
 
-    if (!sessionUser) {
-      return (
-        <Redirect to='/login' />
-      )
-    }
+  if (!sessionUser) {
+    return (
+      <Redirect to='/login' />
+    )
+  }
 
 
-    if(!singlePhoto){
-      return null;
-    }
+  if (!singlePhoto) {
+    return null;
+  }
 
-    const directToEditPage = () =>{
-      history.push(`/edit/${singlePhoto.id}`)
-    }
+  const directToEditPage = () => {
+    history.push(`/edit/${singlePhoto.id}`)
+  }
 
-    // const redirectToHomepage = () =>{
-    //   history.push(`/${sessionUser.username}/${sessionUser.id}`)
-    // }
+  // const redirectToHomepage = () =>{
+  //   history.push(`/${sessionUser.username}/${sessionUser.id}`)
+  // }
 
-    let showEditButton;
-    if (singlePhoto.userId === sessionUser.id){
-      showEditButton = (
-        <div className='edit-photo-button' >
-          < EditPhotoModal />
-        </div>
-      )
-    }
+  let showEditButton;
+  if (singlePhoto.userId === sessionUser.id) {
+    showEditButton = (
+      <div className='edit-photo-button' >
+        < EditPhotoModal />
+      </div>
+    )
+  }
 
 
   return (
@@ -60,7 +61,7 @@ const PhotoDetail = () =>{
           {/* <Link to={`/photos/${singlePhoto.id - 1}`}> previous </Link> */}
         </div>
         <div className='single-photo'>
-          <img  src={singlePhoto.imageUrl}></img>
+          <img src={singlePhoto.imageUrl}></img>
 
         </div>
         {showEditButton}
@@ -75,27 +76,21 @@ const PhotoDetail = () =>{
 
       <div className='photo-detail-container'>
         <div className='photo-details'>
-            <div className='details-header'>
+          <div className='details-header'>
 
-              <div>
-                <Link className='user-link-header' to={`/${singlePhoto.User?.username}/${singlePhoto.userId}`}>{singlePhoto.User?.username}</Link>
-              </div>
-              <div>
-                <h4 className='photo-title'>{singlePhoto.title}</h4>
-              </div>
-              <div>
-                <p className='photo-description'>{singlePhoto.description}</p>
-              </div>
+            <div>
+              <Link className='user-link-header' to={`/${singlePhoto.User?.username}/${singlePhoto.userId}`}>{singlePhoto.User?.username}</Link>
             </div>
-            {/* <button
-            onClick={directToEditPage}
-            >Edit Photo</button>
-            <button
-            onClick={redirectToHomepage}
-            >Back to Homepage</button> */}
-            <div className='comment-container'>
-              <Comments />
+            <div>
+              <h4 className='photo-title'>{singlePhoto.title}</h4>
             </div>
+            <div>
+              <p className='photo-description'>{singlePhoto.description}</p>
+            </div>
+          </div>
+          <div className='comment-container'>
+            <Comments />
+          </div>
         </div>
       </div>
 
