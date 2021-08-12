@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Redirect, useHistory } from 'react-router-dom';
 
 import { getSinglePhoto, removeSinglePhoto, updateSinglePhoto } from '../../store/photos';
-
+// import {setShowModal} from './index'
 
 // import './EditPhoto.css'
 
@@ -21,7 +21,7 @@ const PhotoEditPage = () =>{
     return Object.values(state.photos)
   })
   singlePhoto = singlePhoto[0]
-  console.log('######', singlePhoto)
+  // console.log('######', singlePhoto)
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -47,13 +47,13 @@ const PhotoEditPage = () =>{
       description,
       userId: sessionUser.id
     }
-    const editedPhoto = await dispatch(updateSinglePhoto(photoData))
-
+    // const editedPhoto = await dispatch(updateSinglePhoto(photoData))
+    await dispatch(updateSinglePhoto(photoData))
 
         await setTitle('');
         await setDescription('');
-
-        history.push(`/edit/${id}`)
+        setShowModal(false)
+        // history.push(`/photos/${id}`)
 
 
   }
