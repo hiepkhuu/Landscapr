@@ -80,9 +80,10 @@ if(!comments) return null;
                           <textarea
                           placeholder={comment.comment}
                           type='textarea'
+                          rows='4'
                           value={editedComment.comment}
                           onChange={e => setEditedComment(e.target.value)}
-                          style={{width:200}}
+
                           />
                           <button type='submit' onClick={e=> setEditedCommentId(comment.id)}>submit</button>
 

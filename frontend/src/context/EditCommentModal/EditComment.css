@@ -1,9 +1,18 @@
+.edit-form-container{
+  padding: 15px;
+  width:300px;
+  scroll-behavior: auto;
+}
+
 .comment-edit-form{
   display: flex;
   flex-direction: column;
+  height: 50%;
+  width: 90%;
+  
 
 }
 .comment-edit-form button{
   align-self: flex-end;
-  width:65px;
+  width:80px;
 }
