@@ -18,6 +18,8 @@ const EditCommentModal = ()=> {
 
   const filteredComments = comments.filter(comment => comment.photoId === id)
 
+  const comment = useSelector(state => state.comments[id])
+
   const [showModal, setShowModal] = useState(false);
   const [editedComment, setEditedComment] = useState('')
   const [editedCommentId, setEditedCommentId] = useState('')
@@ -76,7 +78,7 @@ if(!comments) return null;
                         <h3>Edit Comment!</h3>
                         <form className='comment-edit-form' onSubmit={handleEditSubmit}  >
                           <textarea
-                          placeholder='comment'
+                          placeholder={comment.comment}
                           type='textarea'
                           value={editedComment.comment}
                           onChange={e => setEditedComment(e.target.value)}

@@ -46,15 +46,7 @@
 .modify-section{
   display:flex;
 }
-.comment-edit-form{
-  display: flex;
-  flex-direction: column;
 
-}
-.comment-edit-form button{
-  align-self: flex-end;
-  width:65px;
-}
 .edit-icon{
   background-image: url('./images/edit.png');
   height:20px;

@@ -1,0 +1,9 @@
+.comment-edit-form{
+  display: flex;
+  flex-direction: column;
+
+}
+.comment-edit-form button{
+  align-self: flex-end;
+  width:65px;
+}
