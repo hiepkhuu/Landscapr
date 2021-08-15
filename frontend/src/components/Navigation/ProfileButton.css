@@ -1,11 +1,18 @@
 .profile-dropdown{
   position:absolute;
   margin: 10px 0px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 0px 10px 10px 10px;
   color: black;
   border-radius: 2px;
   border: 1px solid black;
+ 
+}
+
+.profile-dropdown-container{
+  background-color: white;
+  opacity: 1 !important;
+  z-index: 7;
 }
 
 .logout-link{
@@ -26,6 +33,7 @@
   background-size: cover;
   border-radius: 50px;
   border:0px;
+  opacity: 1 !important;
 
 }
 /* .triangle-dropdown{

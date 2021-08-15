@@ -37,7 +37,7 @@ function ProfileButton({ user }) {
     <>
       <button className="user-headshot-btn" onClick={openMenu}></button>
       {showMenu && (
-        <div>
+        <div className="profile-dropdown-container">
           {/* <div className='triangle-dropdown'>hello</div> */}
           <div className="profile-dropdown">
             <p>{user.username}</p>

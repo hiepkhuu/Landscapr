@@ -39,10 +39,14 @@
   display:flex;
   justify-content: center;
   align-items: center;
-  color:rgb(168, 167, 167)
+  color:rgb(168, 167, 167);
 
 }
+.album-photo-cover:hover{
+  cursor: not-allowed
+}
 .user-album-card:last-child{
+  text-decoration: none;
 
 }
 
