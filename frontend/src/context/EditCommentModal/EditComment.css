@@ -9,10 +9,16 @@
   flex-direction: column;
   height: 50%;
   width: 90%;
-  
+
 
 }
 .comment-edit-form button{
   align-self: flex-end;
   width:80px;
+}
+
+.comment-edit-form button:hover{
+  background-color: rgb(45, 112, 42);
+  border-color: rgb(45, 112, 42);
+  color:white
 }
