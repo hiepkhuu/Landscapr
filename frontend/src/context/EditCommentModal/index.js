@@ -7,7 +7,7 @@ import { editComment } from '../../store/comments';
 
 const EditPhotoModal = (comment,id)=> {
   const dispatch = useDispatch();
-  console.log('#####3', comment)
+  // console.log('#####3', comment)
   // let {id} = useParams();
   // id = Number(id)
 
@@ -59,7 +59,7 @@ const EditPhotoModal = (comment,id)=> {
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
            <div className='edit-form-container'>
-                    <form className='comment-edit-form' onSubmit={handleEditSubmit}>
+                    <form className='comment-edit-form' onSubmit={handleEditSubmit}  hidden={comment.userId !== sessionUser.id}>
                       <textarea
                       placeholder=''
                       type='textarea'

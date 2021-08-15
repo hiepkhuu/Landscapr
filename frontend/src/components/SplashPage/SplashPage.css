@@ -15,7 +15,7 @@
   flex-direction: column;
   align-items: center;
 
-  animation: slide 20s infinite;
+  animation: slide 25s infinite;
 }
 
 @keyframes slide {
