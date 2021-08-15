@@ -18,12 +18,13 @@ function EditPhotoModal() {
     return Object.values(state.photos)
   })
   singlePhoto = singlePhoto[0]
+
+  const photo = useSelector(state => state.photos[id])
   // console.log('######', singlePhoto)
 
-
   const [showModal, setShowModal] = useState(false);
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+  const [title, setTitle] = useState( photo.title || '');
+  const [description, setDescription] = useState(photo.description || '');
 
   useEffect(() => {
     dispatch(getSinglePhoto(id))

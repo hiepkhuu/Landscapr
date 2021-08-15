@@ -73,9 +73,10 @@ if(!comments) return null;
           {showModal && (
             <Modal>
               <div className='edit-form-container'>
+                        <h3>Edit Comment!</h3>
                         <form className='comment-edit-form' onSubmit={handleEditSubmit}  >
                           <textarea
-                          placeholder=''
+                          placeholder='comment'
                           type='textarea'
                           value={editedComment.comment}
                           onChange={e => setEditedComment(e.target.value)}
