@@ -78,14 +78,14 @@
   background-color: rgb(231, 228, 228);
   padding:10px;
   border-radius: 3px;
-  margin:0px 10px;
+  /* margin:0px 10px; */
 }
 
 .user-link-header{
   margin: 10px 0px 5px 0px;
-  font-weight: 300;
+  font-weight: 600;
   font-size: 19px;
-
+  color: rgb(14, 70, 255);
   text-decoration: none;
 }
 
@@ -95,7 +95,7 @@
 
 .photo-title{
   font-size: 17px;
-  font-weight: 200;
+  font-weight: 500;
   margin: 10px 0px;
 }
 
