@@ -1,28 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { Modal } from '../../context/Modal';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect} from 'react-router-dom';
+import { Redirect, useHistory, useParams} from 'react-router-dom';
 
-import { editComment } from '../../store/comments';
+import { editComment, getComments } from '../../store/comments';
 
-const EditPhotoModal = (comment,id)=> {
+const EditCommentModal = ()=> {
   const dispatch = useDispatch();
-  // console.log('#####3', comment)
-  // let {id} = useParams();
-  // id = Number(id)
+  const history = useHistory();
+  let {id} = useParams();
+  id = Number(id)
 
   const sessionUser = useSelector(state => state.session.user)
+  const comments = useSelector(state => {
+    return Object.values(state.comments)
+  })
 
-
+  const filteredComments = comments.filter(comment => comment.photoId === id)
 
   const [showModal, setShowModal] = useState(false);
   const [editedComment, setEditedComment] = useState('')
   const [editedCommentId, setEditedCommentId] = useState('')
 
-  // useEffect(() => {
-  //   dispatch(getComments(id))
 
-  // }, [dispatch, id])
+
+  useEffect(() => {
+    dispatch(editComment(id))
+    dispatch(getComments(id))
+}, [dispatch, id, sessionUser.id, editedComment])
+
+if(!comments) return null;
 
   if (!sessionUser) {
     return (
@@ -34,50 +41,58 @@ const EditPhotoModal = (comment,id)=> {
 
   const handleEditSubmit = async (e) =>{
     e.preventDefault();
-      const editData = {
-        comment: editedComment,
-        userId: sessionUser.id,
-        photoId: id,
-        id: editedCommentId
-      }
-        const newComment = await dispatch(editComment(editData))
+    const editData = {
+      id: editedCommentId,
+      content: editedComment
+    }
+      // const editData = {
+      //   comment: editedComment,
+      //   userId: sessionUser.id,
+      //   photoId: id,
+      //   id: editedCommentId
+      // }
+        await dispatch(editComment(editData))
 
-          await setEditedComment('')
-          console.log(newComment)
-          // history.push(`/photos/${Number(id)}}`)
+        history.push(`/photos/${id}`)
+
           setShowModal(false)
       }
 
   const handleCancelEdit = async (e) =>{
     e.preventDefault()
+    history.push(`/photos/${id}`)
     await setShowModal(false)
   }
 
   return (
     <>
-      <button className='edit-icon' onClick={() => setShowModal(true)} ></button>
-      {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-           <div className='edit-form-container'>
-                    <form className='comment-edit-form' onSubmit={handleEditSubmit}  hidden={comment.userId !== sessionUser.id}>
-                      <textarea
-                      placeholder=''
-                      type='textarea'
-                      value={editedComment}
-                      onChange={e => setEditedComment(e.target.value)}
-                      style={{width:200}}
-                      ></textarea>
-                      <button type='submit' onClick={e=> setEditedCommentId(comment.id)}>submit</button>
+    {filteredComments?.map((comment)=>(
+      <div hidden={comment.userId !== sessionUser.id}>
+          <button className='edit-icon' onClick={() => setShowModal(true)} ></button>
+          {showModal && (
+            <Modal onClose={() => setShowModal(false)}>
+              <div className='edit-form-container'>
+                        <form className='comment-edit-form' onSubmit={handleEditSubmit}  hidden={comment.userId !== sessionUser.id}>
+                          <textarea
+                          placeholder=''
+                          type='textarea'
+                          value={editedComment}
+                          onChange={e => setEditedComment(e.target.value)}
+                          style={{width:200}}
+                          ></textarea>
+                          <button type='submit' onClick={e=> setEditedCommentId(comment.id)}>submit</button>
 
-                      <button onClick={handleCancelEdit}>Cancel</button>
+                          <button onClick={handleCancelEdit}>Cancel</button>
 
-                    </form>
+                        </form>
 
-              </div>
-        </Modal>
-      )}
+                  </div>
+            </Modal>
+          )}
+       </div>
+    ))}
     </>
   );
 }
 
-export default EditPhotoModal;
+export default EditCommentModal;
