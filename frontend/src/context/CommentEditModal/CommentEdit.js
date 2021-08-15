@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useHistory, Redirect } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux'
-import { getSinglePhoto, uploadPhoto } from '../../store/photos';
+// import React, { useState, useEffect } from 'react';
+// import { Link, useHistory, Redirect } from 'react-router-dom';
+// import { useDispatch, useSelector } from 'react-redux'
+// import { getSinglePhoto, uploadPhoto } from '../../store/photos';
 
 
-// userId: 1,
+// // userId: 1,
 // locationId: null,
 // imageUrl: 'https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
 // title: 'Title for Photo',
 // description: 'This is photo description',
 
-function editComment() {
+// function editComment() {
   // const dispatch = useDispatch();
   // const history = useHistory();
   // const sessionUser = useSelector((state) => state.session.user);
@@ -44,8 +44,8 @@ function editComment() {
   // }
 
 
-  return (
-      null
+  // return (
+  //     null
   //   <div className='upload-form-page'>
 
   //     <div className='upload-form-contaner'>
@@ -106,8 +106,8 @@ function editComment() {
   //     </div>
   //     {banana}
   //   </div>
-  )
-}
+//   )
+// }
 
 
-export default editComment;
+// export default editComment;

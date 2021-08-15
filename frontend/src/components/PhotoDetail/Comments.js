@@ -113,14 +113,8 @@ const Comments = () =>{
                 <button className='trash-icon' type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>
                 {/* <i class="fas fa-trash-alt"></i> */}
                 </button>
-
-                {/* <CommentEditModal /> */}
-                {/* <EditSingleComment /> */}
-                <div>
-
-                </div>
               </form>
-              < EditCommentModal comment={comment} id={id} />
+              < EditCommentModal />
               {/* <button  className='edit-icon'hidden={comment.userId !== sessionUser.id} onClick={openMenu}> */}
                 {/* <i class="far fa-edit"></i> */}
 
