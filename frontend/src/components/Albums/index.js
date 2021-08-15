@@ -92,7 +92,9 @@ const UserAlbums = () => {
             ))}
             <Link className='user-album-card'>
                   {/* <div className='plus'>+</div> */}
-                  <div className='album-photo-cover'><span>+</span>add Album</div>
+                  <div className='album-photo-cover'>
+                    <span>+ add Album</span>
+                    </div>
                   <div className='album-card-info'>
                     {/* <p>ittle</p>
                     <p>caption</p> */}

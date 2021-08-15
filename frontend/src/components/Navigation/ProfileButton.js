@@ -40,7 +40,7 @@ function ProfileButton({ user }) {
         <div className="profile-dropdown-container">
           {/* <div className='triangle-dropdown'>hello</div> */}
           <div className="profile-dropdown">
-            <p>{user.username}</p>
+            <Link className='user-link' to={`/${user?.username}/${user.id}`}>{user?.username}</Link>
             <p>{user.email}</p>
             <div>
               <button onClick={logout}>
