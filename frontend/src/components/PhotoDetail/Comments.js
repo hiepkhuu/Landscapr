@@ -64,7 +64,7 @@ const Comments = () =>{
       userId: sessionUser.id,
       photoId: id
     }
-      const newComment = await dispatch(uploadComment(commentData))
+      await dispatch(uploadComment(commentData))
       // if (newComment){
         await setComment('')
       // }
@@ -109,37 +109,15 @@ const Comments = () =>{
           <div className='comment-content'>
             <p>{comment.comment}</p>
             <div className='modify-section'>
-              <form onSubmit={handleDelete} hidden={comment.userId !== sessionUser.id}>
-                <button className='trash-icon' type='submit' onClick={e=> setCommentToDeleteId(comment.id)}>
-                {/* <i class="fas fa-trash-alt"></i> */}
-                </button>
-              </form>
-              < EditCommentModal />
-              {/* <button  className='edit-icon'hidden={comment.userId !== sessionUser.id} onClick={openMenu}> */}
-                {/* <i class="far fa-edit"></i> */}
-
-              {/* </button> */}
+              <div>
+                <form onSubmit={handleDelete} hidden={comment.userId !== sessionUser.id}>
+                  <button className='trash-icon' type='submit' onClick={e=> setCommentToDeleteId(comment.id)}></button>
+                </form>
+              </div>
+              <div hidden={comment.userId !== sessionUser.id}>
+                  < EditCommentModal />
+              </div>
             </div>
-
-              {/* <div className='edit-form-container'>
-                  {showMenu && (
-                    <form className='comment-edit-form' onSubmit={handleEditSubmit} hidden={comment.userId !== sessionUser.id}>
-                      <textarea
-                      placeholder=''
-                      type='textarea'
-                      value={editedComment}
-                      onChange={e => setEditedComment(e.target.value)}
-                      style={{width:200}}
-                      ></textarea>
-                      <button type='submit' onClick={e=> setEditedCommentId(comment.id)}>submit</button>
-
-                      <button onClick={handleCancelEdit}>Cancel</button>
-
-                    </form>
-
-                  )}
-              </div> */}
-
           </div>
           </div>
         ))}

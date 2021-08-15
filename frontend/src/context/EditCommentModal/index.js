@@ -43,7 +43,7 @@ if(!comments) return null;
     e.preventDefault();
     const editData = {
       id: editedCommentId,
-      content: editedComment
+      comment: editedComment
     }
       // const editData = {
       //   comment: editedComment,
@@ -66,20 +66,21 @@ if(!comments) return null;
 
   return (
     <>
+    <button className='edit-icon' text='Edit Comment' onClick={() => {setShowModal(true)}} ></button>
     {filteredComments?.map((comment)=>(
       <div hidden={comment.userId !== sessionUser.id}>
-          <button className='edit-icon' onClick={() => setShowModal(true)} ></button>
+
           {showModal && (
-            <Modal onClose={() => setShowModal(false)}>
+            <Modal>
               <div className='edit-form-container'>
-                        <form className='comment-edit-form' onSubmit={handleEditSubmit}  hidden={comment.userId !== sessionUser.id}>
+                        <form className='comment-edit-form' onSubmit={handleEditSubmit}  >
                           <textarea
                           placeholder=''
                           type='textarea'
-                          value={editedComment}
+                          value={editedComment.comment}
                           onChange={e => setEditedComment(e.target.value)}
                           style={{width:200}}
-                          ></textarea>
+                          />
                           <button type='submit' onClick={e=> setEditedCommentId(comment.id)}>submit</button>
 
                           <button onClick={handleCancelEdit}>Cancel</button>
