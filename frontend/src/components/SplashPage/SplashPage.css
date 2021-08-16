@@ -42,14 +42,15 @@
   font-size: 4rem;
   font-weight: 500;
   margin: 0px;
+  text-shadow: rgb(65, 65, 65) 1px 0 10px;
 
 
 }
 .splash-photo div{
-  background-color: rgb(75, 73, 73);
-  opacity: 0.5;
+  /* background-color: rgb(75, 73, 73); */
+  /* opacity: 0.5; */
   height:auto;
-  padding:10px 20px;
+  padding:5px 10px;
   margin-bottom: 5px;
   border-radius: 5px;
 }
@@ -58,4 +59,17 @@
   height: 40px;
   width: 130px;
   font-size: large;
+  opacity:0.8;
+  background-color:rgb(127, 169, 177);
+  border:rgb(127, 169, 177);
+  border-radius: 10px;
+  box-shadow: rgb(65, 65, 65) 1px 0 10px;
+  color:white
+}
+.splash-page-container button:hover{
+  background-color: rgb(111, 148, 155);
+  border: rgb(111, 148, 155);
+  opacity: 0.8;
+  color: white;
+
 }
