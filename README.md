@@ -1,19 +1,19 @@
-# Welcome to Campr! 🚙
+# Welcome to Landscapr!
 
-Campr is a web clone inspired by Flickr, where campers can document their trips and take photos of all things camp related.
-This project uses Express, React, JS and Redux.
+Landscapr is a web clone inspired by Flickr, where users can capture the beautiful and sentimental landscapes wherever they go. The view is so mesmerizing you won't stop scrolling. 
+
 
 ## Technology
-  - Express
-  - REact
-  - Redux
-  - Javascript
+  - Key Language: Javascript
+  - backend: Express + authentication
+  - Frontend: React & Redux
+ 
 
 ## Key Feactures (MVP)
-   - Users may sign-in, sign-up or log-out of their accounts
-   - Users may also upload their photos as well as delete them
-   - Users may create comments and delete them
-   - Once signed in, users will have their own homepage which includes their ExplorerPhotoStream and albums
+   - User Features: Users may sign-in, sign-up or log-out of their accounts
+   - Photo Features: Users may upload their photos, edit title/description, and delete photo
+   - Comment Features: Users may create, edit and delete comments made on other's photos
+   - Additional User Features: Users will have their own homepage which includes their info and PhotoStream
 
 
 ## Project Design
@@ -23,10 +23,11 @@ This project uses Express, React, JS and Redux.
 
 
 ## Coming Soon - Features/MVP
+  - Creating Albums
+  - Favorite photos
+  - AWS Uploa
   - tags
   - Following and liking users
-  - Favorite photos
   - View photos by category
-  - AWS Upload
-  - Google Maps
+  - photo location on a map
 
