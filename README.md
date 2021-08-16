@@ -8,6 +8,10 @@ Landscapr is a web clone inspired by Flickr, where users can capture the beautif
   - Javascript | HTML | CSS | React | Redux | Heroku Hosting | AJAX
   ### Back End
   - Express | Express Validation | Sequelize | PostgreSQL | CSURF 
+  ### Additions
+  - Authentication: uses password hash and bcrypt library
+  - CSRF Protection against csrf attacks
+ 
  
 ## Live Site => https://land-scapr.herokuapp.com/ 
   ![image](https://user-images.githubusercontent.com/78452452/129506165-c95a6280-d49c-4989-a398-89f6fa326254.png)
@@ -36,7 +40,7 @@ Landscapr is a web clone inspired by Flickr, where users can capture the beautif
    ![image](https://user-images.githubusercontent.com/78452452/129505233-ad6e9c41-8763-4965-82f4-367c6560d125.png)
 
 
-## Coming Soon - Features/MVP
+## Future Goals - Features/MVP
   - Creating Albums
   - Favorite photos
   - AWS Uploa
