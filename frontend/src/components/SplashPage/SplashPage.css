@@ -42,7 +42,7 @@
   font-size: 4rem;
   font-weight: 500;
   margin: 0px;
-  text-shadow: rgb(65, 65, 65) 1px 0 10px;
+  text-shadow: rgb(53, 53, 53) 1px 0 10px;
 
 
 }
@@ -63,7 +63,8 @@
   background-color:rgb(127, 169, 177);
   border:rgb(127, 169, 177);
   border-radius: 10px;
-  box-shadow: rgb(65, 65, 65) 1px 0 10px;
+  box-shadow: rgb(53, 53, 53) 1px 0 8px;
+  text-shadow: rgb(14, 14, 14) 1px 0 2px;
   color:white
 }
 .splash-page-container button:hover{
