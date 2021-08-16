@@ -17,7 +17,7 @@ Landscapr is a web clone inspired by Flickr, where users can capture the beautif
 
 
 ## Project Design
-![image](https://user-images.githubusercontent.com/78452452/122804242-812e3980-d27c-11eb-9e73-f68d6851a915.png)
+![image](https://user-images.githubusercontent.com/78452452/129505233-ad6e9c41-8763-4965-82f4-367c6560d125.png)
 
 
 
