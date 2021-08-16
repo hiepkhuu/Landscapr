@@ -3,16 +3,13 @@
 Landscapr is a web clone inspired by Flickr, where users can capture the beautiful and sentimental landscapes wherever they go. The view is so mesmerizing you won't stop scrolling.
 
 
-## Technology
-  - Key Language: Javascript
-  - backend: Express with authentication
-  - Frontend: React, Redux & AJAX
-
-
-   
+## Technologies
+  ### Front End
+  - Javascript | HTML | CSS | React | Redux | Heroku Hosting | AJAX
+  ### Back End
+  - Express | Express Validation | Sequelize | PostgreSQL | CSURF 
  
-## Live Site
-  https://land-scapr.herokuapp.com/
+## Live Site ==> https://land-scapr.herokuapp.com/ <==
   ![image](https://user-images.githubusercontent.com/78452452/129506165-c95a6280-d49c-4989-a398-89f6fa326254.png)
   ![image](https://user-images.githubusercontent.com/78452452/129506449-60c471b7-e0ec-47b1-9293-cb57f0474871.png)
 
