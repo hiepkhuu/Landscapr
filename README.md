@@ -1,32 +1,51 @@
-# Welcome to Campr! 🚙
+# Welcome to Landscapr!
 
-Campr is a web clone inspired by Flickr, where campers can document their trips and take photos of all things camp related.
-This project uses Express, React, JS and Redux.
+Landscapr is a web clone inspired by Flickr, where users can capture the beautiful and sentimental landscapes wherever they go. The view is so mesmerizing you won't stop scrolling.
 
-## Technology
-  - Express
-  - REact
-  - Redux
-  - Javascript
 
+## Technologies
+  ### Front End
+  - Javascript | HTML | CSS | React | Redux | Heroku Hosting | AJAX
+  ### Back End
+  - Express | Express Validation | Sequelize | PostgreSQL | CSURF 
+  ### Additions
+  - Authentication: uses password hash and bcrypt library
+  - CSRF Protection against csrf attacks
+ 
+ 
+## [Live Site](https://land-scapr.herokuapp.com/) 
+  ![image](https://user-images.githubusercontent.com/78452452/129506165-c95a6280-d49c-4989-a398-89f6fa326254.png)
+  ![image](https://user-images.githubusercontent.com/78452452/129506449-60c471b7-e0ec-47b1-9293-cb57f0474871.png)
+
+ 
 ## Key Feactures (MVP)
-   - Users may sign-in, sign-up or log-out of their accounts
-   - Users may also upload their photos as well as delete them
-   - Users may create comments and delete them
-   - Once signed in, users will have their own homepage which includes their ExplorerPhotoStream and albums
+   ### User Features: 
+          - Users may sign-in, sign-up or log-out of their accounts
+   ![image](https://user-images.githubusercontent.com/78452452/129507228-d32f9791-1580-418d-b772-e8354e669338.png)
+
+   ### Additional User Features: 
+          - Users will have their own homepage which includes their info and PhotoStream
+   ![image](https://user-images.githubusercontent.com/78452452/129506642-6f05114e-e181-4faf-ac02-79d5ffac1716.png)
+   
+   ### Photo Features: 
+          - Users may upload their photos, edit title/description, and delete photo
+          - The usage of Modal is prevalent throughout to give a modern feel
+   ![image](https://user-images.githubusercontent.com/78452452/129506875-7a666c97-9d16-4eca-bd5f-fd26f66cfb0f.png)
+
+   ### Comment Features: 
+          - Users may create, edit and delete comments made on other's photos
+   ![image](https://user-images.githubusercontent.com/78452452/129507024-70fb387b-4ef6-4dab-a68d-37e05bd7f810.png)
+
+## Database Schema
+   ![image](https://user-images.githubusercontent.com/78452452/129505233-ad6e9c41-8763-4965-82f4-367c6560d125.png)
 
 
-## Project Design
-![image](https://user-images.githubusercontent.com/78452452/122804242-812e3980-d27c-11eb-9e73-f68d6851a915.png)
-
-
-
-
-## Coming Soon - Features/MVP
+## Future Goals - Features/MVP
+  - Creating Albums
+  - Favorite photos
+  - AWS Uploa
   - tags
   - Following and liking users
-  - Favorite photos
   - View photos by category
-  - AWS Upload
-  - Google Maps
+  - photo location on a map
 
