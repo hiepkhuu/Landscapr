@@ -115,6 +115,28 @@ const PhotoDetail = () => {
               <p className='photo-description'>{singlePhoto.description}</p>
             </div>
           </div>
+          {/* <div className='photo-stats-column'>
+          <div className='photo-stats'>
+            <span>0</span>
+            <p>faves</p>
+
+          </div>
+          <div className='photo-stats-comments'>
+            <span>{numberOfComments}</span>
+            <p>comments</p>
+
+          </div>
+
+          <div>
+            <span>Taken on <span>{convertDateToReadable(singlePhoto.createdAt)}</span></span>
+            <div className='allrights'>
+              <img  src={allRightsReserved}></img>
+              <p className="trade-mark">  All Rights Reserved</p>
+            </div>
+
+          </div>
+
+        </div> */}
           <div className='comment-container'>
             <Comments />
           </div>
