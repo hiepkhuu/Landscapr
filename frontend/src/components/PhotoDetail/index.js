@@ -104,39 +104,44 @@ const PhotoDetail = () => {
       <div className='photo-detail-container'>
         <div className='photo-details'>
           <div className='details-header'>
-
             <div>
-              <Link className='user-link-header' to={`/${singlePhoto.User?.username}/${singlePhoto.userId}`}>{singlePhoto.User?.username}</Link>
+                <div>
+                  <Link className='user-link-header' to={`/${singlePhoto.User?.username}/${singlePhoto.userId}`}>{singlePhoto.User?.username}</Link>
+                </div>
+                <div>
+                  <h4 className='photo-title'>{singlePhoto.title}</h4>
+                </div>
+                <div>
+                  <p className='photo-description'>{singlePhoto.description}</p>
+                </div>
+
             </div>
-            <div>
-              <h4 className='photo-title'>{singlePhoto.title}</h4>
-            </div>
-            <div>
-              <p className='photo-description'>{singlePhoto.description}</p>
-            </div>
-          </div>
-          {/* <div className='photo-stats-column'>
-          <div className='photo-stats'>
-            <span>0</span>
-            <p>faves</p>
+                {/* <div className='photo-stats-column-2'>
+                    <div className='photo-stats'>
+                      <span>0</span>
+                      <p>faves</p>
+
+                    </div>
+                    <div className='photo-stats-comments'>
+                      <span>{numberOfComments}</span>
+                      <p>comments</p>
+
+                    </div>
+
+                    <div>
+                      <span>Taken on <span>{convertDateToReadable(singlePhoto.createdAt)}</span></span>
+                      <div className='allrights-2'>
+                        <img  src={allRightsReserved}></img>
+                        <p className="trade-mark">  All Rights Reserved</p>
+                      </div>
+
+                    </div>
+
+                </div> */}
+
 
           </div>
-          <div className='photo-stats-comments'>
-            <span>{numberOfComments}</span>
-            <p>comments</p>
 
-          </div>
-
-          <div>
-            <span>Taken on <span>{convertDateToReadable(singlePhoto.createdAt)}</span></span>
-            <div className='allrights'>
-              <img  src={allRightsReserved}></img>
-              <p className="trade-mark">  All Rights Reserved</p>
-            </div>
-
-          </div>
-
-        </div> */}
           <div className='comment-container'>
             <Comments />
           </div>

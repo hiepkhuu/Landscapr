@@ -79,9 +79,14 @@
   background-color: rgb(231, 228, 228);
   padding:10px;
   border-radius: 3px;
-  /* margin:0px 10px; */
+  /* display: flex !important;
+  flex-direction: row !important; */
+ 
 }
 
+.details-header div{
+
+}
 .user-link-header{
   margin: 10px 0px 5px 0px;
   font-weight: 600;
@@ -105,10 +110,16 @@
 }
 
 @media screen and (max-width:900px) {
-
+  .photo-stats-column-2{
+    visibility: visible;
+  }
+  .photo-stats-column{
+    visibility: hidden;
+  }
 }
 
 .photo-stats-column{
+
   background-color: rgb(231, 228, 228);
   height: 4em;
   margin-left: 1em;
@@ -124,18 +135,49 @@
   color:rgb(160, 160, 160);
 
 }
-.trade-mark{
-  color:rgb(42, 42, 156) !important
-}
 .photo-stats-column img{
   width: 2em;
   height: 1.7em;
 }
-.allrights{
+.trade-mark{
+  color:rgb(42, 42, 156) !important
+}
+
+.allrights,
+.allrights-2{
   display: flex;
   margin-left: 0 !important
 }
 
 .allrights p{
   margin-top: .5em;
+}
+
+/*
+for smaller screens */
+.photo-stats-column-2{
+
+  background-color: rgb(231, 228, 228);
+  height: 4em;
+  display: flex;
+  margin-top: 0.5em;
+
+}
+
+.photo-stats-column-2 div{
+  margin: .5em 1em
+}
+.photo-stats-column-2 p{
+  margin: 0px;
+  color:rgb(160, 160, 160);
+
+}
+.photo-stats-column-2 img{
+  width: 2em;
+  height: 1.7em;
+}
+
+.allrights-2 p{
+  margin-top: .5em;
+
 }
