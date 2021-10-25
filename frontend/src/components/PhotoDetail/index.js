@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useHistory, useParams, Redirect, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSinglePhoto } from '../../store/photos';
+import { getComments} from '../../store/comments'
 import Comments from './Comments.js'
 import EditPhotoModal from '../../context/EditPhotoModal';// for MODAL
 
@@ -12,13 +13,18 @@ import './Comments.css'
 const PhotoDetail = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { id } = useParams();
+  let { id } = useParams();
   id = Number(id)
 
   const sessionUser = useSelector(state => state.session.user)
   const singlePhoto = useSelector(state => state.photos[id]);
 
+  const comments = useSelector(state =>{
+    return Object.values( state.comments)
+  })
 
+  const filteredComments = comments.filter(eachComment => eachComment.photoId === id)
+  const numberOfComments = filteredComments.length
   useEffect(() => {
     dispatch(getSinglePhoto(id))
     dispatch(getComments(id))
@@ -97,7 +103,7 @@ const PhotoDetail = () => {
 
           </div>
           <div className='photo-stats-comments'>
-            <span>0</span>
+            <span>{numberOfComments}</span>
             <p>comments</p>
 
           </div>
