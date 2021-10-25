@@ -1,7 +1,7 @@
 .profile-dropdown{
   position:absolute;
   margin: 10px 0px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255) !important;
   padding: 10px 10px 10px 10px;
   color: black;
   border-radius: 2px;
@@ -12,6 +12,7 @@
 
 .profile-dropdown-container{
   background-color: white;
+  opacity: 1 !important;
 }
 
 .logout-link{
@@ -24,15 +25,16 @@
 } */
 .user-headshot-btn{
   /* position:absolute; */
-  background-color: white;
+  background-color: white !important;
   background-image: url('./images/cellphone-animation-2.jpg');
+  cursor: pointer;
   height:30px;
   width:30px;
   margin: 0px 0px 0px 0px;
   background-size: cover;
   border-radius: 50px;
   border:0px;
-  opacity: 1 !important;
+
 
 }
 /* .triangle-dropdown{

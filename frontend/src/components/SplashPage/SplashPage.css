@@ -65,7 +65,8 @@
   border-radius: 10px;
   box-shadow: rgb(53, 53, 53) 1px 0 8px;
   text-shadow: rgb(14, 14, 14) 1px 0 2px;
-  color:white
+  color:white;
+  cursor: pointer;
 }
 .splash-page-container button:hover{
   background-color: rgb(111, 148, 155);
