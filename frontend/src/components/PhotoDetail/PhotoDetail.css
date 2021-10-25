@@ -41,7 +41,8 @@
 
 .edit-photo-button{
   display: flex;
-  justify-content: center
+  justify-content: center;
+  cursor: pointer
 }
 
 .btn-edit{
