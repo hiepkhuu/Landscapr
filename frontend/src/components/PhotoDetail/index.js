@@ -8,6 +8,7 @@ import EditPhotoModal from '../../context/EditPhotoModal';// for MODAL
 
 import './PhotoDetail.css'
 import './Comments.css'
+import allRightsReserved from './images/all-rights-reserved.png'
 
 
 const PhotoDetail = () => {
@@ -54,6 +55,28 @@ const PhotoDetail = () => {
         < EditPhotoModal />
       </div>
     )
+  }
+
+  let monthConvert = {
+    '01': "January",
+    '02': "February",
+    '03': "March",
+    '04': "April",
+    '05': "may",
+    '06': "June",
+    '07': "July",
+    '08': "August",
+    '09': "September",
+    '10': "October",
+    '11': "November",
+    '12': "December",
+  }
+
+  const convertDateToReadable = (input) =>{
+    let year = input.slice(0,4);
+    let month = input.slice(5,7);
+    let day = input.slice(8,10)
+    return monthConvert[month] + " " + day + ", " + year
   }
 
 
@@ -105,6 +128,15 @@ const PhotoDetail = () => {
           <div className='photo-stats-comments'>
             <span>{numberOfComments}</span>
             <p>comments</p>
+
+          </div>
+
+          <div>
+            <span>Taken on <span>{convertDateToReadable(singlePhoto.createdAt)}</span></span>
+            <div className='allrights'>
+              <img  src={allRightsReserved}></img>
+              <p className="trade-mark">  All Rights Reserved</p>
+            </div>
 
           </div>
 

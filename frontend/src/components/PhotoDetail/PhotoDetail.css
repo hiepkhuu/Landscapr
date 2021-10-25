@@ -115,6 +115,21 @@
 }
 .photo-stats-column p{
   margin: 0px;
-  color:rgb(42, 42, 156);
+  color:rgb(160, 160, 160);
 
+}
+.trade-mark{
+  color:rgb(42, 42, 156) !important
+}
+.photo-stats-column img{
+  width: 2em;
+  height: 1.7em;
+}
+.allrights{
+  display: flex;
+  margin-left: 0 !important
+}
+
+.allrights p{
+  margin-top: .5em;
 }
