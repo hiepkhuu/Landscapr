@@ -66,7 +66,7 @@
 .photo-detail-container{
   margin-top: 30px ;
   width:auto;
-  display:flex;
+  display:flex ;
   justify-content: center;
 }
 
@@ -101,4 +101,20 @@
 
 .photo-description{
   font-size: 13px;
+}
+
+.photo-stats-column{
+  background-color: rgb(231, 228, 228);
+  height: 4em;
+  margin-left: 1em;
+  display: flex
+}
+
+.photo-stats-column div{
+  margin: .5em 1em
+}
+.photo-stats-column p{
+  margin: 0px;
+  color:rgb(42, 42, 156);
+
 }

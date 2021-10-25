@@ -13,15 +13,15 @@ const PhotoDetail = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const { id } = useParams();
+  id = Number(id)
 
   const sessionUser = useSelector(state => state.session.user)
   const singlePhoto = useSelector(state => state.photos[id]);
-  // const photo = useSelector(state => {
-  //   return Object.values(state.photos)
-  // })
+
 
   useEffect(() => {
     dispatch(getSinglePhoto(id))
+    dispatch(getComments(id))
   }, [dispatch])
 
   if (!sessionUser) {
@@ -39,9 +39,7 @@ const PhotoDetail = () => {
     history.push(`/edit/${singlePhoto.id}`)
   }
 
-  // const redirectToHomepage = () =>{
-  //   history.push(`/${sessionUser.username}/${sessionUser.id}`)
-  // }
+
 
   let showEditButton;
   if (singlePhoto.userId === sessionUser.id) {
@@ -92,7 +90,21 @@ const PhotoDetail = () => {
             <Comments />
           </div>
         </div>
+        <div className='photo-stats-column'>
+          <div className='photo-stats'>
+            <span>0</span>
+            <p>faves</p>
+
+          </div>
+          <div className='photo-stats-comments'>
+            <span>0</span>
+            <p>comments</p>
+
+          </div>
+
+        </div>
       </div>
+
 
     </div>
 

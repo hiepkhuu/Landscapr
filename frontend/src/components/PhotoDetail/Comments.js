@@ -13,14 +13,6 @@ const Comments = () =>{
 
   const [comment, setComment] = useState('')
   const [commentToDeleteId, setCommentToDeleteId] = useState('')
-  // const [editedComment, setEditedComment] = useState('')
-  // const [editedCommentId, setEditedCommentId] = useState('')
-  // const [showMenu, setShowMenu] = useState(false);
-
-  // const openMenu = () => {
-  //   if (showMenu) return;
-  //   setShowMenu(true);
-  // };
 
   let {id} = useParams()
   id = Number(id)
@@ -37,17 +29,8 @@ const Comments = () =>{
   useEffect(()=>{
     dispatch(getComments(id))
 
-    // if (!showMenu) return;
-
-    // const closeMenu = () => {
-    //   setShowMenu(false);
-    // };
-
-    // document.addEventListener('submit', closeMenu);
-
-    // return () => document.removeEventListener("click", closeMenu);
   }, [dispatch,id])
-  // [dispatch,id, showMenu]
+
 
   if(!comments) return null;
 
@@ -70,21 +53,6 @@ const Comments = () =>{
       // }
     }
 
-    // const handleEditSubmit = async (e)=>{
-    //   e.preventDefault();
-    //   const editData = {
-    //     comment: editedComment,
-    //     userId: sessionUser.id,
-    //     photoId: id,
-    //     id: editedCommentId
-    //   }
-    //     const newComment = await dispatch(editComment(editData))
-
-    //       await setEditedComment('')
-    //       console.log(newComment)
-    //       // history.push(`/photos/${Number(id)}}`)
-
-    //   }
 
   const handleDelete = async (e)=>{
     e.preventDefault()
@@ -92,10 +60,6 @@ const Comments = () =>{
 
   }
 
-  // const handleCancelEdit = async (e) =>{
-  //   e.preventDefault()
-  //   await setShowMenu(false)
-  // }
 
 
   return(
